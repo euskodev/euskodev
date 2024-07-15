@@ -1,0 +1,1171 @@
+{% load static %}
+
+{% load i18n %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Euskodev (de la mano contigo)</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+
+
+
+    <!--stilos-->
+
+
+    <style>
+        #prueba1 {
+            width: 100%;
+            width: 100%;
+            transition-duration: 1s;
+        }
+
+        #prueba1:hover {
+            width: 90%;
+            height: 80%;
+        }
+    </style>
+
+
+    <!--fin de stilos-->
+
+
+    <!--esto es lo del mapa-->
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+
+
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+
+
+    <!--aca termina la parte del mapa-->
+
+</head>
+
+<body id="page-top">
+
+
+    <!-- Navbar-->
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="display-6" href="#page-top"
+                style="text-decoration: none;font-family: 'Courier New', Courier, monospace;text-shadow: 2px 2px 5px black;">Eusko<b
+                    style="color:white;">dev</b></a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ms-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#services"
+                            style="  text-shadow: 2px 2px black;">{% trans 'Servicios' %}</a></li>
+
+                    <li class="nav-item"><a class="nav-link" href="#portfolio"
+                            style="  text-shadow: 2px 2px black;">{% trans 'Portfolio' %}</a></li>
+
+                    <li class="nav-item"><a class="nav-link" href="#about"
+                            style="  text-shadow: 2px 2px black;">{% trans 'Sobre' %}</a></li>
+
+                    <li class="nav-item"><a class="nav-link" href="{% url 'home_app:blog' %}"
+                            style="  text-shadow: 2px 2px black;">{% trans 'Blog' %} </a></li>
+
+                    <li class="nav-item"><a class="nav-link" href="#team"
+                            style="  text-shadow: 2px 2px black;">{% trans 'Creadores' %} </a></li>
+
+                    <li class="nav-item"><a class="nav-link" href="#contact"
+                            style="  text-shadow: 2px 2px black;">{% trans 'Contacto' %}</a></li>
+
+                    <li class="nav-item"><a class="nav-link" href="#contact"
+                            style="  text-shadow: 2px 2px black;"><b>747
+                                47 88 42 </b> </a></li>
+
+
+                    {% get_current_language as CURRENT_LANGUAGE %}
+                    {% get_available_languages as AVAILABLE_LANGUAGES %}
+                    {% get_language_info_list for AVAILABLE_LANGUAGES as languages %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle"
+                            style="text-transform:uppercase; background-color:#ffc800; color:blue; border-radius:25px;"
+                            href="#" data-bs-toggle="dropdown" aria-expanded="false">{{ CURRENT_LANGUAGE }}</a>
+                        <ul class="dropdown-menu">
+                            {% for language in languages %}
+                            <li><a class="dropdown-item" style="text-transform:uppercase; color:gray;"
+                                    href="/{{ language.code }}/{{ request.get_full_path|slice:'4:' }}">{{ language.code }}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!--fin de navbar-->
+
+
+    <!-- Masthead-->
+
+
+    <header class="masthead"
+        style="background-image: url('{% static "assets/img/portada.jpg" %}'); filter: grayscale(40%);">
+        <div class="container">
+            <div class="masthead-subheading" style="text-shadow: 2px 2px 5px black;">
+                {% trans 'Welcome To Our Studio <br> <br style="text-shadow: 2px 2px 5px black;">of' %}</div>
+            <div class="masthead-heading text-uppercase" style="text-shadow: 2px 2px 5px black;">
+                {% trans "Desarrollo Web" %}</div>
+            <a class="btn btn-primary btn-xl text-uppercase" href="#services"><svg xmlns="http://www.w3.org/2000/svg"
+                    width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16"
+                    style="color:black;">
+                    <path fill-rule="evenodd"
+                        d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1" />
+                </svg></a>
+        </div>
+    </header>
+
+    <!--fin masthead-->
+
+    <!-- Services-->
+
+
+    <section class="page-section" id="services">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase" style="text-shadow: 2px 2px 5px white;">
+                    {% trans 'Servicios' %}</h2>
+                <h3 class="section-subheading text-muted" style="text-shadow: 2px 2px 5px white;">
+                    {% trans 'Conoce un poco de nuestros servicios!.' %}</h3>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fas fa-shopping-cart fa-stack-1x fa-inverse" id="prueba1"></i>
+                    </span>
+                    <h4 class="my-3" style="text-shadow: 2px 2px 5px white;">{% trans 'E-Commerce' %}</h4>
+
+                    <p class="text-muted">
+                        {% trans 'Eleve su presencia online con las soluciones de eCommerce de euskodev <br> En el panorama digital actual, un sitio web de eCommerce no es solo un lujo; es una necesidad para empresas de todos los tamaños. Con un sitio web de eCommerce, puede llegar a una audiencia global, ampliar su base de clientes y aumentar sus ventas. Pero crear un sitio web de eCommerce exitoso requiere más que un diseño atractivo. Debe ser funcional, fácil de usar y seguro..' %}
+
+                    </p>
+                </div>
+
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fas fa-laptop fa-stack-1x fa-inverse" id="prueba1"></i>
+                    </span>
+                    <h4 class="my-3" style="text-shadow: 2px 2px 5px white;">{% trans 'Responsive Design' %}</h4>
+
+                    <p class="text-muted">
+                        {% trans 'Creamos sitios web responsive que se adaptan a la perfección a cualquier tamaño de pantalla, desde ordenadores de sobremesa y portátiles hasta tablets y smartphones. Nuestros expertos diseñadores y desarrolladores se aseguran de que tu sitio web ofrezca una experiencia de usuario (UX) excepcional en todos los dispositivos, manteniendo a tus visitantes comprometidos y regresando por más.' %}
+                    </p>
+
+
+                </div>
+
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fas fa-lock fa-stack-1x fa-inverse" id="prueba1"></i>
+                    </span>
+                    <h4 class="my-3" style="text-shadow: 2px 2px 5px white;">{% trans 'Web Security' %}
+                    </h4>
+                    <p class=" text-muted">
+                        {% trans 'La seguridad del sitio web es primordial. En euskodev, ofrecemos soluciones integrales de seguridad web para proteger tus activos online de las amenazas en constante evolución.. <br><br> HTTPS: Nos aseguramos de que su sitio web utilice HTTPS para cifrar todo el tráfico entre su                        sitio y los navegadores de los visitantes, protegiendo la confidencialidad de los datos.' %}
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!--fin de services-->
+
+
+    <!-- Portfolio Grid-->
+
+
+    <section class="page-section" id="portfolio" style="background-color: #ffc800;">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase text-white" style="text-shadow: 2px 2px 5px black;">
+                    {% trans 'Portfolio' %}</h2>
+                <h3 class="section-subheading text-muted" style="text-shadow: 2px 2px 5px white;">
+                    {% trans 'Hecha un vistazo!.' %}</h3>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-sm-6 mb-4">
+
+
+                    <!-- Portfolio item 1-->
+
+
+                    <div class="portfolio-item" style="border:solid;border-color:black;">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="{% static 'assets/img/portfolio/testosakidetza.png' %}"
+                                alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">20.000+</div>
+                            <div class="portfolio-caption-subheading text-muted">{% trans 'Aprendizaje' %}</div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+
+
+
+
+                    <!-- Portfolio item 2-->
+
+
+                    <div class="portfolio-item" style="border:solid;border-color:black;border-width: 3px;">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="{% static 'assets/img/portfolio/portafolio2.png' %}"
+                                alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Explore</div>
+                            <div class="portfolio-caption-subheading text-muted">{% trans 'Desarrollo de software' %}
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+
+
+                    <!-- Portfolio item 3-->
+
+
+                    <div class="portfolio-item" style="border:solid;border-color:black;border-width: 3px;">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="{% static 'assets/img/portfolio/cocina.jpg' %}" alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Gastronomy</div>
+                            <div class="portfolio-caption-subheading text-muted">{% trans 'Locations' %}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+                    <!-- Portfolio item 4-->
+                    <!-- <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="{% static 'assets/img/portfolio/4.jpg' %}" alt="..." />
+                        </a>
+                       <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Lines</div>
+                            <div class="portfolio-caption-subheading text-muted">Branding</div>
+                        </div>-->
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                <!-- Portfolio item 5-->
+                <!--- <div class="portfolio-item">
+                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="{% static 'assets/img/portfolio/5.jpg' %}" alt="..." />
+                    </a>-->
+                <!-- <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">Southwest</div>
+                        <div class="portfolio-caption-subheading text-muted">Website Design</div>
+                    </div>
+                </div>
+            </div>
+                    <div class="col-lg-4 col-sm-6">-->
+                <!-- Portfolio item 6-->
+                <!-- <div class="portfolio-item">
+                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="{% static 'assets/img/portfolio/6.jpg' %}" alt="..." />
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">Window</div>
+                        <div class="portfolio-caption-subheading text-muted">Photography</div>
+                    </div>
+                </div>-->
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!--fin de portafolio grid-->
+
+
+    <!-- About-->
+
+
+    <section class="page-section" id="about">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">{% trans 'Sobre' %}</h2>
+                <h3 class="section-subheading text-muted">
+                    {% trans 'En euskodev somos un equipo apasionado de desarrolladores web expertos en crear soluciones digitales que impulsan tu negocio. Contamos con un historial probado de éxito en el desarrollo de sitios web, aplicaciones web y sistemas personalizados. Nos especializamos en comprender tus necesidades y objetivos para crear soluciones a medida que superen tus expectativas.   Nuestra filosofía se basa en la innovación, la creatividad y la cercanía con el cliente. Trabajamos en estrecha colaboración contigo en cada paso del proceso, desde la ideación hasta el lanzamiento y el mantenimiento de tu proyecto. Nos enorgullecemos de ofrecer un servicio de alta calidad, personalizado y asequible..' %}
+                </h3>
+
+
+
+
+
+
+
+
+
+            </div>
+            <br><br>
+            <ul class="timeline">
+                <li>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid"
+                            src="{% static 'assets/img/about/nueva.jpg' %}" alt="..." /></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <!--<h4>2009-2011</h4>-->
+                            <h4 class="subheading">{% trans 'Creación y Remodelación de páginas y sitios web' %}</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="text-muted">
+                                {% trans '¿Tu sitio web necesita un cambio de imagen?' %}' <br> <br>
+
+                                {% trans 'En euskodev, ofrecemos servicios profesionales de creación y remodelación de páginas y sitios web. Somos expertos en transformar sitios web obsoletos o que no funcionan correctamente en sitios web modernos, atractivos y funcionales que te ayuden a alcanzar tus objetivos de negocio!' %}
+                            </p>
+                        </div>
+
+                    </div>
+                </li>
+                <li class="timeline-inverted mb-5">
+                    <div class="timeline-image"><img class="rounded-circle img-fluid"
+                            src="{% static 'assets/img/about/seguridad.jpg' %}" alt="..." /></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4>{% trans 'Dominio, hosting y seguridad' %}</h4>
+                            <h4 class="subheading">
+                                <!--{% trans 'campo libre' %}-->
+                            </h4>
+
+                        </div>
+                        <div class="timeline-body mb-5">
+                            <p class="text-muted">
+
+                                {% trans 'Registro de tu dominio: Elige el nombre perfecto para tu proyecto y nosotros nos encargamos de registrarlo y configurarlo para que tu sitio web sea accesible en internet. <br><br> Alojamiento web seguro: Tu sitio web estará alojado en nuestros servidores de última generación, con altos estándares de seguridad para proteger tus datos y los de tus visitantes.  Protección contra amenazas: Implementamos las mejores medidas de seguridad para evitar ataques cibernéticos, malware y otras amenazas que puedan poner en riesgo tu sitio web.' %}
+
+                            </p>
+
+
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid"
+                            src="{% static 'assets/img/about/responsive.png' %}" alt="..." /></div>
+                    <div class="timeline-panel mb-5">
+                        <div class="timeline-heading">
+                            <!--<h4>December 2015</h4>-->
+                            <h4 class="subheading">{% trans 'Sitios Webs Responsives' %}</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="text-muted">
+                                {% trans '¿Tu sitio web se adapta a todas las pantallas? <br> <br>  En la era digital actual, donde cada vez más personas acceden a internet desde dispositivos móviles, es fundamental contar con un sitio web responsive. Un sitio web responsive es aquel que se ajusta automáticamente al tamaño de la pantalla del dispositivo en el que se visualiza, ya sea un ordenador de sobremesa, una tableta o un smartphone!' %}
+                            </p>
+
+
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline-inverted">
+                    <div class="timeline-image"><img class="rounded-circle img-fluid"
+                            src="{% static 'assets/img/about/tienda2.jpg' %}" alt="..." /></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <!--<h4>July 2020</h4>-->
+                            <h4 class="subheading">{% trans 'e-comerce' %}</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="text-muted">
+                                {% trans 'Euskodev: Desarrolle su tienda online con expertos en comercio electrónico En Euskodev, comprendemos el poder transformador del comercio electrónico en el panorama empresarial actual. Ayudamos a las empresas a establecer una presencia sólida en el  mundo online con soluciones de comercio electrónico personalizadas y de vanguardia.!' %}
+
+                            </p>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid"
+                            src="{% static 'assets/img/about/woman.png' %}" alt="..." /></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <!--<h4>2009-2011</h4>-->
+                            <h4 class="subheading">{% trans 'Diseño Gráfico' %}</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="text-muted">
+                                {% trans 'Euskodev: Creando experiencias visuales cautivadoras para su presencia digital En la era digital actual, un sitio web visualmente atractivo y fácil de usar ya no es un lujo, es una necesidad. En Euskodev, entendemos el poder de un diseño convincente para dar forma a la identidad online de su marca y generar compromiso con su público objetivo. Nuestro equipo de diseñadores web expertos y creativos apasionados por crearsitios web que no solo se vean impresionantes sino que también brinden experiencias de usuario excepcionales.' %}
+
+                                <!--Ofrecemos una suite completa de servicios de diseño web adaptados para satisfacer las
+                                necesidades únicas de su negocio. Ya sea que esté buscando una revisión completa de su
+                                sitio web o una actualización de su diseño existente, nuestros expertos trabajarán en
+                                estrecha colaboración con usted para comprender su visión y traducirla en una obra
+                                maestra digital cautivadora.ur--> !</p>
+                        </div>
+                    </div>
+                </li>
+
+
+                <li class="timeline-inverted">
+                    <div class="timeline-image"><img class="rounded-circle img-fluid"
+                            src="{% static 'assets/img/about/seo.jpg' %}" alt="..." /></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <!-- <h4>July 2020</h4>-->
+                            <h4 class="subheading">
+                                {% trans 'Euskodev: Su socio de SEO para una presencia online próspera' %}</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p class="text-muted">
+                                {% trans 'En el panorama digital competitivo actual, una presencia online sólida es crucial para empresas de todos los tamaños. Un sitio web bien optimizado no solo atrae más visitantes, sino que también los convierte en clientes valiosos. Sin embargo, lograr los mejores rankings en los motores de búsqueda y generar tráfico orgánico requiere experiencia y dedicación. Ahí es donde entran en juego los servicios de SEO de Euskodev. Libere el poder del SEO con Euskodev en Euskodev, somos un equipo de especialistas en SEO experimentados apasionados por ayudar a empresas como la suya a lograr sus objetivos online. Entendemos las complejidades de los algoritmos de los motores de búsqueda y el panorama SEO en constante cambio. Nuestros servicios completos de SEO están diseñados para <br> aumentar la visibilidad de su sitio web' %}
+                            </p>
+
+                        </div>
+                    </div>
+                </li>
+
+
+                <li class="timeline-inverted">
+                    <div class="timeline-image">
+                        <h4>
+                            {% trans 'Se parte <br/> de nuestra <br/> historia!' %}
+                        </h4>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+
+    <!--fin de  Abaut-->
+
+
+    <!--comentarios-->
+
+    <div class="container" style="margin-bottom: 5%;">
+
+        <h1 class="section-heading text-uppercase  text-center" style="margin-top: 5%; margin-bottom: 10%;">
+            {% trans 'opiniones' %}</h1>
+
+
+        <div class="row">
+
+            <div class="col-lg-4 text-center">
+                <img class="rounded-circle" src="{% static 'assets/img/opiniones/primera.jpeg' %}" alt="" width="140"
+                    height="140">
+                <h2 style="margin-top: 3%; margin-bottom: 3%;">MERTXE</h2>
+                <p>{% trans 'En Euskodev me diseñaron una web perfecta para mi negocio. Me escucharon con atención y entendieron mis necesidades a la perfección.' %}
+                </p>
+
+
+
+
+
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4 text-center">
+                <img class="rounded-circle" src="{% static 'assets/img/opiniones/segundaa.jpeg' %}" alt="" width="140"
+                    height="140">
+                <h2 style="margin-top: 3%; margin-bottom: 3%;">Jose Luis</h2>
+                <p>{% trans 'Buscaba una web para mi negocio y no sabía por dónde empezar. En Euskodev me lo pusieron facilísimo. Desde el principio me escucharon y entendieron lo que quería. Me hicieron un diseño chulísimo y que funciona a la perfección, ¡hasta me subieron en el buscador! Son majísimos y profesionales.' %}
+                </p>
+
+
+
+
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4 text-center">
+                <img class="rounded-circle" src="{% static 'assets/img/opiniones/tercera.jpeg' %}" alt="" width="140"
+                    height="140">
+                <h2 style="margin-top: 3%; margin-bottom: 3%;">Luis Diego</h2>
+                <p>{% trans 'En Euskodev me entendieron a la perfección. Desde el principio supieron lo que buscaba para mi negocio online. Me hicieron una web preciosa y que funciona de maravilla. Además, me ayudaron a que me encontraran en Google, ¡estoy encantado! Son un equipo súper atento y profesional.' %}
+                </p>
+
+            </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
+    </div>
+
+    <!--terminan el  area  de comentarios-->
+
+
+
+
+
+    <!-- Team-->
+
+
+
+    <!--este es un espacio oculto sobre los creadores de la web "team"-->
+
+    <section class="page-section bg-light" id="team">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">{% trans 'Creadores de la web' %}</h2>
+                <h3 class="section-subheading text-muted">{% trans 'Developers Full Stack.' %}</h3>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="team-member">
+                        <img class="mx-auto rounded-circle" src="{% static 'assets/img/team/daniel.jpg' %}" alt="..." />
+                        <h4>Olvin Duarte</h4>
+                        <p class="text-muted">{% trans 'Full Stack Developer' %}</p>
+                        <!-- <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Twitter Profile"><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Facebook Profile"><i
+                                class="fab fa-facebook-f"></i></a>-->
+                        <a class="btn btn-dark btn-social mx-2"
+                            href="https://www.linkedin.com/in/olvin-duarte-252b25300?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BvYDRoEspTgKDbrTxlgSb5w%3D%3D"
+                            aria-label="Parveen Anand LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+
+                <!--<div class="col-lg-4">
+                    <div class="team-member">
+                        <img class="mx-auto rounded-circle" src="{% static 'assets/img/team/2.jpg' %}" alt="..." />
+                        <h4>Diana Petersen</h4>
+                        <p class="text-muted">Lead Marketer</p>
+                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Twitter Profile"><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"
+                            aria-label="Diana Petersen Facebook Profile"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"
+                            aria-label="Diana Petersen LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>-->
+
+
+
+
+
+                <div class="col-lg-6">
+                    <div class="team-member">
+                        <img class="mx-auto rounded-circle" src="{% static 'assets/img/team/retegi.jpg' %}" alt="..." />
+                        <h4>Iñaki Retegi</h4>
+                        <p class="text-muted">{% trans 'Full Stack Developer' %}</p>
+                        <!-- <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Twitter Profile"><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Facebook Profile"><i
+                                class="fab fa-facebook-f"></i></a>-->
+                        <a class="btn btn-dark btn-social mx-2"
+                            href="https://www.linkedin.com/in/inakiretegi?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BWKM33ZUHQTK%2FysXX4DfVYw%3D%3D"
+                            aria-label="Larry Parker LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <p class="large text-muted">
+                        {% trans 'Euskodev: Donde la tecnología se convierte en realidad Si está buscando un equipo de programadores digitales confiables y experimentados que puedan ayudarlo a alcanzar sus objetivos comerciales, no busque más allá de Euskodev. Con su enfoque personalizado y su dedicación a la calidad, Euskodev le brindará las soluciones digitales que necesita para prosperar en el mundo digital actual.' %}
+                    </p>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--acá termina el área de team-->
+
+
+
+    <!-- iconos de aplicaciones  usadas-->
+    <div class="py-5">
+        <div class="container">
+            <div class="row align-items-center" style="opacity:100%; ">
+                <div class="col-md-3 col-sm-6 my-3">
+
+                    <a href="#!"><img class="img-fluid img-brand d-block mx-auto"
+                            src="{% static 'assets/img/logos/python.png' %}" alt="..." aria-label="python.png" /></a>
+
+                </div>
+                <div class="col-md-3 col-sm-6 my-3" style="opacity:90%;">
+                    <a href="#!"><img class="img-fluid img-brand d-block mx-auto"
+                            src="{% static 'assets/img/logos/artificial.avif' %}" alt="..."
+                            aria-label="artificial Logo" /></a>
+
+                    <p class="text-center"><b>{% trans 'Artificial Intelligence' %}</b></p>
+
+
+                </div>
+                <div class="col-md-3 col-sm-6 my-3" style="opacity:70%;">
+                    <a href="#!"><img class="img-fluid img-brand d-block mx-auto"
+                            src="{% static 'assets/img/logos/django.png' %}" alt="..." aria-label="django Logo" /></a>
+                </div>
+                <div class="col-md-3 col-sm-6 my-3" style="opacity:80%; ">
+                    <a href="#!"><img class="img-fluid img-brand d-block mx-auto"
+                            src="{% static 'assets/img/logos/bootstrap.png' %}" alt="..."
+                            aria-label="bootstrap Logo" /></a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="py-5">
+        <div class="container">
+            <div class="row align-items-center" style="opacity:100%; ">
+                <div class="col-md-3 col-sm-6 my-3">
+
+                    <a href="#!"><img class="img-fluid img-brand d-block mx-auto"
+                            src="{% static 'assets/img/logos/github.jpg' %}" alt="..." aria-label="python.png" /></a>
+
+                </div>
+                <div class="col-md-3 col-sm-6 my-3" style="opacity:100%;">
+                    <a href="#!"><img class="img-fluid  d-block mx-auto w-25"
+                            src="{% static 'assets/img/logos/Google-Cloud.webp' %}" alt="..."
+                            aria-label="artificial Logo" /></a>
+
+                </div>
+                <div class="col-md-3 col-sm-6 my-3 " style="opacity:70%;">
+                    <a href="#!"><img class="img-fluid w-25 d-block mx-auto"
+                            src="{% static 'assets/img/logos/sql.webp' %}" alt="..." aria-label="django Logo" /></a>
+                </div>
+                <div class="col-md-3 col-sm-6 my-3" style="opacity:80%; ">
+                    <a href="#!"><img class="img-fluid w-25 d-block mx-auto"
+                            src="{% static 'assets/img/logos/triologo.webp' %}" alt="..."
+                            aria-label="bootstrap Logo" /></a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--fin de iconos de aplicasiones usadas ppara desarrollar la web-->
+
+
+    <!-- Contact-->
+
+
+
+    <section class="page-section" id="contact">
+        <div class="container">
+
+            <div class=" row text-center col-lg-12 col-md-12" style="padding-bottom: 20px;">
+
+                <h2 class="section-heading text-uppercase">{% trans 'Contáctanos' %}</h2>
+                <h3 class="section-subheading " style="color: white; margin-bottom: 1%;">{% trans 'Sin Fronteras.' %}
+                </h3>
+                <h3 class="section-heading text-uppercase mb-5">747 47 88 42 <img
+                        src="{% static 'assets/img/whatsapp.png' %}" alt="" style="width: 40px;"></h3>
+
+
+
+                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                    <div class="row align-items-stretch mb-5">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <!-- Name input-->
+                                <input class="form-control" id="name" type="text" placeholder="{% trans 'Nombre' %}*"
+                                    data-sb-validations="required" />
+                                <div class="invalid-feedback" data-sb-feedback="name:required">
+                                    {% trans 'A name is required.' %}</div>
+                            </div>
+                            <div class="form-group">
+                                <!-- Email address input-->
+                                <input class="form-control" id="email" type="email" placeholder="{% trans 'Email' %} *"
+                                    data-sb-validations="required,email" />
+                                <div class="invalid-feedback" data-sb-feedback="email:required">
+                                    {% trans 'An email is required' %}.</div>
+                                <div class="invalid-feedback" data-sb-feedback="email:email">
+                                    {% trans 'Email is not valid.' %}</div>
+                            </div>
+                            <div class="form-group mb-md-0">
+                                <!-- Phone number input-->
+                                <input class="form-control" id="phone" type="tel" placeholder="{% trans 'teléfono' %} *"
+                                    data-sb-validations="required" />
+                                <div class="invalid-feedback" data-sb-feedback="phone:required">
+                                    {% trans 'A phone number is required.' %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-group-textarea mb-md-0">
+                                <!-- Message input-->
+                                <textarea class="form-control" id="message" placeholder="{% trans 'Mensaje' %}*"
+                                    data-sb-validations="required"></textarea>
+                                <div class="invalid-feedback" data-sb-feedback="message:required">
+                                    {% trans 'A message is required.' %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Submit success message-->
+                    <!---->
+                    <!-- This is what your users will see when the form-->
+                    <!-- has successfully submitted-->
+                    <div class="d-none" id="submitSuccessMessage">
+                        <div class="text-center text-white mb-3">
+                            <div class="fw-bolder">Form submission successful!</div>
+                            To activate this form, sign up at
+                            <br />
+                            <a
+                                href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                        </div>
+                    </div>
+                    <!-- Submit error message-->
+                    <!---->
+                    <!-- This is what your users will see when there is-->
+                    <!-- an error submitting the form-->
+                    <div class="d-none" id="submitErrorMessage">
+                        <div class="text-center text-danger mb-3">{% trans 'Error sending message!' %}</div>
+                    </div>
+                    <!-- Submit Button-->
+                    <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled"
+                            id="submitButton" type="submit">{% trans 'Enviar' %}</button></div>
+                </form>
+
+
+            </div>
+
+
+            <!--text-muted se usa para que una palabra o un parrafo no tenga movimientos ni cambie de color sus letras ni pueda hacer nada-->
+            <!-- * * * * * * * * * * * * * * *-->
+            <!-- * * SB Forms Contact Form * *-->
+            <!-- * * * * * * * * * * * * * * *-->
+            <!-- This form is pre-integrated with SB Forms.-->
+            <!-- To make this form functional, sign up at-->
+            <!-- https://startbootstrap.com/solution/contact-forms-->
+            <!-- to get an API token!-->
+
+            <!--este es el div del mapa-->
+            <div class="row">
+                <div class="col-lg-3 col-md-12"></div>
+
+                <div class="col-lg-6  text col-md-12" id="map" style="height: 300px;"">
+
+                </div>
+
+                <div class=" col-lg-3 col-md-12"></div>
+
+            </div>
+
+            <!--aca termina el div  del mapa-->
+
+        </div>
+    </section>
+
+
+    <!--fin de contact-->
+
+
+    <!-- Footer-->
+    <footer class=" footer py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-lg-start">
+                    {% trans 'Euskodev &copy;tu creador de sitios web 2024' %}</div>
+                <div class="col-lg-4 my-3 my-lg-0">
+                    <!--  <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i
+                            class="fab fa-twitter"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i
+                            class="fab fa-facebook-f"></i></a>-->
+                    <a class="btn btn-dark btn-social mx-2 aline" href="https://www.linkedin.com/company/euskodev/"
+                        aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <div class=" col-lg-4 text-lg-end">
+                    <a class="link-dark text-decoration-none me-3" href="{% url 'home_app:politicas_de_privacidad' %}"
+                        target="_blank">{% trans 'Privacy Policy' %} |</a>
+
+                    <a class="link-dark text-decoration-none" href="{% url 'home_app:aviso_legal' %}"
+                        target="_blank">{% trans 'Aviso_legal' %} | </a>
+
+
+                    <a class="link-dark text-decoration-none" href="{% url 'home_app:politicas_de_cookies' %}"
+                        target="_blank">{% trans 'politicas de cookies' %}</a>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--fin del  footer-->
+
+
+
+    <!-- Portfolio Modals-->
+
+
+    <!-- Portfolio item 1 modal popup-->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="{% static 'assets/img/close-icon.svg' %}"
+                        alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">TESTOSAKIDETZA</h2>
+                                <p class="item-intro text-muted">
+                                    {% trans 'Facilitamos Vuestro Aprendizaje' %}</p>
+                                <img class="img-fluid d-block mx-auto"
+                                    src="{% static 'assets/img/portfolio/testosakidetza.png' %}" alt="..." />
+                                <p>TESTOSAKIDETZA
+                                    {% trans ' es tu portal ideal para prepararte con éxito. Esta web te ofrece una amplia variedad de test para diferentes puestos de trabajo en el ámbito de la salud, la educación, la administración y otros sectores.' %}
+                                </p>
+
+                                <ul class="list-inline">
+                                    <li>
+                                        <strong>{% trans 'Personas:' %}</strong>
+                                        20.000+
+                                    </li>
+                                    <li>
+                                        <strong>{% trans 'Category:' %}</strong>
+                                        {% trans 'Aprendizaje' %}
+                                    </li>
+                                </ul>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                    type="button">
+                                    <i class="fas fa-xmark me-1"></i>
+                                    {% trans 'Volver' %}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--fin del portafiolio numero 1-->
+
+
+    <!-- Portfolio item 2 modal popup-->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div><img src="{% static 'assets/img/portafolio/portafolio2.png' %}" alt="" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">{% trans 'Euskodev' %}</h2>
+                                <p class="item-intro text-muted">Desarrollo de software.</p>
+                                <img class="img-fluid d-block mx-auto"
+                                    src="{% static 'assets/img/portfolio/portafolio2.png' %}" alt="..." />
+                                <p> {% trans 'Euskodev: Su aliado en el desarrollo de software <br> Euskodev, un equipo de desarrolladores de software en el País Vasco. especializado en la creación de soluciones digitales a medida, para empresas de todos los tamaños, desde pequeñas startups hasta grandes corporaciones!' %}
+                                </p>
+                                <ul class="list-inline">
+                                    <!--<li>
+                                        <strong>{% trans 'Personas:' %}</strong>
+                                    {% trans 'Web privada' %}
+                                    </li>-->
+                                    <li>
+                                        <strong>{% trans 'Category:' %}</strong>
+                                        {% trans 'Desarrollo de software' %}
+                                    </li>
+                                </ul>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                    type="button">
+                                    <i class="fas fa-xmark me-1"></i>
+                                    {% trans 'Volver' %}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--fin del portafolio numero 2-->
+
+    <!-- Portfolio item 3 modal popup-->
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="{% static 'assets/img/close-icon.svg' %}"
+                        alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">{% trans 'Gastrogune' %}</h2>
+                                <p class="item-intro text-muted">
+                                    {% trans 'GastroGune: La esencia de Euskadi en cada bocado.' %}</p>
+                                <img class="img-fluid d-block mx-auto"
+                                    src="{% static 'assets/img/portfolio/cocina.jpg' %}" alt="..." />
+                                <p>{% trans 'GastroGune: Tu Guía para Descubrir la Gastronomía <br> Vasca Eusko.Gune no solo te acerca la cocina vasca a tu hogar a través de recetas tradicionales, sino que también te sirve como guía para descubrir y disfrutar de los mejores lugares y restaurantes del País Vasco.!' %}
+                                </p>
+
+                                <!--<ul class="list-inline">
+                                    <li>
+                                        <strong>Client:</strong>
+                                        Finish
+                                    </li>-->
+                                <li>
+                                    <strong>Category:</strong>
+                                    {% trans 'Gastronomy' %}
+                                </li>
+                                </ul>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                    type="button">
+                                    <i class="fas fa-xmark me-1"></i>
+                                    {% trans 'Close Project' %}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--fin del portafolio numero 3-->
+
+
+    <!--fin de los portafolios que si se usan- despues de este solo son adicionales-->
+
+
+    <!-- Portfolio item 4 modal popup
+
+
+
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="{% static 'assets/img/close-icon.svg' %}"
+                        alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+
+
+        Project details-->
+
+
+    <!--       <h2 class="text-uppercase">Project Name</h2>
+                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                <img class="img-fluid d-block mx-auto" src="{% static 'assets/img/portfolio/4.jpg' %}"
+                                    alt="..." />
+                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet,
+                                    consectetur
+                                    adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos
+                                    deserunt
+                                    repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores
+                                    repudiandae,
+                                    nostrum, reiciendis facere nemo!</p>
+                                <ul class="list-inline">
+                                    <li>
+                                        <strong>Client:</strong>
+                                        Lines
+                                    </li>
+                                    <li>
+                                        <strong>Category:</strong>
+                                        Branding
+                                    </li>
+                                </ul>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                    type="button">
+                                    <i class="fas fa-xmark me-1"></i>
+                                    Close Project
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+
+
+    <!-- Portfolio item 5 modal popup
+
+
+    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="{% static 'assets/img/close-icon.svg' %}"
+                        alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+
+
+
+
+                                 Project details
+
+
+
+
+                    
+                                <h2 class="text-uppercase">Project Name</h2>
+                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                <img class="img-fluid d-block mx-auto" src="{% static 'assets/img/portfolio/5.jpg' %}"
+                                    alt="..." />
+                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet,
+                                    consectetur
+                                    adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos
+                                    deserunt
+                                    repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores
+                                    repudiandae,
+                                    nostrum, reiciendis facere nemo!</p>
+                                <ul class="list-inline">
+                                    <li>
+                                        <strong>Client:</strong>
+                                        Southwest
+                                    </li>
+                                    <li>
+                                        <strong>Category:</strong>
+                                        Website Design
+                                    </li>
+                                </ul>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                    type="button">
+                                    <i class="fas fa-xmark me-1"></i>
+                                    Close Project
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+
+
+    <!-- Portfolio item 6 modal popup
+
+
+    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="{% static 'assets/img/close-icon.svg' %}"
+                        alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+
+
+
+                                Project details
+
+
+
+                                <h2 class="text-uppercase">Project Name</h2>
+                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                <img class="img-fluid d-block mx-auto" src="{% static 'assets/img/portfolio/6.jpg' %}"
+                                    alt="..." />
+                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet,
+                                    consectetur
+                                    adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos
+                                    deserunt
+                                    repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores
+                                    repudiandae,
+                                    nostrum, reiciendis facere nemo!</p>
+                                <ul class="list-inline">
+                                    <li>
+                                        <strong>Client:</strong>
+                                        Window
+                                    </li>
+                                    <li>
+                                        <strong>Category:</strong>
+                                        Photography
+                                    </li>
+                                </ul>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                    type="button">
+                                    <i class="fas fa-xmark me-1"></i>
+                                    Close Project
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <!-- Bootstrap core JS-->
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+
+    <script>
+        var map = L.map('map').setView([43.322334391672506, -1.9831932035420474], 14);
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+
+        var marker = L.marker([43.322334391672506, -1.9831932035420474]).addTo(map);
+    </script>
+
+
+
+</body>
+
+</html>
