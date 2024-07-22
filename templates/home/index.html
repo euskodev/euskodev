@@ -38,6 +38,36 @@
             width: 90%;
             height: 80%;
         }
+
+        .facephoto{
+            opacity:0.9;
+            transition-duration: 1s;
+            transform: rotate(0deg)
+        }
+        .facephoto:hover{
+            opacity:1;
+            transition-duration: 0.3s;
+            transform: rotate(10deg)
+        }
+
+        .simbolEffect{
+            opacity:0.9;
+            transition-duration: 1s;
+            transform: rotate(0deg)
+        }
+        .simbolEffect:hover{
+            opacity:1;
+            transition-duration: 0.3s;
+            transform: rotate(30deg)
+        }
+        .testToYellow{
+            transition-duration: 1s;
+            color:black;
+        }
+        .testToYellow:hover{
+            transition-duration: 0.1s;
+            color:yellow;
+        }
     </style>
 
 
@@ -155,7 +185,7 @@
                 <h2 class="section-heading text-uppercase" style="text-shadow: 2px 2px 5px white;">
                     {% trans 'Servicios' %}</h2>
                 <h3 class="section-subheading text-muted" style="text-shadow: 2px 2px 5px white;">
-                    {% trans '¡Conoce un poco de nuestros servicios!.' %}</h3>
+                    {% trans '¡Conoce un poco de nuestros servicios!' %}</h3>
             </div>
             <div class="row text-center">
                 <div class="col-md-4">
@@ -165,7 +195,7 @@
                     </span>
                     <h4 class="my-3" style="text-shadow: 2px 2px 5px white;">{% trans 'E-Commerce' %}</h4>
 
-                    <p class="text-muted">
+                    <p class="text-muted" style="text-align:left;">
                         {% trans 'Eleve su presencia online con las soluciones de eCommerce de euskodev <br> En el panorama digital actual, un sitio web de eCommerce no es solo un lujo; es una necesidad para empresas de todos los tamaños. Con un sitio web de eCommerce, puede llegar a una audiencia global, ampliar su base de clientes y aumentar sus ventas. Pero crear un sitio web de eCommerce exitoso requiere más que un diseño atractivo. Debe ser funcional, fácil de usar y seguro..' %}
 
                     </p>
@@ -178,7 +208,7 @@
                     </span>
                     <h4 class="my-3" style="text-shadow: 2px 2px 5px white;">{% trans 'Responsive Design' %}</h4>
 
-                    <p class="text-muted">
+                    <p class="text-muted" style="text-align:left;">
                         {% trans 'Creamos sitios web responsive que se adaptan a la perfección a cualquier tamaño de pantalla, desde ordenadores de sobremesa y portátiles hasta tablets y smartphones. Nuestros expertos diseñadores y desarrolladores se aseguran de que tu sitio web ofrezca una experiencia de usuario (UX) excepcional en todos los dispositivos, manteniendo a tus visitantes comprometidos y regresando por más.' %}
                     </p>
 
@@ -192,7 +222,7 @@
                     </span>
                     <h4 class="my-3" style="text-shadow: 2px 2px 5px white;">{% trans 'Web Security' %}
                     </h4>
-                    <p class=" text-muted">
+                    <p class=" text-muted" style="text-align:left;">
                         {% trans 'La seguridad del sitio web es primordial. En euskodev, ofrecemos soluciones integrales de seguridad web para proteger tus activos online de las amenazas en constante evolución.. <br><br> HTTPS: Nos aseguramos de que su sitio web utilice HTTPS para cifrar todo el tráfico entre su                        sitio y los navegadores de los visitantes, protegiendo la confidencialidad de los datos.' %}
                     </p>
 
@@ -217,31 +247,37 @@
                 <h3 class="section-subheading text-muted" style="text-shadow: 2px 2px 5px white;">
                     {% trans '¡Hecha un vistazo!.' %}</h3>
             </div>
+
+<!--primer row de portafolio-->
+
             <div class="row">
                 <div class="col-lg-4 col-sm-6 mb-4">
 
 
                     <!-- Portfolio item 1-->
 
-
                     <div class="portfolio-item" style="border:solid;border-color:black;">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                        <a class="portfolio-link" data-bs-toggle="" href="{% url 'home_app:atenea-gastronomica' %}" target="_blank">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="{% static 'assets/img/portfolio/testosakidetza.png' %}"
+                            <img class="img-fluid" src="{% static 'portfolio/atenea-gastronomica/assets/img/portada.png' %}"
                                 alt="..." />
                         </a>
                         <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">20.000+</div>
-                            <div class="portfolio-caption-subheading text-muted">{% trans 'Aprendizaje' %}</div>
+                            <div class="portfolio-caption-heading">Atenea Gastronómica</div>
+                            <div class="portfolio-caption-subheading text-muted">Web</div>
                         </div>
                     </div>
-
+            
                 </div>
                 <div class="col-lg-4 col-sm-6 mb-4">
+            
+            
+            
 
 
+           
 
 
                     <!-- Portfolio item 2-->
@@ -256,8 +292,8 @@
                                 alt="..." />
                         </a>
                         <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Explore</div>
-                            <div class="portfolio-caption-subheading text-muted">{% trans 'Desarrollo de software' %}
+                            <div class="portfolio-caption-heading">Euskodev</div>
+                            <div class="portfolio-caption-subheading text-muted">Web + Design
                             </div>
                         </div>
                     </div>
@@ -278,8 +314,8 @@
                             <img class="img-fluid" src="{% static 'assets/img/portfolio/cocina.jpg' %}" alt="..." />
                         </a>
                         <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Gastronomy</div>
-                            <div class="portfolio-caption-subheading text-muted">{% trans 'Locations' %}</div>
+                            <div class="portfolio-caption-heading">Gastrogune</div>
+                            <div class="portfolio-caption-subheading text-muted">Web + Design + App</div>
                         </div>
                     </div>
                 </div>
@@ -299,6 +335,96 @@
                         </div>-->
                 </div>
             </div>
+
+<!--fin de primer row de la presentacion de portafolios-->
+
+<!--segundo row de presentacion de portafolio-->
+
+<div class="row">
+    <div class="col-lg-4 col-sm-6 mb-4">
+
+
+        <!-- Portfolio item 4-->
+
+
+        <div class="portfolio-item" style="border:solid;border-color:black;">
+            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                <div class="portfolio-hover">
+                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                </div>
+                <img class="img-fluid" src="{% static 'assets/img/portfolio/testosakidetza.png' %}"
+                    alt="..." />
+            </a>
+            <div class="portfolio-caption">
+                <div class="portfolio-caption-heading">20.000+</div>
+                <div class="portfolio-caption-subheading text-muted">Web + Design</div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-lg-4 col-sm-6 mb-4">
+
+
+
+
+
+        <!-- Portfolio item 5-->
+
+
+        <!--<div class="portfolio-item" style="border:solid;border-color:black;border-width: 3px;">
+            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+                <div class="portfolio-hover">
+                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                </div>
+                <img class="img-fluid" src="{% static 'assets/img/portfolio/portafolio2.png' %}"
+                    alt="..." />
+            </a>
+            <div class="portfolio-caption">
+                <div class="portfolio-caption-heading">Explore</div>
+                <div class="portfolio-caption-subheading text-muted">{% trans 'Desarrollo de software' %}
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="col-lg-4 col-sm-6 mb-4">-->
+
+
+        <!-- Portfolio item 6-->
+
+
+        <!--<div class="portfolio-item" style="border:solid;border-color:black;border-width: 3px;">
+            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
+                <div class="portfolio-hover">
+                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                </div>
+                <img class="img-fluid" src="{% static 'assets/img/portfolio/cocina.jpg' %}" alt="..." />
+            </a>
+            <div class="portfolio-caption">
+                <div class="portfolio-caption-heading">Gastronomy</div>
+                <div class="portfolio-caption-subheading text-muted">{% trans 'Locations' %}</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">-->
+        <!-- Portfolio item 4-->
+        <!-- <div class="portfolio-item">
+            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
+                <div class="portfolio-hover">
+                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                </div>
+                <img class="img-fluid" src="{% static 'assets/img/portfolio/4.jpg' %}" alt="..." />
+            </a>
+           <div class="portfolio-caption">
+                <div class="portfolio-caption-heading">Lines</div>
+                <div class="portfolio-caption-subheading text-muted">Branding</div>
+            </div>-->
+    </div>
+</div>
+
+<!--fin del segundo row de la portada de portafolio duplicado-->
 
             <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
                 <!-- Portfolio item 5-->
@@ -342,8 +468,8 @@
 
     <section class="page-section" id="about">
         <div class="container">
-            <div class="text-center">
-                <h2 class="section-heading text-uppercase">{% trans 'Sobre' %}</h2>
+            <div class="text-start">
+                <h2 class="section-heading text-uppercase text-center">{% trans 'Sobre' %}</h2>
                 <h3 class="section-subheading text-muted">
                     {% trans 'En euskodev somos un equipo apasionado de desarrolladores web expertos en crear soluciones digitales que impulsan tu negocio. Contamos con un historial probado de éxito en el desarrollo de sitios web, aplicaciones web y sistemas personalizados. Nos especializamos en comprender tus necesidades y objetivos para crear soluciones a medida que superen tus expectativas.   Nuestra filosofía se basa en la innovación, la creatividad y la cercanía con el cliente. Trabajamos en estrecha colaboración contigo en cada paso del proceso, desde la ideación hasta el lanzamiento y el mantenimiento de tu proyecto. Nos enorgullecemos de ofrecer un servicio de alta calidad, personalizado y asequible..' %}
                 </h3>
@@ -360,12 +486,12 @@
             <br><br>
             <ul class="timeline">
                 <li>
-                    <div class="timeline-image"><img class="rounded-circle img-fluid"
+                    <div class="timeline-image"><img class="rounded-circle img-fluid simbolEffect"
                             src="{% static 'assets/img/about/nueva.jpg' %}" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                             <!--<h4>2009-2011</h4>-->
-                            <h4 class="subheading">{% trans 'Creación y Remodelación de páginas y sitios web' %}</h4>
+                            <h4 class="subheading testToYellow">{% trans 'Creación y Remodelación de páginas y sitios web' %}</h4>
                         </div>
                         <div class="timeline-body">
                             <p class="text-muted">
@@ -378,7 +504,7 @@
                     </div>
                 </li>
                 <li class="timeline-inverted mb-5">
-                    <div class="timeline-image"><img class="rounded-circle img-fluid"
+                    <div class="timeline-image"><img class="rounded-circle img-fluid simbolEffect"
                             src="{% static 'assets/img/about/seguridad.jpg' %}" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
@@ -400,7 +526,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="timeline-image"><img class="rounded-circle img-fluid"
+                    <div class="timeline-image"><img class="rounded-circle img-fluid simbolEffect"
                             src="{% static 'assets/img/about/responsive.png' %}" alt="..." /></div>
                     <div class="timeline-panel mb-5">
                         <div class="timeline-heading">
@@ -417,7 +543,7 @@
                     </div>
                 </li>
                 <li class="timeline-inverted">
-                    <div class="timeline-image"><img class="rounded-circle img-fluid"
+                    <div class="timeline-image"><img class="rounded-circle img-fluid simbolEffect"
                             src="{% static 'assets/img/about/tienda2.jpg' %}" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
@@ -434,7 +560,7 @@
                 </li>
 
                 <li>
-                    <div class="timeline-image"><img class="rounded-circle img-fluid"
+                    <div class="timeline-image"><img class="rounded-circle img-fluid simbolEffect"
                             src="{% static 'assets/img/about/woman.png' %}" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
@@ -456,7 +582,7 @@
 
 
                 <li class="timeline-inverted">
-                    <div class="timeline-image"><img class="rounded-circle img-fluid"
+                    <div class="timeline-image"><img class="rounded-circle img-fluid simbolEffect"
                             src="{% static 'assets/img/about/seo.jpg' %}" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
@@ -475,7 +601,7 @@
 
 
                 <li class="timeline-inverted">
-                    <div class="timeline-image">
+                    <div class="timeline-image simbolEffect">
                         <h4>
                             {% trans '¡Se parte <br/> de nuestra <br/> historia!' %}
                         </h4>
@@ -500,10 +626,10 @@
         <div class="row">
 
             <div class="col-lg-4 text-center">
-                <img class="rounded-circle" src="{% static 'assets/img/opiniones/primera.jpeg' %}" alt="" width="140"
+                <img class="rounded-circle facephoto"  style="" src="{% static 'assets/img/opiniones/primera.jpeg' %}" alt="" width="140"
                     height="140">
-                <h2 style="margin-top: 3%; margin-bottom: 3%;">MERTXE</h2>
-                <p>{% trans 'En Euskodev me diseñaron una web perfecta para mi negocio. Me escucharon con atención y entendieron mis necesidades a la perfección.' %}
+                <h2 style="margin-top: 3%; margin-bottom: 3%;">Mertxe</h2>
+                <p  style= "text-align:left;">{% trans 'En Euskodev me diseñaron una web perfecta para mi negocio. Me escucharon con atención y entendieron mis necesidades a la perfección.' %}
                 </p>
 
 
@@ -512,10 +638,10 @@
 
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4 text-center">
-                <img class="rounded-circle" src="{% static 'assets/img/opiniones/segundaa.jpeg' %}" alt="" width="140"
+                <img class="rounded-circle facephoto"  style="" src="{% static 'assets/img/opiniones/segundaa.jpeg' %}" alt="" width="140"
                     height="140">
                 <h2 style="margin-top: 3%; margin-bottom: 3%;">Jose Luis</h2>
-                <p>{% trans 'Buscaba una web para mi negocio y no sabía por dónde empezar. En Euskodev me lo pusieron facilísimo. Desde el principio me escucharon y entendieron lo que quería. Me hicieron un diseño chulísimo y que funciona a la perfección, ¡hasta me subieron en el buscador! Son majísimos y profesionales.' %}
+                <p style= "text-align:left;">{% trans 'Buscaba una web para mi negocio y no sabía por dónde empezar. En Euskodev me lo pusieron facilísimo. Desde el principio me escucharon y entendieron lo que quería. Me hicieron un diseño chulísimo y que funciona a la perfección, ¡hasta me subieron en el buscador! Son majísimos y profesionales.' %}
                 </p>
 
 
@@ -523,10 +649,10 @@
 
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4 text-center">
-                <img class="rounded-circle" src="{% static 'assets/img/opiniones/tercera.jpeg' %}" alt="" width="140"
+                <img class="rounded-circle facephoto"  style="" src="{% static 'assets/img/opiniones/tercera.jpeg' %}" alt="" width="140"
                     height="140">
                 <h2 style="margin-top: 3%; margin-bottom: 3%;">Luis Diego</h2>
-                <p>{% trans 'En Euskodev me entendieron a la perfección. Desde el principio supieron lo que buscaba para mi negocio online. Me hicieron una web preciosa y que funciona de maravilla. Además, me ayudaron a que me encontraran en Google, ¡estoy encantado! Son un equipo súper atento y profesional.' %}
+                <p  style= "text-align:left;">{% trans 'En Euskodev me entendieron a la perfección. Desde el principio supieron lo que buscaba para mi negocio online. Me hicieron una web preciosa y que funciona de maravilla. Además, me ayudaron a que me encontraran en Google, ¡estoy encantado! Son un equipo súper atento y profesional.' %}
                 </p>
 
             </div><!-- /.col-lg-4 -->
@@ -554,7 +680,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="{% static 'assets/img/team/daniel.jpg' %}" alt="..." />
+                        <img class="mx-auto rounded-circle facephoto"  style="" src="{% static 'assets/img/team/daniel.jpg' %}" alt="..." />
                         <h4>Olvin Duarte</h4>
                         <p class="text-muted">{% trans 'Full Stack Developer' %}</p>
                         <!-- <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Twitter Profile"><i
@@ -588,7 +714,7 @@
 
                 <div class="col-lg-6">
                     <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="{% static 'assets/img/team/retegi.jpg' %}" alt="..." />
+                        <img class="mx-auto rounded-circle facephoto" style="" src="{% static 'assets/img/team/retegi.jpg' %}" alt="..." />
                         <h4>Iñaki Retegi</h4>
                         <p class="text-muted">{% trans 'Full Stack Developer' %}</p>
                         <!-- <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Twitter Profile"><i
@@ -764,7 +890,7 @@
                         <div class="text-center text-danger mb-3">{% trans 'Error sending message!' %}</div>
                     </div>
                     <!-- Submit Button-->
-                    <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled"
+                    <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase"
                             id="submitButton" type="submit">{% trans 'Enviar' %}</button></div>
                 </form>
 
@@ -785,7 +911,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-12"></div>
 
-                <div class="col-lg-6  text col-md-12" id="map" style="height: 300px;"">
+                <div class="col-lg-6  text col-md-12" id="map" style="height: 300px;">
 
                 </div>
 
@@ -840,7 +966,7 @@
 
 
     <!-- Portfolio item 1 modal popup-->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="portfolio-modal modal fade" id="" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="close-modal" data-bs-dismiss="modal"><img src="{% static 'assets/img/close-icon.svg' %}"
@@ -866,7 +992,7 @@
                                     </li>
                                     <li>
                                         <strong>{% trans 'Category:' %}</strong>
-                                        {% trans 'Aprendizaje' %}
+                                        Atenea Gastronómica
                                     </li>
                                 </ul>
                                 <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"

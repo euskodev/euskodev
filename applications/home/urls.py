@@ -50,5 +50,11 @@ urlpatterns = [
     path('tinymce/', include('tinymce.urls')),
 
 
+    path('Atenea Gastronomica',
+        views.AteneaGastronomicaView.as_view(),
+        name='atenea-gastronomica',
+    ),
+
+
 
 ]

@@ -64,9 +64,9 @@
     <!-- Navigation-->
     <nav class=" navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
+            
             <a class="display-6" href="{% url 'home_app:home' %}#page-top"
-                style="text-decoration: none;font-family: 'Courier New', Courier, monospace;text-shadow: 2px 2px 5px black;">Eusko<b
-                    style="color:white;">dev</b></a>
+                style="text-decoration: none;font-family: 'Courier New', Courier, monospace;text-shadow: 2px 2px 5px black;"><img class="p-0 m-0" style="height:30px;" src="{% static 'img/Logo-euskodev-color-horizontal-rgb-001.png' %}"></a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -138,26 +138,21 @@
     <div id="" class="container text-center">
         <div class="row">
 
-            <div class="border-end col-lg-3 d-none d-md-block">publicidad
-                <h4>Hecha un vistazo!</h4>
+            <div class="col-3 border-end">Te puede interesar:
 
-
-                <!--<h4><br> Olvin Duarte </h4>
+                <!--<h4><br>Olvin Duarte </h4>
 
                 <a href="https://www.olvinduarte.com/" target="_blank"><img
                         src="{% static 'assets/img/logopruff2.jpg' %}" alt="" class="w-100"></a>
 
                 <h5 class="mt-2">Desarrolladores web full stock, coonfia en un equipo capacitado.</h5>-->
 
+                <h4 style="padding-top: 10%;"></h4>
 
-                <h4 style="padding-top: 25%;">Euskodev</h4>
+                <a href="#" target="_blank"><img
+                        src="{% static 'assets/img/testOsakidetza.png' %}" alt="" class="w-75"></a>
 
-                <a href="https://www.olvinduarte.com/" target="_blank"><img
-                        src="{% static 'assets/img/testOsakidetza.png' %}" alt="" class="w-100"></a>
-
-                <h5 class="mt-2">Aprendiendo de una manera mas sencilla.</h5>
-
-
+                <label class="mt-3" style="font-size:11px;">(Hemos desarrollado esta plataforma para ayudar en la preparación de oposiciones.)</label>
 
             </div>
 
@@ -173,9 +168,12 @@
                     <div class="row">
 
                         <div class="col-lg-10 col-md-12">
-                            <h1 class="text-lg-start"><a href="{% url 'home_app:blog-detail' entrada_blog.id %}"
-                                    class="text-danger" style="text-decoration: none;">{{ entrada_blog.titulo }}</a>
-                            </h1>
+                            <a href="{% url 'home_app:blog-detail' entrada_blog.id %}"
+                                    class="text-danger" style="text-decoration: none;">
+                                    <h1 class="text-lg-start" style="font-size:34px;color:#1098ad;">{{ entrada_blog.titulo }}
+
+                                    </h1>
+                            </a>
                         </div>
 
 
@@ -188,15 +186,15 @@
 
                         <div class="col-lg-4 col-md-12"> <img src="/{{ entrada_blog.imagen }}" class="w-100">
                             <br>
-                            <p class="mt-2">Fecha y hora: {{ entrada_blog.fecha_hora }}</p>
+                            <p class="mt-2">{{ entrada_blog.fecha_hora|date:"Y/m/d" }}</p>
                         </div>
 
 
                         <div class="col-lg-6 col-md-12">
                             <a href="{% url 'home_app:blog-detail' entrada_blog.id %}" style="text-decoration: none;">
-                                <p style="color: black;">{{ entrada_blog.resumen|safe }}
-                                    <button class="btn" style="border: 60%;color: red;">ver
-                                        más...
+                                <p style="color: black;" class="">{{ entrada_blog.resumen|safe }}
+                                    <button class="btn" style="border: 60%;color:white; background-color:#1098ad;">Leer
+                                        artículo...
                                     </button>
                                 </p>
                             </a>
@@ -204,8 +202,8 @@
                             <br>
 
                             <a href="" style=" text-decoration: none;">
-                                <p style="color: black;">Publicado por: <label for=""
-                                        style="margin-left: 15px;">{{ entrada_blog.autor }}</label>
+                                <p style="color: black;">Autor:<label for=""
+                                        style="margin-left: 5px;">{{ entrada_blog.autor }}</label>
                                 </p>
                             </a>
                         </div>

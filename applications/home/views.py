@@ -40,4 +40,7 @@ class BlogDetailView(DetailView):
     template_name = 'home/articulo_completo.html' # Define el template "articulo_completo.html"
     context_object_name = 'articulo'
 
+class AteneaGastronomicaView(TemplateView):
+    template_name = "portfolio/atenea-gastronomica/index.html"
+
 

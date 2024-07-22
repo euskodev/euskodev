@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-15 18:15+0000\n"
-"PO-Revision-Date: 2024-07-15 18:29+0000\n"
+"PO-Revision-Date: 2024-07-21 22:42+0000\n"
 "Last-Translator:   <olvind78@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -87,10 +87,7 @@ msgstr "¡Conoce un poco de nuestros servicios!."
 
 #: templates/home/index.html:168
 msgid "E-Commerce"
-msgstr ""
-" \t\t\t\n"
-"templates/home/index.html:160\n"
-"E-Commerce"
+msgstr "E-Commerce"
 
 #: templates/home/index.html:171
 msgid ""
