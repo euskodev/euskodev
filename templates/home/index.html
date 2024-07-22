@@ -126,9 +126,9 @@
                     <li class="nav-item"><a class="nav-link" href="#contact"
                             style="  text-shadow: 2px 2px black;">{% trans 'Contacto' %}</a></li>
 
-                    <li class="nav-item"><a class="nav-link" href="#contact"
+                    <!--<li class="nav-item"><a class="nav-link" href="#contact"
                             style="  text-shadow: 2px 2px black;"><b>747
-                                47 88 42 </b> </a></li>
+                                47 88 42 </b> </a></li>-->
 
 
                     {% get_current_language as CURRENT_LANGUAGE %}
@@ -162,9 +162,9 @@
         style="background-image: url('{% static "assets/img/portada.jpg" %}'); filter: grayscale(40%);">
         <div class="container">
             <div class="masthead-subheading" style="text-shadow: 2px 2px 5px black;">
-                {% trans 'Welcome To Our Studio <br> <br style="text-shadow: 2px 2px 5px black;">of' %}</div>
-            <div class="masthead-heading text-uppercase" style="text-shadow: 2px 2px 5px black;">
-                {% trans "Desarrollo Web" %}</div>
+                
+            <div class="masthead-heading text-uppercase" style="text-shadow: 4px 2px 5px black;">
+                {% trans "Desarrollo Web, APP e Imagen Corporativa" %}</div>
             <a class="btn btn-primary btn-xl text-uppercase" href="#services"><svg xmlns="http://www.w3.org/2000/svg"
                     width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16"
                     style="color:black;">
@@ -471,7 +471,7 @@
             <div class="text-start">
                 <h2 class="section-heading text-uppercase text-center">{% trans 'Sobre' %}</h2>
                 <h3 class="section-subheading text-muted">
-                    {% trans 'En euskodev somos un equipo apasionado de desarrolladores web expertos en crear soluciones digitales que impulsan tu negocio. Contamos con un historial probado de éxito en el desarrollo de sitios web, aplicaciones web y sistemas personalizados. Nos especializamos en comprender tus necesidades y objetivos para crear soluciones a medida que superen tus expectativas.   Nuestra filosofía se basa en la innovación, la creatividad y la cercanía con el cliente. Trabajamos en estrecha colaboración contigo en cada paso del proceso, desde la ideación hasta el lanzamiento y el mantenimiento de tu proyecto. Nos enorgullecemos de ofrecer un servicio de alta calidad, personalizado y asequible..' %}
+                    {% trans 'En euskodev somos un equipo apasionado de desarrolladores web, app y diseño de imagen corporativa, expertos en crear soluciones digitales que impulsan tu negocio. Contamos con un historial probado de éxito en el desarrollo de sitios web, aplicaciones web y sistemas personalizados. Nos especializamos en comprender tus necesidades y objetivos para crear soluciones a medida que superen tus expectativas.   Nuestra filosofía se basa en la innovación, la creatividad y la cercanía con el cliente. Trabajamos en estrecha colaboración contigo en cada paso del proceso, desde la ideación hasta el lanzamiento y el mantenimiento de tu proyecto. Nos enorgullecemos de ofrecer un servicio de alta calidad, personalizado y asequible..' %}
                 </h3>
 
 
@@ -682,7 +682,7 @@
                     <div class="team-member">
                         <img class="mx-auto rounded-circle facephoto"  style="" src="{% static 'assets/img/team/daniel.jpg' %}" alt="..." />
                         <h4>Olvin Duarte</h4>
-                        <p class="text-muted">{% trans 'Full Stack Developer' %}</p>
+                        <p class="text-muted">{% trans 'Full Stack Developer & Photographer' %}</p>
                         <!-- <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Twitter Profile"><i
                                 class="fab fa-twitter"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Facebook Profile"><i
@@ -716,7 +716,7 @@
                     <div class="team-member">
                         <img class="mx-auto rounded-circle facephoto" style="" src="{% static 'assets/img/team/retegi.jpg' %}" alt="..." />
                         <h4>Iñaki Retegi</h4>
-                        <p class="text-muted">{% trans 'Full Stack Developer' %}</p>
+                        <p class="text-muted">{% trans 'Full Stack Developer & Designer' %}</p>
                         <!-- <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Twitter Profile"><i
                                 class="fab fa-twitter"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Facebook Profile"><i
@@ -751,25 +751,25 @@
             <div class="row align-items-center" style="opacity:100%; ">
                 <div class="col-md-3 col-sm-6 my-3">
 
-                    <a href="#!"><img class="img-fluid img-brand d-block mx-auto"
+                    <a href="#!"><img class="w-50"
                             src="{% static 'assets/img/logos/python.png' %}" alt="..." aria-label="python.png" /></a>
 
                 </div>
                 <div class="col-md-3 col-sm-6 my-3" style="opacity:90%;">
-                    <a href="#!"><img class="img-fluid img-brand d-block mx-auto"
+                    <a href="#!"><img class="w-50"
                             src="{% static 'assets/img/logos/artificial.avif' %}" alt="..."
                             aria-label="artificial Logo" /></a>
 
-                    <p class="text-center"><b>{% trans 'Artificial Intelligence' %}</b></p>
+                   
 
 
                 </div>
                 <div class="col-md-3 col-sm-6 my-3" style="opacity:70%;">
-                    <a href="#!"><img class="img-fluid img-brand d-block mx-auto"
+                    <a href="#!"><img class="w-50"
                             src="{% static 'assets/img/logos/django.png' %}" alt="..." aria-label="django Logo" /></a>
                 </div>
                 <div class="col-md-3 col-sm-6 my-3" style="opacity:80%; ">
-                    <a href="#!"><img class="img-fluid img-brand d-block mx-auto"
+                    <a href="#!"><img class="w-50"
                             src="{% static 'assets/img/logos/bootstrap.png' %}" alt="..."
                             aria-label="bootstrap Logo" /></a>
 
@@ -785,22 +785,22 @@
             <div class="row align-items-center" style="opacity:100%; ">
                 <div class="col-md-3 col-sm-6 my-3">
 
-                    <a href="#!"><img class="img-fluid img-brand d-block mx-auto"
+                    <a href="#!"><img class="w-50"
                             src="{% static 'assets/img/logos/github.jpg' %}" alt="..." aria-label="python.png" /></a>
 
                 </div>
                 <div class="col-md-3 col-sm-6 my-3" style="opacity:100%;">
-                    <a href="#!"><img class="img-fluid  d-block mx-auto w-25"
-                            src="{% static 'assets/img/logos/Google-Cloud.webp' %}" alt="..."
+                    <a href="#!"><img class="w-50"
+                            src="{% static 'assets/img/logos/linux.jpeg' %}" alt="..."
                             aria-label="artificial Logo" /></a>
 
                 </div>
                 <div class="col-md-3 col-sm-6 my-3 " style="opacity:70%;">
-                    <a href="#!"><img class="img-fluid w-25 d-block mx-auto"
+                    <a href="#!"><img class="w-50"
                             src="{% static 'assets/img/logos/sql.webp' %}" alt="..." aria-label="django Logo" /></a>
                 </div>
                 <div class="col-md-3 col-sm-6 my-3" style="opacity:80%; ">
-                    <a href="#!"><img class="img-fluid w-25 d-block mx-auto"
+                    <a href="#!"><img class="w-50"
                             src="{% static 'assets/img/logos/triologo.webp' %}" alt="..."
                             aria-label="bootstrap Logo" /></a>
 
