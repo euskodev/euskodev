@@ -168,6 +168,9 @@
                     <div class="row">
 
                         <div class="col-lg-10 col-md-12">
+                            <label style="color: gray;" class="text-start w-100"
+                                        style="margin-left: 5px;">{{ entrada_blog.fecha_hora|date:"Y/m/d" }} | {{ entrada_blog.autor }} <br> </label>
+                            
                             <a href="{% url 'home_app:blog-detail' entrada_blog.id %}"
                                     class="" style="text-decoration: none;">
                                     <h1 class="text-start" style="font-size:34px;color:#1098ad;">{{ entrada_blog.titulo }}
@@ -187,8 +190,6 @@
 
                         <div class="col-lg-4 col-md-12"> <img src="/{{ entrada_blog.imagen }}" class="w-100">
                             <br>
-                            <label style="color: black;" class="text-start w-100"
-                                        style="margin-left: 5px;">{% trans 'Autor:' %} {{ entrada_blog.autor }} <br> {{ entrada_blog.fecha_hora|date:"Y/m/d" }}</label>
                             
                             
                         </div>
