@@ -121,7 +121,7 @@
                             style="  text-shadow: 2px 2px black;">{% trans 'Blog' %} </a></li>
 
                     <li class="nav-item"><a class="nav-link" href="#team"
-                            style="  text-shadow: 2px 2px black;">{% trans 'Creadores' %} </a></li>
+                            style="  text-shadow: 2px 2px black;">{% trans 'Nosotros' %} </a></li>
 
                     <li class="nav-item"><a class="nav-link" href="#contact"
                             style="  text-shadow: 2px 2px black;">{% trans 'Contacto' %}</a></li>
@@ -163,8 +163,8 @@
         <div class="container">
             <div class="masthead-subheading" style="text-shadow: 2px 2px 5px black;">
                 
-            <div class="masthead-heading text-uppercase" style="text-shadow: 4px 2px 5px black;">
-                {% trans "Desarrollo Web, APP e Imagen Corporativa" %}</div>
+            <div class="masthead-heading text-uppercase" style="text-shadow: 4px 2px 5px black; font-size:50px;">
+                {% trans "Desarrollo Web, APP<br> e Imagen Corporativa" %}</div>
             <a class="btn btn-primary btn-xl text-uppercase" href="#services"><svg xmlns="http://www.w3.org/2000/svg"
                     width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16"
                     style="color:black;">
@@ -347,12 +347,12 @@
         <!-- Portfolio item 4-->
 
 
-        <div class="portfolio-item" style="border:solid;border-color:black;">
+        <div class="portfolio-item bg-white" style="border:solid;border-color:black;">
             <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
                 <div class="portfolio-hover">
                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                 </div>
-                <img class="img-fluid" src="{% static 'assets/img/portfolio/testosakidetza.png' %}"
+                <img class="img-fluid p-2" src="{% static 'assets/img/portfolio/testosakidetza.png' %}"
                     alt="..." />
             </a>
             <div class="portfolio-caption">
@@ -548,7 +548,7 @@
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                             <!--<h4>July 2020</h4>-->
-                            <h4 class="subheading">{% trans 'e-comerce' %}</h4>
+                            <h4 class="subheading">{% trans 'E-commerce' %}</h4>
                         </div>
                         <div class="timeline-body">
                             <p class="text-muted">
@@ -674,7 +674,7 @@
     <section class="page-section bg-light" id="team">
         <div class="container">
             <div class="text-center">
-                <h2 class="section-heading text-uppercase">{% trans 'Creadores de la web' %}</h2>
+                <h2 class="section-heading text-uppercase">{% trans 'Sobre nosotros' %}</h2>
                 <h3 class="section-subheading text-muted">{% trans 'Developers Full Stack.' %}</h3>
             </div>
             <div class="row">
@@ -732,10 +732,6 @@
                     <p class="large text-muted">
                         {% trans 'Euskodev: Donde la tecnología se convierte en realidad Si está buscando un equipo de programadores digitales confiables y experimentados que puedan ayudarlo a alcanzar sus objetivos comerciales, no busque más allá de Euskodev. Con su enfoque personalizado y su dedicación a la calidad, Euskodev le brindará las soluciones digitales que necesita para prosperar en el mundo digital actual.' %}
                     </p>
-
-
-
-
                 </div>
             </div>
         </div>
@@ -746,61 +742,50 @@
 
 
     <!-- iconos de aplicaciones  usadas-->
-    <div class="py-5">
-        <div class="container">
-            <div class="row align-items-center" style="opacity:100%; ">
-                <div class="col-md-3 col-sm-6 my-3">
 
-                    <a href="#!"><img class="w-50"
-                            src="{% static 'assets/img/logos/python.png' %}" alt="..." aria-label="python.png" /></a>
 
+    
+        <div class="container mt-5">
+            <div class="row" style="opacity:100%;">
+                <div class="col-lg-3 col-md-12 text-center mt-3">
+                    <img class="w-25" src="{% static 'assets/img/logos/python.png' %}"/>
                 </div>
-                <div class="col-md-3 col-sm-6 my-3" style="opacity:90%;">
-                    <a href="#!"><img class="w-50"
-                            src="{% static 'assets/img/logos/artificial.avif' %}" alt="..."
-                            aria-label="artificial Logo" /></a>
-
-                   
-
-
+                <div class="col-lg-3 col-md-12 text-center mt-3" style="opacity:90%;">
+                    <img class="w-25 " src="{% static 'assets/img/logos/artificial.avif' %}"/>
                 </div>
-                <div class="col-md-3 col-sm-6 my-3" style="opacity:70%;">
-                    <a href="#!"><img class="w-50"
-                            src="{% static 'assets/img/logos/django.png' %}" alt="..." aria-label="django Logo" /></a>
+                <div class="col-lg-3 col-md-12 text-center mt-3" style="opacity:70%;">
+                    <img class="w-25"
+                            src="{% static 'assets/img/logos/django.png' %}"/>
                 </div>
-                <div class="col-md-3 col-sm-6 my-3" style="opacity:80%; ">
-                    <a href="#!"><img class="w-50"
-                            src="{% static 'assets/img/logos/bootstrap.png' %}" alt="..."
-                            aria-label="bootstrap Logo" /></a>
-
+                <div class="col-lg-3 col-md-12  text-center mt-3" style="opacity:80%; ">
+                    <img class="w-25"
+                            src="{% static 'assets/img/logos/bootstrap.png' %}"/>
                 </div>
             </div>
         </div>
-    </div>
+    
 
 
 
-    <div class="py-5">
-        <div class="container">
-            <div class="row align-items-center" style="opacity:100%; ">
-                <div class="col-md-3 col-sm-6 my-3">
-
-                    <a href="#!"><img class="w-50"
-                            src="{% static 'assets/img/logos/github.jpg' %}" alt="..." aria-label="python.png" /></a>
-
+    
+        <div class="container mb-5">
+            <div class="row" style="opacity:100%;">
+                <div class="col-lg-3 col-sm-6 text-center mt-3">
+                    <img class="w-25"
+                            src="{% static 'assets/img/logos/github.jpg' %}"/>
                 </div>
-                <div class="col-md-3 col-sm-6 my-3" style="opacity:100%;">
-                    <a href="#!"><img class="w-50"
+                <div class="col-lg-3 col-sm-4 text-center mt-3" style="opacity:100%;">
+                    <a href="#!"><img class="w-25"
                             src="{% static 'assets/img/logos/linux.jpeg' %}" alt="..."
                             aria-label="artificial Logo" /></a>
 
                 </div>
-                <div class="col-md-3 col-sm-6 my-3 " style="opacity:70%;">
-                    <a href="#!"><img class="w-50"
+                <div class="col-md-3 col-sm-6 text-center mt-3" style="opacity:70%;">
+                    <a href="#!"><img class="w-25"
                             src="{% static 'assets/img/logos/sql.webp' %}" alt="..." aria-label="django Logo" /></a>
                 </div>
-                <div class="col-md-3 col-sm-6 my-3" style="opacity:80%; ">
-                    <a href="#!"><img class="w-50"
+                <div class="col-md-3 col-sm-6 text-center mt-3" style="opacity:80%; ">
+                    <a href="#!"><img class="w-25"
                             src="{% static 'assets/img/logos/triologo.webp' %}" alt="..."
                             aria-label="bootstrap Logo" /></a>
 
@@ -814,10 +799,10 @@
 
 
     <!-- Contact-->
+  
 
 
-
-    <section class="page-section" id="contact">
+    <section class="page-section mt-3" id="contact">
         <div class="container">
 
             <div class=" row text-center col-lg-12 col-md-12" style="padding-bottom: 20px;">
@@ -825,7 +810,7 @@
                 <h2 class="section-heading text-uppercase">{% trans 'Contáctanos' %}</h2>
                 <h3 class="section-subheading " style="color: white; margin-bottom: 1%;">{% trans 'Sin Fronteras.' %}
                 </h3>
-                <h3 class="section-heading text-uppercase mb-5">747 47 88 42 <img
+                <h3 class="section-heading text-uppercase mb-5">+34 747 47 88 42 <img
                         src="{% static 'assets/img/whatsapp.png' %}" alt="" style="width: 40px;"></h3>
 
 
@@ -1022,7 +1007,7 @@
                             <div class="modal-body">
                                 <!-- Project details-->
                                 <h2 class="text-uppercase">{% trans 'Euskodev' %}</h2>
-                                <p class="item-intro text-muted">Desarrollo de software.</p>
+                                <p class="item-intro text-muted">{% trans 'Desarrollo de software' %}</p>
                                 <img class="img-fluid d-block mx-auto"
                                     src="{% static 'assets/img/portfolio/portafolio2.png' %}" alt="..." />
                                 <p> {% trans 'Euskodev: Su aliado en el desarrollo de software <br> Euskodev, un equipo de desarrolladores de software en el País Vasco. especializado en la creación de soluciones digitales a medida, para empresas de todos los tamaños, desde pequeñas startups hasta grandes corporaciones!' %}
