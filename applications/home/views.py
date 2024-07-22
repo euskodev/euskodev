@@ -43,4 +43,16 @@ class BlogDetailView(DetailView):
 class AteneaGastronomicaView(TemplateView):
     template_name = "portfolio/atenea-gastronomica/index.html"
 
+class LaMaisonDuBordeauxView(TemplateView):
+    template_name = "portfolio/la-maison-du-bordeaux/index.html"
+
+class LaMaisonDuBordeauxAproposView(TemplateView):
+    template_name = "portfolio/la-maison-du-bordeaux/about.html"
+
+class LaMaisonDuBordeauxProduitsView(TemplateView):
+    template_name = "portfolio/la-maison-du-bordeaux/products.html"
+
+class LaMaisonDuBordeauxBoutiqueView(TemplateView):
+    template_name = "portfolio/la-maison-du-bordeaux/store.html"
+
 

@@ -55,6 +55,23 @@ urlpatterns = [
         name='atenea-gastronomica',
     ),
 
+    path('La Maison du Bordeaux',
+        views.LaMaisonDuBordeauxView.as_view(),
+        name='la-maison-du-bordeaux',
+    ),
+    path('La Maison du Bordeaux - Apropos',
+        views.LaMaisonDuBordeauxAproposView.as_view(),
+        name='la-maison-du-bordeaux-apropos',
+    ),
+    path('La Maison du Bordeaux - Produits',
+        views.LaMaisonDuBordeauxProduitsView.as_view(),
+        name='la-maison-du-bordeaux-produits',
+    ),
+    path('La Maison du Bordeaux - Boutique',
+        views.LaMaisonDuBordeauxBoutiqueView.as_view(),
+        name='la-maison-du-bordeaux-boutique',
+    ),
+
 
 
 ]
