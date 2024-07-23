@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-22 10:54+0000\n"
-"PO-Revision-Date: 2024-07-22 10:54+0000\n"
+"POT-Creation-Date: 2024-07-23 09:27+0000\n"
+"PO-Revision-Date: 2024-07-23 09:31+0000\n"
 "Last-Translator:   <olvind78@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -19,63 +19,59 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 "X-Translated-Using: django-rosetta 0.10.0\n"
 
-#: euskodev/settings.py:157
+#: euskodev/settings.py:159
 msgid "Spanish"
 msgstr "Español"
 
-#: euskodev/settings.py:160
+#: euskodev/settings.py:162
 msgid "Basque"
 msgstr "euskera"
 
-#: templates/home/Blog copy 2.html:77 copy.html:58 templates/home/Blog.html:79
-#: templates/home/articulo_completo.html:63 templates/home/index.html:112
-#: templates/home/index.html:186
+#: templates/home/Blog.html:25 templates/home/articulo_completo.html:25
+#: templates/home/index.html:25
+#| msgid "Desarrollo Web, APP<br> e Imagen Corporativa"
+msgid "Euskodev - Desarrollo Web, App e Imagen Corporativa"
+msgstr "Euskodev - Desarrollo Web, App e Imagen Corporativa"
+
+#: templates/home/Blog.html:93 templates/home/articulo_completo.html:78
+#: templates/home/index.html:123 templates/home/index.html:197
 msgid "Servicios"
 msgstr "servicios"
 
-#: templates/home/Blog copy 2.html:80 copy.html:61 templates/home/Blog.html:82
-#: templates/home/articulo_completo.html:66 templates/home/index.html:115
-#: templates/home/index.html:246
+#: templates/home/Blog.html:96 templates/home/articulo_completo.html:81
+#: templates/home/index.html:126 templates/home/index.html:257
 msgid "Portfolio"
 msgstr "Portfolio"
 
-#: templates/home/Blog copy 2.html:83 copy.html:64 templates/home/Blog.html:85
-#: templates/home/articulo_completo.html:69 templates/home/index.html:118
-#: templates/home/index.html:472
+#: templates/home/Blog.html:99 templates/home/articulo_completo.html:84
+#: templates/home/index.html:129 templates/home/index.html:500
 msgid "Sobre"
 msgstr "Sobre"
 
-#: templates/home/Blog copy 2.html:86 2.html:125 copy.html:67 copy.html:104
-#: templates/home/Blog.html:88 templates/home/Blog.html:127
-#: templates/home/articulo_completo.html:72
-#: templates/home/articulo_completo.html:111 templates/home/index.html:121
+#: templates/home/Blog.html:102 templates/home/Blog.html:139
+#: templates/home/articulo_completo.html:87
+#: templates/home/articulo_completo.html:124 templates/home/index.html:132
 msgid "Blog"
 msgstr "Blog"
 
-#: templates/home/Blog copy 2.html:89 copy.html:70 templates/home/Blog.html:91
-#: templates/home/articulo_completo.html:75
+#: templates/home/Blog.html:105 templates/home/articulo_completo.html:90
 msgid "Creadores"
 msgstr "Creadores"
 
-#: templates/home/Blog copy 2.html:92 copy.html:73 templates/home/Blog.html:94
-#: templates/home/articulo_completo.html:78 templates/home/index.html:127
+#: templates/home/Blog.html:108 templates/home/articulo_completo.html:93
+#: templates/home/index.html:138
 msgid "Contacto"
 msgstr "Contacto"
 
-#: templates/home/Blog copy 2.html:127 copy.html:106
-#: templates/home/articulo_completo.html:113
-msgid "Últimas novedades!."
-msgstr "¡Últimas novedades!."
-
-#: templates/home/Blog.html:129
+#: templates/home/Blog.html:141
 msgid "¡Últimas novedades!."
 msgstr "¡Últimas novedades!."
 
-#: templates/home/Blog.html:141
+#: templates/home/Blog.html:153
 msgid "Te puede interesar:"
 msgstr "Te puede interesar"
 
-#: templates/home/Blog.html:155
+#: templates/home/Blog.html:167
 msgid ""
 "Hemos desarrollado esta plataforma para ayudar en la preparación de "
 "oposiciones"
@@ -83,33 +79,33 @@ msgstr ""
 "Hemos desarrollado esta plataforma para ayudar en la preparación de "
 "oposiciones"
 
-#: templates/home/Blog.html:191
-msgid "Autor:"
-msgstr "Autor:"
-
-#: templates/home/Blog.html:200
+#: templates/home/Blog.html:213
 msgid "Leer artículo..."
 msgstr "Leer artículo..."
 
-#: templates/home/index.html:124
+#: templates/home/articulo_completo.html:126
+msgid "Últimas novedades!."
+msgstr "¡Últimas novedades!."
+
+#: templates/home/index.html:135
 msgid "Nosotros"
 msgstr "Nosotros"
 
-#: templates/home/index.html:167
+#: templates/home/index.html:178
 msgid "Desarrollo Web, APP<br> e Imagen Corporativa"
 msgstr "Desarrollo Web, APP<br> e Imagen Corporativa"
 
-#: templates/home/index.html:188
+#: templates/home/index.html:199
 #, fuzzy
 #| msgid "¡Conoce un poco de nuestros servicios!."
 msgid "¡Conoce un poco de nuestros servicios!"
 msgstr "¡Conoce un poco de nuestros servicios!."
 
-#: templates/home/index.html:196
+#: templates/home/index.html:207
 msgid "E-Commerce"
 msgstr "E-Commerce"
 
-#: templates/home/index.html:199
+#: templates/home/index.html:210
 msgid ""
 "Eleve su presencia online con las soluciones de eCommerce de euskodev <br> "
 "En el panorama digital actual, un sitio web de eCommerce no es solo un lujo;"
@@ -125,11 +121,11 @@ msgstr ""
 "y aumentar sus ventas. Pero crear un sitio web de eCommerce exitoso requiere"
 " más que un diseño atractivo. Debe ser funcional, fácil de usar y seguro.."
 
-#: templates/home/index.html:209
+#: templates/home/index.html:220
 msgid "Responsive Design"
 msgstr "Responsive Design"
 
-#: templates/home/index.html:212
+#: templates/home/index.html:223
 msgid ""
 "Creamos sitios web responsive que se adaptan a la perfección a cualquier "
 "tamaño de pantalla, desde ordenadores de sobremesa y portátiles hasta "
@@ -145,11 +141,11 @@ msgstr ""
 "excepcional en todos los dispositivos, manteniendo a tus visitantes "
 "comprometidos y regresando por más."
 
-#: templates/home/index.html:223
+#: templates/home/index.html:234
 msgid "Web Security"
 msgstr "Web Security"
 
-#: templates/home/index.html:226
+#: templates/home/index.html:237
 msgid ""
 "La seguridad del sitio web es primordial. En euskodev, ofrecemos soluciones "
 "integrales de seguridad web para proteger tus activos online de las amenazas"
@@ -164,20 +160,20 @@ msgstr ""
 " utilice HTTPS para cifrar todo el tráfico entre su sitio y los navegadores "
 "de los visitantes, protegiendo la confidencialidad de los datos."
 
-#: templates/home/index.html:248
+#: templates/home/index.html:259
 msgid "¡Hecha un vistazo!."
 msgstr "¡Hecha un vistazo!."
 
-#: templates/home/index.html:384 templates/home/index.html:1010
-#: templates/home/index.html:1022
+#: templates/home/index.html:412 templates/home/index.html:1038
+#: templates/home/index.html:1050
 msgid "Desarrollo de software"
 msgstr "Desarrollo de software"
 
-#: templates/home/index.html:406
+#: templates/home/index.html:434
 msgid "Locations"
 msgstr ""
 
-#: templates/home/index.html:474
+#: templates/home/index.html:502
 msgid ""
 "En euskodev somos un equipo apasionado de desarrolladores web, app y diseño "
 "de imagen corporativa, expertos en crear soluciones digitales que impulsan "
@@ -201,15 +197,15 @@ msgstr ""
 "proyecto. Nos enorgullecemos de ofrecer un servicio de alta calidad, "
 "personalizado y asequible.."
 
-#: templates/home/index.html:494
+#: templates/home/index.html:522
 msgid "Creación y Remodelación de páginas y sitios web"
 msgstr "Creación y Remodelación de páginas y sitios web"
 
-#: templates/home/index.html:498
+#: templates/home/index.html:526
 msgid "¿Tu sitio web necesita un cambio de imagen?"
 msgstr "¿Tu sitio web necesita un cambio de imagen?"
 
-#: templates/home/index.html:500
+#: templates/home/index.html:528
 msgid ""
 "En euskodev, ofrecemos servicios profesionales de creación y remodelación de"
 " páginas y sitios web. Somos expertos en transformar sitios web obsoletos o "
@@ -221,15 +217,15 @@ msgstr ""
 "o que no funcionan correctamente en sitios web modernos, atractivos y "
 "funcionales que te ayuden a alcanzar tus objetivos de negocio!"
 
-#: templates/home/index.html:511
+#: templates/home/index.html:539
 msgid "Dominio, hosting y seguridad"
 msgstr "Dominio, hosting y seguridad"
 
-#: templates/home/index.html:513
+#: templates/home/index.html:541
 msgid "campo libre"
 msgstr ""
 
-#: templates/home/index.html:520
+#: templates/home/index.html:548
 msgid ""
 "Registro de tu dominio: Elige el nombre perfecto para tu proyecto y nosotros"
 " nos encargamos de registrarlo y configurarlo para que tu sitio web sea "
@@ -249,11 +245,11 @@ msgstr ""
 "ataques cibernéticos, malware y otras amenazas que puedan poner en riesgo tu"
 " sitio web."
 
-#: templates/home/index.html:534
+#: templates/home/index.html:562
 msgid "Sitios Webs Responsives"
 msgstr "Sitios Webs Responsives"
 
-#: templates/home/index.html:538
+#: templates/home/index.html:566
 msgid ""
 "¿Tu sitio web se adapta a todas las pantallas? <br> <br>  En la era digital "
 "actual, donde cada vez más personas acceden a internet desde dispositivos "
@@ -269,13 +265,13 @@ msgstr ""
 "del dispositivo en el que se visualiza, ya sea un ordenador de sobremesa, "
 "una tableta o un smartphone!"
 
-#: templates/home/index.html:551
+#: templates/home/index.html:579
 #, fuzzy
 #| msgid "E-Commerce"
 msgid "E-commerce"
 msgstr "E-Commerce"
 
-#: templates/home/index.html:555
+#: templates/home/index.html:583
 msgid ""
 "Euskodev: Desarrolle su tienda online con expertos en comercio electrónico "
 "En Euskodev, comprendemos el poder transformador del comercio electrónico en"
@@ -289,11 +285,11 @@ msgstr ""
 "presencia sólida en el mundo online con soluciones de comercio electrónico "
 "personalizadas y de vanguardia.!"
 
-#: templates/home/index.html:568
+#: templates/home/index.html:596
 msgid "Diseño Gráfico"
 msgstr "Diseño Gráfico"
 
-#: templates/home/index.html:572
+#: templates/home/index.html:600
 msgid ""
 "Euskodev: Creando experiencias visuales cautivadoras para su presencia "
 "digital En la era digital actual, un sitio web visualmente atractivo y fácil"
@@ -313,11 +309,11 @@ msgstr ""
 "solo se vean impresionantes sino que también brinden experiencias de usuario"
 " excepcionales."
 
-#: templates/home/index.html:591
+#: templates/home/index.html:619
 msgid "Euskodev: Su socio de SEO para una presencia online próspera"
 msgstr "Euskodev: Su socio de SEO para una presencia online próspera"
 
-#: templates/home/index.html:595
+#: templates/home/index.html:623
 msgid ""
 "En el panorama digital competitivo actual, una presencia online sólida es "
 "crucial para empresas de todos los tamaños. Un sitio web bien optimizado no "
@@ -345,15 +341,15 @@ msgstr ""
 "servicios completos de SEO están diseñados para <br> aumentar la visibilidad"
 " de su sitio web"
 
-#: templates/home/index.html:606
+#: templates/home/index.html:634
 msgid "¡Se parte <br/> de nuestra <br/> historia!"
 msgstr "¡Se parte <br/> de nuestra <br/> historia!"
 
-#: templates/home/index.html:623
+#: templates/home/index.html:651
 msgid "opiniones"
 msgstr "opiniones"
 
-#: templates/home/index.html:632
+#: templates/home/index.html:660
 msgid ""
 "En Euskodev me diseñaron una web perfecta para mi negocio. Me escucharon con"
 " atención y entendieron mis necesidades a la perfección."
@@ -361,7 +357,7 @@ msgstr ""
 "En Euskodev me diseñaron una web perfecta para mi negocio. Me escucharon con"
 " atención y entendieron mis necesidades a la perfección."
 
-#: templates/home/index.html:644
+#: templates/home/index.html:672
 msgid ""
 "Buscaba una web para mi negocio y no sabía por dónde empezar. En Euskodev me"
 " lo pusieron facilísimo. Desde el principio me escucharon y entendieron lo "
@@ -373,7 +369,7 @@ msgstr ""
 "que quería. Me hicieron un diseño chulísimo y que funciona a la perfección, "
 "¡hasta me subieron en el buscador! Son majísimos y profesionales."
 
-#: templates/home/index.html:655
+#: templates/home/index.html:683
 msgid ""
 "En Euskodev me entendieron a la perfección. Desde el principio supieron lo "
 "que buscaba para mi negocio online. Me hicieron una web preciosa y que "
@@ -385,27 +381,27 @@ msgstr ""
 "funciona de maravilla. Además, me ayudaron a que me encontraran en Google, "
 "¡estoy encantado! Son un equipo súper atento y profesional."
 
-#: templates/home/index.html:677
+#: templates/home/index.html:705
 msgid "Sobre nosotros"
 msgstr ""
 
-#: templates/home/index.html:678
+#: templates/home/index.html:706
 msgid "Developers Full Stack."
 msgstr "Developers Full Stack."
 
-#: templates/home/index.html:685
+#: templates/home/index.html:713
 #, fuzzy
 #| msgid "Full Stack Developer"
 msgid "Full Stack Developer & Photographer"
 msgstr "Full Stack Developer"
 
-#: templates/home/index.html:719
+#: templates/home/index.html:747
 #, fuzzy
 #| msgid "Full Stack Developer"
 msgid "Full Stack Developer & Designer"
 msgstr "Full Stack Developer"
 
-#: templates/home/index.html:733
+#: templates/home/index.html:761
 msgid ""
 "Euskodev: Donde la tecnología se convierte en realidad Si está buscando un "
 "equipo de programadores digitales confiables y experimentados que puedan "
@@ -421,79 +417,79 @@ msgstr ""
 "Euskodev le brindará las soluciones digitales que necesita para prosperar en"
 " el mundo digital actual."
 
-#: templates/home/index.html:810
+#: templates/home/index.html:838
 msgid "Contáctanos"
 msgstr "Contáctanos"
 
-#: templates/home/index.html:811
+#: templates/home/index.html:839
 msgid "Sin Fronteras."
 msgstr "Sin Fronteras."
 
-#: templates/home/index.html:823
+#: templates/home/index.html:851
 msgid "Nombre"
 msgstr "Nombre"
 
-#: templates/home/index.html:826
+#: templates/home/index.html:854
 msgid "A name is required."
 msgstr "A name is required."
 
-#: templates/home/index.html:830
+#: templates/home/index.html:858
 msgid "Email"
 msgstr "Email"
 
-#: templates/home/index.html:833
+#: templates/home/index.html:861
 msgid "An email is required"
 msgstr "An email is required"
 
-#: templates/home/index.html:835
+#: templates/home/index.html:863
 msgid "Email is not valid."
 msgstr "Email is not valid."
 
-#: templates/home/index.html:839
+#: templates/home/index.html:867
 msgid "teléfono"
 msgstr "teléfono"
 
-#: templates/home/index.html:842
+#: templates/home/index.html:870
 msgid "A phone number is required."
 msgstr "A phone number is required."
 
-#: templates/home/index.html:849
+#: templates/home/index.html:877
 msgid "Mensaje"
 msgstr "Mensaje"
 
-#: templates/home/index.html:852
+#: templates/home/index.html:880
 msgid "A message is required."
 msgstr "A message is required."
 
-#: templates/home/index.html:875
+#: templates/home/index.html:903
 msgid "Error sending message!"
 msgstr "Error sending message!"
 
-#: templates/home/index.html:879
+#: templates/home/index.html:907
 msgid "Enviar"
 msgstr "Enviar"
 
-#: templates/home/index.html:921
+#: templates/home/index.html:949
 msgid "Euskodev &copy;tu creador de sitios web 2024"
 msgstr "Euskodev &copy;tu creador de sitios web 2024"
 
-#: templates/home/index.html:932
+#: templates/home/index.html:960
 msgid "Privacy Policy"
 msgstr "Privacy Policy"
 
-#: templates/home/index.html:935
+#: templates/home/index.html:963
 msgid "Aviso_legal"
 msgstr "Aviso_legal"
 
-#: templates/home/index.html:939
+#: templates/home/index.html:967
 msgid "politicas de cookies"
 msgstr "politicas de cookies"
 
-#: templates/home/index.html:966
+#: templates/home/index.html:994
 msgid "Facilitamos Vuestro Aprendizaje"
 msgstr "Facilitamos Vuestro Aprendizaje"
 
-#: templates/home/index.html:970
+#: templates/home/index.html:998
 msgid ""
 " es tu portal ideal para prepararte con éxito. Esta web te ofrece una amplia"
 " variedad de test para diferentes puestos de trabajo en el ámbito de la "
@@ -503,23 +499,23 @@ msgstr ""
 "variedad de test para diferentes puestos de trabajo en el ámbito de la "
 "salud, la educación, la administración y otros sectores."
 
-#: templates/home/index.html:975 templates/home/index.html:1017
+#: templates/home/index.html:1003 templates/home/index.html:1045
 msgid "Personas:"
 msgstr "Personas:"
 
-#: templates/home/index.html:979 templates/home/index.html:1021
+#: templates/home/index.html:1007 templates/home/index.html:1049
 msgid "Category:"
 msgstr "Category:"
 
-#: templates/home/index.html:986 templates/home/index.html:1028
+#: templates/home/index.html:1014 templates/home/index.html:1056
 msgid "Volver"
 msgstr "Volver"
 
-#: templates/home/index.html:1009
+#: templates/home/index.html:1037
 msgid "Euskodev"
 msgstr "Euskodev"
 
-#: templates/home/index.html:1013
+#: templates/home/index.html:1041
 msgid ""
 "Euskodev: Su aliado en el desarrollo de software <br> Euskodev, un equipo de"
 " desarrolladores de software en el País Vasco. especializado en la creación "
@@ -531,19 +527,19 @@ msgstr ""
 "creación de soluciones digitales a medida, para empresas de todos los "
 "tamaños, desde pequeñas startups hasta grandes corporaciones!"
 
-#: templates/home/index.html:1018
+#: templates/home/index.html:1046
 msgid "Web privada"
 msgstr "Web privada"
 
-#: templates/home/index.html:1051
+#: templates/home/index.html:1079
 msgid "Gastrogune"
 msgstr "Gastrogune"
 
-#: templates/home/index.html:1053
+#: templates/home/index.html:1081
 msgid "GastroGune: La esencia de Euskadi en cada bocado."
 msgstr "GastroGune: La esencia de Euskadi en cada bocado."
 
-#: templates/home/index.html:1056
+#: templates/home/index.html:1084
 msgid ""
 "GastroGune: Tu Guía para Descubrir la Gastronomía <br> Vasca Eusko.Gune no "
 "solo te acerca la cocina vasca a tu hogar a través de recetas tradicionales,"
@@ -555,13 +551,16 @@ msgstr ""
 " sino que también te sirve como guía para descubrir y disfrutar de los "
 "mejores lugares y restaurantes del País Vasco.!"
 
-#: templates/home/index.html:1066
+#: templates/home/index.html:1094
 msgid "Gastronomy"
 msgstr "Gastronomy"
 
-#: templates/home/index.html:1072
+#: templates/home/index.html:1100
 msgid "Close Project"
 msgstr "Close Project"
+
+#~ msgid "Autor:"
+#~ msgstr "Autor:"
 
 #~ msgid ""
 #~ "Welcome To Our Studio <br> <br style=\"text-shadow: 2px 2px 5px black;\">of"
