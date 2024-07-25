@@ -223,7 +223,6 @@
                         {% trans 'Creamos sitios web responsive que se adaptan a la perfección a cualquier tamaño de pantalla, desde ordenadores de sobremesa y portátiles hasta tablets y smartphones. Nuestros expertos diseñadores y desarrolladores se aseguran de que tu sitio web ofrezca una experiencia de usuario (UX) excepcional en todos los dispositivos, manteniendo a tus visitantes comprometidos y regresando por más.' %}
                     </p>
 
-
                 </div>
 
                 <div class="col-md-4">
@@ -260,13 +259,26 @@
             </div>
 
 <!--primer row de portafolio-->
-
             <div class="row">
+                <!-- Portfolio item 1-->
                 <div class="col-lg-4 col-sm-6 mb-4">
-
-
-                    <!-- Portfolio item 1-->
-
+                    <div class="portfolio-item" style="border:solid;border-color:black;">
+                        <a class="portfolio-link" data-bs-toggle="" href="{% url 'home_app:sun-and-surf' %}" target="_blank">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="{% static 'portfolio/sun-and-surf/img/tablas4.jpg' %}"
+                                alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Sun And Surf</div>
+                            <div class="portfolio-caption-subheading text-muted">Web</div>
+                        </div>
+                    </div>
+            
+                </div>
+                <!-- Portfolio item 2-->
+                <div class="col-lg-4 col-sm-6 mb-4">
                     <div class="portfolio-item" style="border:solid;border-color:black;">
                         <a class="portfolio-link" data-bs-toggle="" href="{% url 'home_app:atenea-gastronomica' %}" target="_blank">
                             <div class="portfolio-hover">
@@ -282,16 +294,9 @@
                     </div>
             
                 </div>
+                <!-- Portfolio item 3-->
                 <div class="col-lg-4 col-sm-6 mb-4">
-            
-            
-            
-
-
-           
-
-
-                    <!-- Portfolio item 2-->
+                    
 
                     <div class="portfolio-item" style="border:solid;border-color:black;">
                         <a class="portfolio-link" data-bs-toggle="" href="{% url 'home_app:la-maison-du-bordeaux' %}" target="_blank">
@@ -306,17 +311,13 @@
                             <div class="portfolio-caption-subheading text-muted">Web</div>
                         </div>
                     </div>
-
-                    
-
-
                 </div>
+            </div>
+<!--segundo row de presentacion de portafolio-->
+            <div class="row">
+                <!-- Portfolio item 4-->
                 <div class="col-lg-4 col-sm-6 mb-4">
-
-
-                    <!-- Portfolio item 3-->
-
-
+                    
                     <div class="portfolio-item" style="border:solid;border-color:black;border-width: 3px;">
                         <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
                             <div class="portfolio-hover">
@@ -331,160 +332,50 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-                    <!-- Portfolio item 4-->
-                    <!-- <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
+                <!-- Portfolio item 4-->
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    
+                    <div class="portfolio-item bg-white" style="border:solid;border-color:black;">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="{% static 'assets/img/portfolio/4.jpg' %}" alt="..." />
+                            <img class="img-fluid p-2" src="{% static 'assets/img/portfolio/testosakidetza.png' %}"
+                                alt="..." />
                         </a>
-                       <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Lines</div>
-                            <div class="portfolio-caption-subheading text-muted">Branding</div>
-                        </div>-->
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">20.000+</div>
+                            <div class="portfolio-caption-subheading text-muted">Web + Design</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Portfolio 5 -->
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="portfolio-item" style="border:solid;border-color:black;border-width: 3px;">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="{% static 'assets/img/portfolio/portafolio2.png' %}"
+                                alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Euskodev</div>
+                            <div class="portfolio-caption-subheading text-muted">Web + Design
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Portfolio 6 -->-->
+                <div class="col-lg-4 col-sm-6 mb-4">
+
                 </div>
             </div>
-
-<!--fin de primer row de la presentacion de portafolios-->
-
-<!--segundo row de presentacion de portafolio-->
-
-<div class="row">
-    <div class="col-lg-4 col-sm-6 mb-4">
-
-
-        <!-- Portfolio item 4-->
-
-
-        <div class="portfolio-item bg-white" style="border:solid;border-color:black;">
-            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
-                <div class="portfolio-hover">
-                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                </div>
-                <img class="img-fluid p-2" src="{% static 'assets/img/portfolio/testosakidetza.png' %}"
-                    alt="..." />
-            </a>
-            <div class="portfolio-caption">
-                <div class="portfolio-caption-heading">20.000+</div>
-                <div class="portfolio-caption-subheading text-muted">Web + Design</div>
-            </div>
-        </div>
-
-    </div>
-
-
-
-    <!-- Portfolio 5 -->
-    <div class="col-lg-4 col-sm-6 mb-4">
-
-        <div class="portfolio-item" style="border:solid;border-color:black;border-width: 3px;">
-            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
-                <div class="portfolio-hover">
-                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                </div>
-                <img class="img-fluid" src="{% static 'assets/img/portfolio/portafolio2.png' %}"
-                    alt="..." />
-            </a>
-            <div class="portfolio-caption">
-                <div class="portfolio-caption-heading">Euskodev</div>
-                <div class="portfolio-caption-subheading text-muted">Web + Design
-                </div>
-            </div>
-        </div>
-
-
-
-        <!-- Portfolio item 5-->
-
-
-        <!--<div class="portfolio-item" style="border:solid;border-color:black;border-width: 3px;">
-            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
-                <div class="portfolio-hover">
-                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                </div>
-                <img class="img-fluid" src="{% static 'assets/img/portfolio/portafolio2.png' %}"
-                    alt="..." />
-            </a>
-            <div class="portfolio-caption">
-                <div class="portfolio-caption-heading">Explore</div>
-                <div class="portfolio-caption-subheading text-muted">{% trans 'Desarrollo de software' %}
-                </div>
-            </div>
-        </div>-->
-
-
-    </div>
-    <div class="col-lg-4 col-sm-6 mb-4">
-
-
-        <!-- Portfolio item 6-->
-
-
-        <!--<div class="portfolio-item" style="border:solid;border-color:black;border-width: 3px;">
-            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
-                <div class="portfolio-hover">
-                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                </div>
-                <img class="img-fluid" src="{% static 'assets/img/portfolio/cocina.jpg' %}" alt="..." />
-            </a>
-            <div class="portfolio-caption">
-                <div class="portfolio-caption-heading">Gastronomy</div>
-                <div class="portfolio-caption-subheading text-muted">{% trans 'Locations' %}</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">-->
-        <!-- Portfolio item 4-->
-        <!-- <div class="portfolio-item">
-            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
-                <div class="portfolio-hover">
-                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                </div>
-                <img class="img-fluid" src="{% static 'assets/img/portfolio/4.jpg' %}" alt="..." />
-            </a>
-           <div class="portfolio-caption">
-                <div class="portfolio-caption-heading">Lines</div>
-                <div class="portfolio-caption-subheading text-muted">Branding</div>
-            </div>-->
-    </div>
-</div>
 
 <!--fin del segundo row de la portada de portafolio duplicado-->
 
-            <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
-                <!-- Portfolio item 5-->
-                <!--- <div class="portfolio-item">
-                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="{% static 'assets/img/portfolio/5.jpg' %}" alt="..." />
-                    </a>-->
-                <!-- <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Southwest</div>
-                        <div class="portfolio-caption-subheading text-muted">Website Design</div>
-                    </div>
-                </div>
-            </div>
-                    <div class="col-lg-4 col-sm-6">-->
-                <!-- Portfolio item 6-->
-                <!-- <div class="portfolio-item">
-                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="{% static 'assets/img/portfolio/6.jpg' %}" alt="..." />
-                    </a>
-                    <div class="portfolio-caption">
-                        <div class="portfolio-caption-heading">Window</div>
-                        <div class="portfolio-caption-subheading text-muted">Photography</div>
-                    </div>
-                </div>-->
-            </div>
-        </div>
+           
+        
         </div>
     </section>
 

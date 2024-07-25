@@ -55,4 +55,7 @@ class LaMaisonDuBordeauxProduitsView(TemplateView):
 class LaMaisonDuBordeauxBoutiqueView(TemplateView):
     template_name = "portfolio/la-maison-du-bordeaux/store.html"
 
+class SunAndSurfView(TemplateView):
+    template_name = "portfolio/sun-and-surf/index.html"
+
 

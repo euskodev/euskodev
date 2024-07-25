@@ -71,6 +71,10 @@ urlpatterns = [
         views.LaMaisonDuBordeauxBoutiqueView.as_view(),
         name='la-maison-du-bordeaux-boutique',
     ),
+    path('Sun And Surf',
+        views.SunAndSurfView.as_view(),
+        name='sun-and-surf',
+    ),
 
 
 
