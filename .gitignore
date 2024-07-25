@@ -9,3 +9,4 @@ db.sqlite3-journal
 # Ignore the settings file
 settings.py
 
+migrations/
