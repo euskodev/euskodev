@@ -840,13 +840,23 @@
 
             <!--este es el div del mapa-->
             <div class="row">
-                <div class="col-lg-3 col-md-12"></div>
-
-                <div class="col-lg-6  text col-md-12" id="map" style="height: 300px;">
-
+                <div class="col-lg-4 text col-md-12 p-3 text-center text-light">
+                    <h3 class="">Euskadi</h3>
+                    <div class="w-100" id="map" style="height: 300px">
+                    </div>
                 </div>
 
-                <div class=" col-lg-3 col-md-12"></div>
+                <div class="col-lg-4 text col-md-12 p-3 text-center text-light">
+                    <h3 class="">Nicaragua</h3>
+                    <div class="w-100" id="map2" style="height: 300px">
+                    </div>
+                </div>
+
+                <div class="col-lg-4 text col-md-12 p-3 text-center text-light">
+                    <h3 class="">Costa Rica</h3>
+                    <div class="w-100" id="map3" style="height: 300px">
+                    </div>
+                </div>
 
             </div>
 
@@ -1209,14 +1219,39 @@
 
 
     <script>
-        var map = L.map('map').setView([43.322334391672506, -1.9831932035420474], 14);
+        //Euskadi
+        var map = L.map('map').setView([42.92471085566681, -2.224726126989571], 7);
 
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(map);
 
-        var marker = L.marker([43.322334391672506, -1.9831932035420474]).addTo(map);
+        var marker = L.marker([43.31815747804332, -1.9811787439768613]).addTo(map);
+    </script>
+
+    <script>
+        //Nicaragua
+        var map2 = L.map('map2').setView([12.114982075245731, -86.23655551332077], 7);
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map2);
+
+        var marker2 = L.marker([12.114982075245731, -86.23655551332077]).addTo(map2);
+    </script>
+
+    <script>
+        //Costa Rica
+        var map3 = L.map('map3').setView([9.928779589424872, -84.0906867099021], 7);
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map3);
+
+        var marker3 = L.marker([9.928779589424872, -84.0906867099021]).addTo(map3);
     </script>
 
 
