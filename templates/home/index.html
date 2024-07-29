@@ -262,11 +262,8 @@
     <!-- Portfolio Grid-->
 
 
-<<<<<<< HEAD
-    <section class="page-section" id="portfolio" style="background-color: #eee8d1;">
-=======
-    <section class="page-section" id="portfolio" style="background-color:  #fef9e7 ;">
->>>>>>> 1d9d03c (cambiar configuracion de static)
+    <section class="page-section" id="portfolio" style="background-color:  #fef9e7;">
+
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase text-white" style="text-shadow: 2px 2px 5px black;">
@@ -285,8 +282,9 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="{% static 'portfolio/sun-and-surf/img/tablas4.jpg' %}"
-                                alt="..." />
+                            <div class="" style="height:250px; background-image: url('{% static "portfolio/sun-and-surf/img/tablas4.jpg" %}'); background-size:cover;">
+                            </div>
+                            
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">Sun And Surf</div>
@@ -303,8 +301,8 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid"
-                                src="{% static 'portfolio/atenea-gastronomica/assets/img/portada.png' %}" alt="..." />
+                            <div class="" style="height:250px; background-image: url('{% static "portfolio/atenea-gastronomica/assets/img/portada.png" %}'); background-size:cover;">
+                            </div>
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">Atenea Gastronómica</div>
@@ -323,9 +321,8 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid"
-                                src="{% static 'portfolio/la-maison-du-bordeaux/assets/img/chocolates-06.jpg' %}"
-                                alt="..." />
+                            <div class="" style="height:250px; background-image: url('{% static "portfolio/la-maison-du-bordeaux/assets/img/chocolates-06.jpg" %}'); background-size:cover;">
+                            </div>
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">La Maison du Bordeaux</div>
@@ -344,8 +341,8 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="{% static 'assets/img/portfolio/cocina.jpg' %}" alt="..." />
-                        </a>
+                            <div class="" style="height:250px; background-image: url('{% static "assets/img/portfolio/cocina.jpg" %}'); background-size:cover;">
+                            </div>    </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">Gastrogune</div>
                             <div class="portfolio-caption-subheading text-muted">Web + Design + App</div>
@@ -361,8 +358,9 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid p-2" src="{% static 'assets/img/portfolio/testosakidetza.png' %}"
-                                alt="..." />
+                            <!-- El tipo de background-image de este div es diferente al resto-->
+                            <div class="" style="height:250px; background-image: url('{% static "assets/img/portfolio/testosakidetza.png" %}'); background-size:200px; background-position: center; background-repeat:no-repeat; background-color:#eeeeee;">
+                            </div> 
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">20.000+</div>
@@ -377,8 +375,8 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="{% static 'assets/img/portfolio/portafolio2.png' %}"
-                                alt="..." />
+                            <div class="" style="height:250px; background-image: url('{% static "assets/img/portfolio/portafolio2.png" %}'); background-size:cover; background-position:center;background-size:130%;">
+                                </div>
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">Euskodev</div>
@@ -406,7 +404,7 @@
     <!-- About-->
 
 
-    <section class="page-section" id="about">
+    <section class="page-section" id="about" style="backgroun-color:white;">
         <div class="container">
             <div class="text-start">
                 <h2 class="section-heading text-uppercase text-center">{% trans 'Sobre' %}</h2>
@@ -615,7 +613,7 @@
 
     <!--este es un espacio oculto sobre los creadores de la web "team"-->
 
-    <section class="page-section bg-light" id="team">
+    <section class="page-section" id="team" style="background-color: #ecfef9">
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">{% trans 'Sobre nosotros' %}</h2>
