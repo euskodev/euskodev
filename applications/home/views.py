@@ -10,6 +10,7 @@ from django.conf import settings
 from django.core.mail import send_mail
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
+from django.contrib import messages
 
 def formulario_contactar(request):
     print("Formulario de contactarrrrrrrrrrrrrrrrrrrrrrrrrrrrr")
@@ -24,6 +25,7 @@ def formulario_contactar(request):
         from_email = settings.EMAIL_HOST_USER
         recipient_list = ['euskodev@gmail.com','retegi84@gmail.com']
         send_mail(email, message, from_email, recipient_list)
+        messages.add_message(request, messages.INFO, "Hemos recibido el email, en breve nos pondremos en contacto. | Emaila jaso dugu, laster harremanetan jarriko gara.")
 
     return render(request, "home/index.html")
 

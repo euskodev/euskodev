@@ -177,6 +177,14 @@
         </div>
     </nav>
 
+    {% if messages %}
+    <div class="container-fluid text-center" style="background-color:#8cfaa5; position: relative; top: 20%;">
+        {% for message in messages %}
+        <label {% if message.tags %} class="{{ message.tags }}"{% endif %} style="font-size: 12px;">{{ message }}</label>
+        {% endfor %}
+    </div>
+    {% endif %}
+    
 
     <!--fin de navbar-->
 
