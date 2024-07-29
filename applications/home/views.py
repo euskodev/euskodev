@@ -6,13 +6,31 @@ from django.views.generic import (
 )
 
 from .models import Blog
+from django.conf import settings
+from django.core.mail import send_mail
+from django.core.mail import EmailMultiAlternatives
+from django.template.loader import render_to_string
 
+def formulario_contactar(request):
+    print("Formulario de contactarrrrrrrrrrrrrrrrrrrrrrrrrrrrr")
+    if request.method == "POST":
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        message = request.POST.get('message')
+        message = "Nombre: " + name + " Email: " + email + " Tel: " + phone + " Mensaje: " + message
+        
+        print(name, email, phone, message)
+        from_email = settings.EMAIL_HOST_USER
+        recipient_list = ['euskodev@gmail.com','retegi84@gmail.com']
+        send_mail(email, message, from_email, recipient_list)
 
-
-
+    return render(request, "home/index.html")
 
 class HomePageView(TemplateView):
     template_name = "home/index.html"
+
+    
 
 
 class PoliticasdeprivacidadView(TemplateView):

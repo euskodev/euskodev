@@ -122,8 +122,10 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <img class="p-0 m-0" style="height:30px;"
+            <a href="{% url 'home_app:home' %}">
+                <img class="p-0 m-0" style="height:30px;"
                 src="{% static 'img/Logo-euskodev-color-horizontal-rgb-001.png' %}">
+            </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -754,19 +756,20 @@
 
 
 
-                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                <form id="contactForm" data-sb-form-api-token="API_TOKEN" method="post" action="{% url 'home_app:formulario_contactar' %}">
+                    {% csrf_token %}
                     <div class="row align-items-stretch mb-5">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <!-- Name input-->
-                                <input class="form-control" id="name" type="text" placeholder="{% trans 'Nombre' %}*"
+                                <input class="form-control" id="name" name="name" type="text" placeholder="{% trans 'Nombre' %}*"
                                     data-sb-validations="required" />
                                 <div class="invalid-feedback" data-sb-feedback="name:required">
                                     {% trans 'A name is required.' %}</div>
                             </div>
                             <div class="form-group">
                                 <!-- Email address input-->
-                                <input class="form-control" id="email" type="email" placeholder="{% trans 'Email' %} *"
+                                <input class="form-control" id="email" name="email" type="email" placeholder="{% trans 'Email' %} *"
                                     data-sb-validations="required,email" />
                                 <div class="invalid-feedback" data-sb-feedback="email:required">
                                     {% trans 'An email is required' %}.</div>
@@ -775,7 +778,7 @@
                             </div>
                             <div class="form-group mb-md-0">
                                 <!-- Phone number input-->
-                                <input class="form-control" id="phone" type="tel" placeholder="{% trans 'teléfono' %} *"
+                                <input class="form-control" id="phone" name="phone" type="tel" placeholder="{% trans 'teléfono' %} *"
                                     data-sb-validations="required" />
                                 <div class="invalid-feedback" data-sb-feedback="phone:required">
                                     {% trans 'A phone number is required.' %}
@@ -785,7 +788,7 @@
                         <div class="col-md-6">
                             <div class="form-group form-group-textarea mb-md-0">
                                 <!-- Message input-->
-                                <textarea class="form-control" id="message" placeholder="{% trans 'Mensaje' %}*"
+                                <textarea class="form-control" id="message" name="message" placeholder="{% trans 'Mensaje' %}*"
                                     data-sb-validations="required"></textarea>
                                 <div class="invalid-feedback" data-sb-feedback="message:required">
                                     {% trans 'A message is required.' %}
@@ -800,10 +803,6 @@
                     <div class="d-none" id="submitSuccessMessage">
                         <div class="text-center text-white mb-3">
                             <div class="fw-bolder">Form submission successful!</div>
-                            To activate this form, sign up at
-                            <br />
-                            <a
-                                href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
                         </div>
                     </div>
                     <!-- Submit error message-->
@@ -814,7 +813,7 @@
                         <div class="text-center text-danger mb-3">{% trans 'Error sending message!' %}</div>
                     </div>
                     <!-- Submit Button-->
-                    <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase" id="submitButton"
+                    <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase" id="s"
                             type="submit">{% trans 'Enviar' %}</button></div>
                 </form>
 
