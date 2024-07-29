@@ -23,7 +23,7 @@ def formulario_contactar(request):
         
         print(name, email, phone, message)
         from_email = settings.EMAIL_HOST_USER
-        recipient_list = ['euskodev@gmail.com','retegi84@gmail.com']
+        recipient_list = ['euskodev@gmail.com','retegi84@gmail.com','olvind78@gmail.com']
         send_mail(email, message, from_email, recipient_list)
         messages.add_message(request, messages.INFO, "Hemos recibido el email, en breve nos pondremos en contacto. | Emaila jaso dugu, laster harremanetan jarriko gara.")
 
