@@ -10,11 +10,6 @@ from django.conf.urls.static import static
 from django.views.generic.base import RedirectView
 from django.contrib.staticfiles.storage import staticfiles_storage
 
-
-
-
-
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("ads.txt",
@@ -30,3 +25,6 @@ urlpatterns += i18n_patterns(
     path('i18n/', include('django.conf.urls.i18n')),
     path('', include('applications.home.urls')),  # Reemplaza 'yourapp' por tu aplicación real
 )
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
