@@ -75,6 +75,14 @@ urlpatterns = [
         views.SunAndSurfView.as_view(),
         name='sun-and-surf',
     ),
+    path('La Fortuna Trip',
+        views.LaFortunaTripView.as_view(),
+        name='la-fortuna-trip',
+    ),
+    path('De Mi Tierra',
+        views.DeMiTierraView.as_view(),
+        name='de-mi-tierra',
+    ),
     path('formulario/', views.formulario_contactar, name='formulario_contactar'),
 
 

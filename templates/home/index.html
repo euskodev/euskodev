@@ -86,6 +86,13 @@
             transition-duration: 0.1s;
             color: yellow;
         }
+
+        .efecto-foto-blog {
+            background-size: cover;
+        }
+        .efecto-foto-blog:hover {
+            background-size: auto;
+        }
     </style>
 
 
@@ -115,18 +122,13 @@
 </head>
 
 <body id="page-top">
-
-
     <!-- Navbar-->
-
-
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
             <a href="{% url 'home_app:home' %}">
                 <img class="p-0 m-0" style="height:30px;"
                 src="{% static 'img/Logo-euskodev-color-horizontal-rgb-001.png' %}">
             </a>
-
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
@@ -193,7 +195,7 @@
 
 
     <header class="masthead"
-        style="background-image: url('{% static "assets/img/portada.jpg" %}'); filter: grayscale(40%);">
+        style="background-image: url('{% static "assets/img/portada.jpg" %}'); filter: saturate(40%);">
         <div class="container">
             <div class="masthead-subheading" style="text-shadow: 2px 2px 5px black;">
 
@@ -211,8 +213,6 @@
     <!--fin masthead-->
 
     <!-- Services-->
-
-
     <section class="page-section" id="services">
         <div class="container">
             <div class="text-center">
@@ -231,7 +231,6 @@
 
                     <p class="text-muted" style="text-align:left;">
                         {% trans 'Eleve su presencia online con las soluciones de eCommerce de euskodev <br> En el panorama digital actual, un sitio web de eCommerce no es solo un lujo; es una necesidad para empresas de todos los tamaños. Con un sitio web de eCommerce, puede llegar a una audiencia global, ampliar su base de clientes y aumentar sus ventas. Pero crear un sitio web de eCommerce exitoso requiere más que un diseño atractivo. Debe ser funcional, fácil de usar y seguro..' %}
-
                     </p>
                 </div>
 
@@ -263,15 +262,44 @@
 
             </div>
         </div>
-
     </section>
-
     <!--fin de services-->
+
+    <!-- Blog-->
+    <section class="page-section" id="services" style="background-color:#fafafa;">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase" style="text-shadow: 2px 2px 5px white;">
+                    {% trans 'Blog' %}</h2>
+                <h3 class="section-subheading text-muted" style="text-shadow: 2px 2px 5px white;">
+                    {% trans '¡Últimas publicaciones!' %}</h3>
+            </div>
+            <div class="row text-center">
+                
+                {% for entradas_blog in entradas_blog %}
+                
+                <div class="col-md-4" style="">
+                    <a href="{% url 'home_app:blog-detail' entradas_blog.id %}" style="text-decoration: none;" class="w-100">
+                        <div class="w-100 text-start">
+                            <label class="" style="color:#bbb;">{{ entradas_blog.fecha_hora|date:"Y/m/d" }} <i> {{ entradas_blog.autor }}</i></label>
+                        </div>
+                    <div class="w-100 efecto-foto-blog" id="efecto-foto-blog" style="background-image: url('{{ entradas_blog.imagen.url }}'); height:300px; background-size: cover;">
+                    </div>
+                    <h5 class="text-dark p-2" style="text-shadow: 2px 2px 5px white;">{{ entradas_blog.titulo }}</h4>
+
+                    <p class="text-muted" style="text-align:left;">  </p>
+                    </a>
+                </div>
+                
+                {% endfor %}
+
+            </div>
+        </div>
+    </section>
+    <!--fin de Blog-->
 
 
     <!-- Portfolio Grid-->
-
-
     <section class="page-section" id="portfolio" style="background-color:  #fef9e7;">
 
         <div class="container">
@@ -286,7 +314,7 @@
             <div class="row">
                 <!-- Portfolio item 1-->
                 <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="portfolio-item" style="border:solid;border-color:black;">
+                    <div class="portfolio-item" style="border:solid; border-width:2px; border-color:black;">
                         <a class="portfolio-link" data-bs-toggle="" href="{% url 'home_app:sun-and-surf' %}"
                             target="_blank">
                             <div class="portfolio-hover">
@@ -305,7 +333,7 @@
                 </div>
                 <!-- Portfolio item 2-->
                 <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="portfolio-item" style="border:solid;border-color:black;">
+                    <div class="portfolio-item" style="border:solid; border-width:2px; border-color:black;">
                         <a class="portfolio-link" data-bs-toggle="" href="{% url 'home_app:atenea-gastronomica' %}"
                             target="_blank">
                             <div class="portfolio-hover">
@@ -325,7 +353,7 @@
                 <div class="col-lg-4 col-sm-6 mb-4">
 
 
-                    <div class="portfolio-item" style="border:solid;border-color:black;">
+                    <div class="portfolio-item" style="border:solid; border-width:2px; border-color:black;">
                         <a class="portfolio-link" data-bs-toggle="" href="{% url 'home_app:la-maison-du-bordeaux' %}"
                             target="_blank">
                             <div class="portfolio-hover">
@@ -341,46 +369,48 @@
                     </div>
                 </div>
             </div>
-            <!--segundo row de presentacion de portafolio-->
-            <div class="row">
+             <!--segungo row de portafolio-->
+             <div class="row">
                 <!-- Portfolio item 4-->
                 <div class="col-lg-4 col-sm-6 mb-4">
-
-                    <div class="portfolio-item" style="border:solid;border-color:black;border-width: 3px;">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
+                    <div class="portfolio-item" style="border:solid;border-width:2px;border-color:black;">
+                        <a class="portfolio-link" data-bs-toggle="" href="{% url 'home_app:la-fortuna-trip' %}"
+                            target="_blank">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <div class="" style="height:250px; background-image: url('{% static "assets/img/portfolio/cocina.jpg" %}'); background-size:cover;">
-                            </div>    </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Gastrogune</div>
-                            <div class="portfolio-caption-subheading text-muted">Web + Design + App</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Portfolio item 4-->
-                <div class="col-lg-4 col-sm-6 mb-4">
-
-                    <div class="portfolio-item bg-white" style="border:solid;border-color:black;">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            <div class="" style="height:250px; background-image: url('{% static "portfolio/la-fortuna-trip/assets/img/inicio/la-fortuna-downtown-town-city-buildings-arenal-volcano-costa-rica.jpg" %}'); background-size:cover;">
                             </div>
-                            <!-- El tipo de background-image de este div es diferente al resto-->
-                            <div class="" style="height:250px; background-image: url('{% static "assets/img/portfolio/testosakidetza.png" %}'); background-size:200px; background-position: center; background-repeat:no-repeat; background-color:#eeeeee;">
-                            </div> 
+                            
                         </a>
                         <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">20.000+</div>
-                            <div class="portfolio-caption-subheading text-muted">Web + Design</div>
+                            <div class="portfolio-caption-heading">La Fortuna Trip</div>
+                            <div class="portfolio-caption-subheading text-muted">Web</div>
                         </div>
                     </div>
+
                 </div>
-                <!-- Portfolio 5 -->
+                <!-- Portfolio item 5-->
                 <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="portfolio-item" style="border:solid;border-color:black;border-width: 3px;">
+                    <div class="portfolio-item" style="border:solid;border-width:2px;border-color:black;">
+                        <a class="portfolio-link" data-bs-toggle="" href="{% url 'home_app:de-mi-tierra' %}"
+                            target="_blank">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <div class="" style="height:250px; background-image: url('{% static "portfolio/de-mi-tierra/assets/img/hero-bg.jpg" %}'); background-size:cover;">
+                            </div>
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">De Mi Tierra</div>
+                            <div class="portfolio-caption-subheading text-muted">Web</div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Portfolio item 6-->
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="portfolio-item" style="border:solid; border-width:2px; border-color:black;">
                         <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
@@ -395,10 +425,45 @@
                         </div>
                     </div>
                 </div>
-                <!-- Portfolio 6 -->-->
+            </div>
+            <!--tercer row de presentacion de portafolio-->
+            <div class="row">
+                <!-- Portfolio item 7-->
                 <div class="col-lg-4 col-sm-6 mb-4">
 
+                    <div class="portfolio-item" style="border:solid; border-width:2px; border-color:black;">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <div class="" style="height:250px; background-image: url('{% static "assets/img/portfolio/cocina.jpg" %}'); background-size:cover;">
+                            </div>    </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Gastrogune</div>
+                            <div class="portfolio-caption-subheading text-muted">Web + Design + App</div>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Portfolio item 8-->
+                <div class="col-lg-4 col-sm-6 mb-4">
+
+                    <div class="portfolio-item bg-white" style="border:solid; border-width:2px; border-color:black;">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <!-- El tipo de background-image de este div es diferente al resto-->
+                            <div class="" style="height:250px; background-image: url('{% static "assets/img/portfolio/testosakidetza.png" %}'); background-size:200px; background-position: center; background-repeat:no-repeat; background-color:#eeeeee;">
+                            </div> 
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">20.000+</div>
+                            <div class="portfolio-caption-subheading text-muted">Web + Design</div>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
 
             <!--fin del segundo row de la portada de portafolio duplicado-->
@@ -407,13 +472,9 @@
 
         </div>
     </section>
-
     <!--fin de portafolio grid-->
 
-
     <!-- About-->
-
-
     <section class="page-section" id="about" style="backgroun-color:white;">
         <div class="container">
             <div class="text-start">
@@ -421,14 +482,6 @@
                 <h3 class="section-subheading text-muted">
                     {% trans 'En euskodev somos un equipo apasionado de desarrolladores web, app y diseño de imagen corporativa, expertos en crear soluciones digitales que impulsan tu negocio. Contamos con un historial probado de éxito en el desarrollo de sitios web, aplicaciones web y sistemas personalizados. Nos especializamos en comprender tus necesidades y objetivos para crear soluciones a medida que superen tus expectativas.   Nuestra filosofía se basa en la innovación, la creatividad y la cercanía con el cliente. Trabajamos en estrecha colaboración contigo en cada paso del proceso, desde la ideación hasta el lanzamiento y el mantenimiento de tu proyecto. Nos enorgullecemos de ofrecer un servicio de alta calidad, personalizado y asequible..' %}
                 </h3>
-
-
-
-
-
-
-
-
 
             </div>
             <br><br>

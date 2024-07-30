@@ -11,6 +11,7 @@ from django.core.mail import send_mail
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.contrib import messages
+from applications.home.models import Blog
 
 def formulario_contactar(request):
     print("Formulario de contactarrrrrrrrrrrrrrrrrrrrrrrrrrrrr")
@@ -29,10 +30,20 @@ def formulario_contactar(request):
 
     return render(request, "home/index.html")
 
-class HomePageView(TemplateView):
+class HomePageView(ListView):
     template_name = "home/index.html"
-
-    
+    model = Blog
+    context_object_name = 'entradas_blog'
+    def get_queryset(self):
+        # Obtenemos el queryset original
+        queryset = super().get_queryset()
+        # Filtramos y seleccionamos el primer objeto
+        first_item = queryset.first()
+        # Si no hay objetos en el queryset, devolvemos un queryset vacío
+        if first_item is None:
+            return queryset.none()
+        # Devolvemos un queryset que contiene solo el primer objeto
+        return queryset[:3]
 
 
 class PoliticasdeprivacidadView(TemplateView):
@@ -77,5 +88,17 @@ class LaMaisonDuBordeauxBoutiqueView(TemplateView):
 
 class SunAndSurfView(TemplateView):
     template_name = "portfolio/sun-and-surf/index.html"
+
+class DeMiTierraView(TemplateView):
+    template_name = "portfolio/de-mi-tierra/index.html"
+
+class LaFortunaTripView(TemplateView):
+    template_name = "portfolio/la-fortuna-trip/index.html"
+
+class DeMiTierrapView(TemplateView):
+    template_name = "portfolio/de-mi-tierra/index.html"
+
+
+
 
 
