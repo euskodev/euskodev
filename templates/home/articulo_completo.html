@@ -62,10 +62,10 @@
     <!-- Navigation-->
 
 
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-to bg-dark" id="mainNav">
         <div class="container">
             <a class="display-6" href="{% url 'home_app:home' %}#page-top"
-                style="text-decoration: none;font-family: 'Courier New', Courier, monospace;text-shadow: 2px 2px 5px black;"><img class="p-0 m-0" style="height:30px;" src="{% static 'img/Logo-euskodev-color-horizontal-rgb-001.png' %}"></a>
+                style="text-decoration: none;font-family: 'Courier New', Courier, monospace;text-shadow: 2px 2px 5px black;"><img class="p-0 m-0" style="height:30px;" src="{% static 'img/Logo-euskodev-gris-horizontal-rgb-001.png' %}"></a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -100,7 +100,7 @@
                     {% get_language_info_list for AVAILABLE_LANGUAGES as languages %}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle"
-                            style="text-transform:uppercase; background-color:#ffc800; color:blue; border-radius:25px;"
+                            style="text-transform:uppercase; background-color:green; color:white; border-radius:25px;"
                             href="#" data-bs-toggle="dropdown" aria-expanded="false">{{ CURRENT_LANGUAGE }}</a>
                         <ul class="dropdown-menu">
                             {% for language in languages %}
