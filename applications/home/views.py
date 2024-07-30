@@ -43,7 +43,7 @@ class HomePageView(ListView):
         if first_item is None:
             return queryset.none()
         # Devolvemos un queryset que contiene solo el primer objeto
-        return queryset[:-3]
+        return queryset.order_by('-id')[:3]
 
 
 class PoliticasdeprivacidadView(TemplateView):
