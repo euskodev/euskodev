@@ -8,15 +8,18 @@
 
 <head>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JLE08PZQL8"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JLE08PZQL8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'G-JLE08PZQL8');
-</script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-JLE08PZQL8');
+    </script>
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -35,8 +38,16 @@
 
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1565972943494658"
-     crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
 
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1565972943494658"
+        crossorigin="anonymous"></script>
+    <ins class="adsbygoogle" style="display:inline-block;width:360px;height:800px"
+        data-ad-client="ca-pub-1565972943494658" data-ad-slot="9663527865"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
 
     <style>
         @media (max-width: 768px) {
@@ -65,7 +76,9 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-to bg-dark" id="mainNav">
         <div class="container">
             <a class="display-6" href="{% url 'home_app:home' %}#page-top"
-                style="text-decoration: none;font-family: 'Courier New', Courier, monospace;text-shadow: 2px 2px 5px black;"><img class="p-0 m-0" style="height:30px;" src="{% static 'img/Logo-euskodev-gris-horizontal-rgb-001.png' %}"></a>
+                style="text-decoration: none;font-family: 'Courier New', Courier, monospace;text-shadow: 2px 2px 5px black;"><img
+                    class="p-0 m-0" style="height:30px;"
+                    src="{% static 'img/Logo-euskodev-gris-horizontal-rgb-001.png' %}"></a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -92,7 +105,7 @@
                     <li class="nav-item"><a class="nav-link" href="{% url 'home_app:home' %}#contact"
                             style="  text-shadow: 2px 2px black;">{% trans 'Contacto' %}</a></li>
 
-                    
+
 
 
                     {% get_current_language as CURRENT_LANGUAGE %}
@@ -145,10 +158,11 @@
 
                 <h4 style="padding-top: 10%;"></h4>
 
-                <a href="#" target="_blank"><img
-                        src="{% static 'assets/img/testOsakidetza.png' %}" alt="" class="w-75"></a>
+                <a href="#" target="_blank"><img src="{% static 'assets/img/testOsakidetza.png' %}" alt=""
+                        class="w-75"></a>
 
-                <label class="mt-3" style="font-size:11px;">(Hemos desarrollado esta plataforma para ayudar en la preparación de oposiciones.)</label>
+                <label class="mt-3" style="font-size:11px;">(Hemos desarrollado esta plataforma para ayudar en la
+                    preparación de oposiciones.)</label>
 
             </div>
 
@@ -166,7 +180,7 @@
                             <p style="color:gray">
                                 {{ articulo.fecha_hora|date:"Y/m/d" }} | {{ articulo.autor }}</p>
                             <h1 class="" style="text-align: left;">{{ articulo.titulo }}</h1>
-                            
+
 
                         </div>
 
@@ -179,7 +193,7 @@
 
                         <div class="col-8 mt-5 mb-5">
                             <img src="{{ articulo.imagen.url }}" class="w-100">
-                           
+
                         </div>
 
                         <div class="col-2"></div>
@@ -189,7 +203,7 @@
                     <div class="row">
 
                         <p style="font-size: 22px;">{{ articulo.cuerpo|safe }}</p>
-                       
+
 
                     </div>
 
@@ -213,7 +227,7 @@
                 <p style="color:gray">
                     {{ articulo.fecha_hora|date:"Y/m/d" }} | {{ articulo.autor }}</p>
                 <h1 class="text-left">{{ articulo.titulo }}</h1>
-                
+
             </div>
         </div>
 
@@ -222,7 +236,7 @@
             <div class="col-2"></div>
 
             <div class="col-8 p-0">
-                <img  src="{{ articulo.imagen.url }}" class="w-100">
+                <img src="{{ articulo.imagen.url }}" class="w-100">
             </div>
 
             <div class="col-2"></div>
@@ -232,7 +246,7 @@
         <div class="row">
 
             <p style="font-size: 24px;">{{ articulo.cuerpo|safe }}</p>
-            
+
 
         </div>
 
