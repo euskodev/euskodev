@@ -125,14 +125,17 @@
 
         .portafolio-izquierda {
             transform: translateX(-5000px);
+            opacity: 0:
         }
 
         .portafolio-derecha {
             transform: translateX(5000px);
+            opacity: 0;
         }
 
         .portafolio-izquierda2 {
             transform: translateX(-5000px);
+            opacity: 0;
         }
 
         .comentarios {
@@ -247,7 +250,8 @@
         style="background-image: url('{% static "/img/la-fortuna-desarrollo-web-donostia.jpg" %}'); filter: saturate(100%); height: 100vh; background-position:top;">
         <div class="container">
             <div class="masthead-subheading" style="text-shadow: 20px 20px 50px black;">
-
+                <img class="p-0 m-0" style="100%;"
+                    src="{% static 'img/Logo-euskodev-gris-horizontal-rgb-001.png' %}">
                 <div class="text-uppercase" style="text-shadow: 4px 2px 30px black; font-size:3vw; font-family: arial;margin-top: 10vh;"><b>
                     {% trans "Desarrollo Web<br><br>APP e Imagen<br><br>Corporativa" %}</b></div>
                 <a class="btn btn-xl text-uppercase mt-5" style="background-color: #77E25B;" href="#services">
@@ -367,7 +371,7 @@
             <!--primer row de portafolio-->
             <div class="row  portafolio-izquierda " id="izquierda">
                 <!-- Portfolio item 1-->
-                <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="col-lg-4 col-sm-12 mb-4">
                     <div class="portfolio-item" style="border:solid; border-width:2px; border-color:black;">
                         <a class="portfolio-link" data-bs-toggle="" href="{% url 'home_app:sun-and-surf' %}"
                             target="_blank">
@@ -387,7 +391,7 @@
 
                 </div>
                 <!-- Portfolio item 2-->
-                <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="col-lg-4 col-sm-12 mb-4">
                     <div class="portfolio-item" style="border:solid; border-width:2px; border-color:black;">
                         <a class="portfolio-link" data-bs-toggle="" href="{% url 'home_app:atenea-gastronomica' %}"
                             target="_blank">
@@ -406,7 +410,7 @@
 
                 </div>
                 <!-- Portfolio item 3-->
-                <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="col-lg-4 col-sm-12 mb-4">
 
 
                     <div class="portfolio-item" style="border:solid; border-width:2px; border-color:black;">
@@ -429,7 +433,7 @@
             <!--segungo row de portafolio-->
             <div class="row   portafolio-derecha" id="derecha">
                 <!-- Portfolio item 4-->
-                <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="col-lg-4 col-sm-12 mb-4">
                     <div class="portfolio-item" style="border:solid;border-width:2px;border-color:black;">
                         <a class="portfolio-link" data-bs-toggle="" href="{% url 'home_app:la-fortuna-trip' %}"
                             target="_blank">
@@ -449,7 +453,7 @@
 
                 </div>
                 <!-- Portfolio item 5-->
-                <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="col-lg-4 col-sm-12 mb-4">
                     <div class="portfolio-item" style="border:solid;border-width:2px;border-color:black;">
                         <a class="portfolio-link" data-bs-toggle="" href="{% url 'home_app:de-mi-tierra' %}"
                             target="_blank">
@@ -468,7 +472,7 @@
 
                 </div>
                 <!-- Portfolio item 6-->
-                <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="col-lg-4 col-sm-12 mb-4">
                     <div class="portfolio-item" style="border:solid; border-width:2px; border-color:black;">
                         <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
                             <div class="portfolio-hover">
@@ -489,7 +493,7 @@
             <!--tercer row de presentacion de portafolio-->
             <div class="row portafolio-izquierda2" id="izquierda2">
                 <!-- Portfolio item 7-->
-                <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="col-lg-4 col-sm-12 mb-4">
 
                     <div class="portfolio-item" style="border:solid; border-width:2px; border-color:black;">
                         <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
@@ -508,7 +512,7 @@
                 </div>
 
                 <!-- Portfolio item 8-->
-                <div class="col-lg-4 col-sm-6 mb-4">
+                <div class="col-lg-4 col-sm-12 mb-4">
 
                     <div class="portfolio-item bg-white" style="border:solid; border-width:2px; border-color:black;">
                         <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
@@ -1413,7 +1417,7 @@
             scrollTrigger: {
                 trigger: '#icon-container-div', // El contenedor que activa la animación
                 start: "top 100%", // Inicia la animación cuando el contenedor esté en el centro de la pantalla
-                end: "bottom 80%", // Termina la animación cuando el contenedor salga del centro de la pantalla
+                end: "bottom 95%", // Termina la animación cuando el contenedor salga del centro de la pantalla
                 scrub: true // Sincroniza la animación con el scroll
             }
         });
@@ -1435,7 +1439,7 @@
             scrollTrigger: {
                 trigger: '#icon-container-div2', // El contenedor que activa la animación
                 start: "top 100%", // Inicia la animación cuando el contenedor esté en el centro de la pantalla
-                end: "bottom 80%", // Termina la animación cuando el contenedor salga del centro de la pantalla
+                end: "bottom 95%", // Termina la animación cuando el contenedor salga del centro de la pantalla
                 scrub: true // Sincroniza la animación con el scroll
             }
         });
@@ -1457,7 +1461,7 @@
             scrollTrigger: {
                 trigger: '#olvin-e-inaki', // El contenedor que activa la animación
                 start: "top 100%", // Inicia la animación cuando el contenedor esté en el centro de la pantalla
-                end: "bottom 100%", // Termina la animación cuando el contenedor salga del centro de la pantalla
+                end: "bottom 95%", // Termina la animación cuando el contenedor salga del centro de la pantalla
                 scrub: true, // Sincroniza la animación con el scroll
             }
         });
@@ -1477,7 +1481,7 @@
             scrollTrigger: {
                 trigger: '#olvin-e-inaki', // El contenedor que activa la animación
                 start: "top 100%", // Inicia la animación cuando el contenedor esté en el centro de la pantalla
-                end: "bottom 100%", // Termina la animación cuando el contenedor salga del centro de la pantalla
+                end: "bottom 95%", // Termina la animación cuando el contenedor salga del centro de la pantalla
                 scrub: true, // Sincroniza la animación con el scroll
             }
         });
@@ -1499,7 +1503,7 @@
             scrollTrigger: {
                 trigger: '#parrafo_abajo_inaki', // El contenedor que activa la animación
                 start: "top 100%", // Inicia la animación cuando el contenedor esté en el centro de la pantalla
-                end: "bottom 80%", // Termina la animación cuando el contenedor salga del centro de la pantalla
+                end: "bottom 95%", // Termina la animación cuando el contenedor salga del centro de la pantalla
                 scrub: true, // Sincroniza la animación con el scroll
                 opacity: 1,
             }
@@ -1523,7 +1527,7 @@
             stagger: 0, // Retrasar cada imagen un poco para un efecto de escalonamiento
             scrollTrigger: {
                 trigger: '#ecomerce', // El contenedor que activa la animación
-                start: "top 70%", // Inicia la animación cuando el contenedor esté en el centro de la pantalla
+                start: "top 100%", // Inicia la animación cuando el contenedor esté en el centro de la pantalla
                 end: "bottom 80%", // Termina la animación cuando el contenedor salga del centro de la pantalla
                 scrub: true, // Sincroniza la animación con el scroll
             }
@@ -1547,9 +1551,10 @@
             x: 0, // Desplazar las imágenes 200px a la derecha
             duration: 3, // Duración de la animación
             stagger: 0, // Retrasar cada imagen un poco para un efecto de escalonamiento
+            opacity: 1,
             scrollTrigger: {
                 trigger: '#izquierda', // El contenedor que activa la animación
-                start: "top 80%", // Inicia la animación cuando el contenedor esté en el centro de la pantalla
+                start: "top 100%", // Inicia la animación cuando el contenedor esté en el centro de la pantalla
                 end: "bottom 90%", // Termina la animación cuando el contenedor salga del centro de la pantalla
                 scrub: true // Sincroniza la animación con el scroll
             }
@@ -1568,11 +1573,12 @@
         // Crear la animación con GSAP y ScrollTrigger
         gsap.to(images8, {
             x: 0, // Desplazar las imágenes 200px a la derecha
-            duration: 3, // Duración de la animación
-            stagger: 0, // Retrasar cada imagen un poco para un efecto de escalonamiento
+            duration: 1, // Duración de la animación
+            stagger: 0,
+            opacity: 1, // Retrasar cada imagen un poco para un efecto de escalonamiento
             scrollTrigger: {
                 trigger: '#derecha', // El contenedor que activa la animación
-                start: "top 70%", // Inicia la animación cuando el contenedor esté en el centro de la pantalla
+                start: "top 100%", // Inicia la animación cuando el contenedor esté en el centro de la pantalla
                 end: "bottom 90%", // Termina la animación cuando el contenedor salga del centro de la pantalla
                 scrub: true // Sincroniza la animación con el scroll
             }
@@ -1593,9 +1599,10 @@
             x: 0, // Desplazar las imágenes 200px a la derecha
             duration: 3, // Duración de la animación
             stagger: 0, // Retrasar cada imagen un poco para un efecto de escalonamiento
+            opacity: 1,
             scrollTrigger: {
                 trigger: '#izquierda2', // El contenedor que activa la animación
-                start: "top 80%", // Inicia la animación cuando el contenedor esté en el centro de la pantalla
+                start: "top 100%", // Inicia la animación cuando el contenedor esté en el centro de la pantalla
                 end: "bottom 90%", // Termina la animación cuando el contenedor salga del centro de la pantalla
                 scrub: true // Sincroniza la animación con el scroll
             }
@@ -1619,7 +1626,7 @@
             stagger: 0, // Retrasar cada imagen un poco para un efecto de escalonamiento
             scrollTrigger: {
                 trigger: '#comentarios', // El contenedor que activa la animación
-                start: "top 70%", // Inicia la animación cuando el contenedor esté en el centro de la pantalla
+                start: "top 100%", // Inicia la animación cuando el contenedor esté en el centro de la pantalla
                 end: "bottom 80%", // Termina la animación cuando el contenedor salga del centro de la pantalla
                 scrub: true, // Sincroniza la animación con el scroll
             }
@@ -1641,8 +1648,8 @@
             stagger: 0, // Retrasar cada imagen un poco para un efecto de escalonamiento
             scrollTrigger: {
                 trigger: '#backgroud', // El contenedor que activa la animación
-                start: "top 70%", // Inicia la animación cuando el contenedor esté en el centro de la pantalla
-                end: "bottom 70%", // Termina la animación cuando el contenedor salga del centro de la pantalla
+                start: "top 100%", // Inicia la animación cuando el contenedor esté en el centro de la pantalla
+                end: "bottom 25%", // Termina la animación cuando el contenedor salga del centro de la pantalla
                 scrub: true, // Sincroniza la animación con el scroll
             }
         });
