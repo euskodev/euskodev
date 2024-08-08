@@ -39,8 +39,6 @@
     <!--Google Search Console-->
     <meta name="google-site-verification" content="Z5huUGyc1deP2ce9DgHlqWheIAB-kZt5-Ae9WK1rfeU" />
 
-
-
     <!--stilos-->
 
 
@@ -93,54 +91,14 @@
         .efecto-foto-blog {
             background-size: cover;
         }
-
         .efecto-foto-blog:hover {
             background-size: auto;
         }
-
-        .icon-image-izquierda {
-            transform: translateX(-5000px);
+        .icon-image-izquierda{
+            transform: translateX(-500px);
         }
-
-        .icon-image-izquierda2 {
-            transform: translateX(5000px);
-        }
-
-        .foto-olvin {
-            transform: translateX(-5000px);
-        }
-
-        .foto-inaki {
-            transform: translateX(5000px);
-        }
-
-        .parrafo_abajo_inaki {
-            transform: translateX(-8000px);
-            opacity: ;
-        }
-
-        .ecomerce {
-            opacity: 0;
-        }
-
-        .portafolio-izquierda {
-            transform: translateX(-5000px);
-        }
-
-        .portafolio-derecha {
-            transform: translateX(5000px);
-        }
-
-        .portafolio-izquierda2 {
-            transform: translateX(-5000px);
-        }
-
-        .comentarios {
-            opacity: 0;
-        }
-
-        .cambio-color {
-            background-color: green;
+        .icon-image-izquierda2{
+            transform: translateX(-500px);
         }
     </style>
 
@@ -176,7 +134,7 @@
         <div class="container">
             <a href="{% url 'home_app:home' %}">
                 <img class="p-0 m-0" style="height:30px;"
-                    src="{% static 'img/Logo-euskodev-gris-horizontal-rgb-001.png' %}">
+                src="{% static 'img/Logo-euskodev-gris-horizontal-rgb-001.png' %}">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -217,8 +175,7 @@
                             href="#" data-bs-toggle="dropdown" aria-expanded="false">{{ CURRENT_LANGUAGE }}</a>
                         <ul class="dropdown-menu">
                             {% for language in languages %}
-                            <li><a class="dropdown-item"
-                                    style="text-transform:uppercase; color:gray; text-decoration:none;"
+                            <li><a class="dropdown-item" style="text-transform:uppercase; color:gray; text-decoration:none;"
                                     href="/{{ language.code }}/{{ request.get_full_path|slice:'4:' }}">{{ language.code }}</a>
                             </li>
                             {% endfor %}
@@ -232,12 +189,11 @@
     {% if messages %}
     <div class="container-fluid text-center" style="background-color:#8cfaa5; position: relative; top: 20%;">
         {% for message in messages %}
-        <label {% if message.tags %} class="{{ message.tags }}" {% endif %}
-            style="font-size: 12px;">{{ message }}</label>
+        <label {% if message.tags %} class="{{ message.tags }}"{% endif %} style="font-size: 12px;">{{ message }}</label>
         {% endfor %}
     </div>
     {% endif %}
-
+    
 
     <!--fin de navbar-->
 
@@ -253,8 +209,9 @@
                 <div class="masthead-heading text-uppercase" style="text-shadow: 4px 2px 5px black; font-size:40px;">
                     {% trans "Desarrollo Web, APP<br> e Imagen Corporativa" %}</div>
                 <a class="btn btn-xl text-uppercase" style="background-color: #77E25B;" href="#services">
-
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-arrow-down" viewBox="0 0 16 16" style="color:black;">
                         <path fill-rule="evenodd"
                             d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1" />
@@ -274,7 +231,7 @@
                     {% trans '¡Conoce un poco de nuestros servicios!' %}</h3>
             </div>
             <div class="row text-center">
-                <div class="col-md-4 ecomerce" id="ecomerce">
+                <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fas fa-circle fa-stack-2x" style="color:#30C06F;"></i>
                         <i class="fas fa-shopping-cart fa-stack-1x fa-inverse" id="prueba1"></i>
@@ -286,7 +243,7 @@
                     </p>
                 </div>
 
-                <div class="col-md-4 ecomerce">
+                <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fas fa-circle fa-stack-2x" style="color:#30C06F;"></i>
                         <i class="fas fa-laptop fa-stack-1x fa-inverse" id="prueba1"></i>
@@ -299,7 +256,7 @@
 
                 </div>
 
-                <div class="col-md-4  ecomerce">
+                <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fas fa-circle fa-stack-2x" style="color:#30C06F;"></i>
                         <i class="fas fa-lock fa-stack-1x fa-inverse" id="prueba1"></i>
@@ -318,35 +275,31 @@
     <!--fin de services-->
 
     <!-- Blog-->
-    <section class="page-section cambio-color" id="services">
-        <div class="container" id="background">
+    <section class="page-section" id="services" style="background-color:#eee;">
+        <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase" style="text-shadow: 2px 2px 5px white;">
                     {% trans 'Blog' %}</h2>
-                <h3 class="section-subheading text-muted" style="text-shadow: 2px 2px 5px black;">
-                    <b>{% trans '¡Últimas publicaciones!' %}</b></h3>
+                <h3 class="section-subheading text-muted" style="text-shadow: 2px 2px 5px white;">
+                    {% trans '¡Últimas publicaciones!' %}</h3>
             </div>
             <div class="row text-center">
-
+                
                 {% for entradas_blog in entradas_blog %}
-
+                
                 <div class="col-md-4" style="">
-                    <a href="{% url 'home_app:blog-detail' entradas_blog.id %}" style="text-decoration: none;"
-                        class="w-100">
+                    <a href="{% url 'home_app:blog-detail' entradas_blog.id %}" style="text-decoration: none;" class="w-100">
                         <div class="w-100 text-start">
-                            <label class="" style="color:#bbb;">{{ entradas_blog.fecha_hora|date:"Y/m/d" }} <i>
-                                    {{ entradas_blog.autor }}</i></label>
+                            <label class="" style="color:#bbb;">{{ entradas_blog.fecha_hora|date:"Y/m/d" }} <i> {{ entradas_blog.autor }}</i></label>
                         </div>
-                        <div class="w-100 efecto-foto-blog" id="efecto-foto-blog"
-                            style="background-image: url('{{ entradas_blog.imagen.url }}'); height:300px; background-size: cover;">
-                        </div>
-                        <h5 class="text-dark p-2" style="text-shadow: 2px 2px 5px white;">{{ entradas_blog.titulo }}
-                            </h4>
+                    <div class="w-100 efecto-foto-blog" id="efecto-foto-blog" style="background-image: url('{{ entradas_blog.imagen.url }}'); height:300px; background-size: cover;">
+                    </div>
+                    <h5 class="text-dark p-2" style="text-shadow: 2px 2px 5px white;">{{ entradas_blog.titulo }}</h4>
 
-                            <p class="text-muted" style="text-align:left;"> </p>
+                    <p class="text-muted" style="text-align:left;">  </p>
                     </a>
                 </div>
-
+                
                 {% endfor %}
 
             </div>
@@ -367,7 +320,7 @@
             </div>
 
             <!--primer row de portafolio-->
-            <div class="row  portafolio-izquierda " id="izquierda">
+            <div class="row">
                 <!-- Portfolio item 1-->
                 <div class="col-lg-4 col-sm-6 mb-4">
                     <div class="portfolio-item" style="border:solid; border-width:2px; border-color:black;">
@@ -376,10 +329,9 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <div class=""
-                                style="height:250px; background-image: url('{% static "portfolio/sun-and-surf/img/tablas4.jpg" %}'); background-size:cover;">
+                            <div class="" style="height:250px; background-image: url('{% static "portfolio/sun-and-surf/img/tablas4.jpg" %}'); background-size:cover;">
                             </div>
-
+                            
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">Sun And Surf</div>
@@ -396,8 +348,7 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <div class=""
-                                style="height:250px; background-image: url('{% static "portfolio/atenea-gastronomica/assets/img/portada.png" %}'); background-size:cover;">
+                            <div class="" style="height:250px; background-image: url('{% static "portfolio/atenea-gastronomica/assets/img/portada.png" %}'); background-size:cover;">
                             </div>
                         </a>
                         <div class="portfolio-caption">
@@ -417,8 +368,7 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <div class=""
-                                style="height:250px; background-image: url('{% static "portfolio/la-maison-du-bordeaux/assets/img/chocolates-06.jpg" %}'); background-size:cover;">
+                            <div class="" style="height:250px; background-image: url('{% static "portfolio/la-maison-du-bordeaux/assets/img/chocolates-06.jpg" %}'); background-size:cover;">
                             </div>
                         </a>
                         <div class="portfolio-caption">
@@ -428,8 +378,8 @@
                     </div>
                 </div>
             </div>
-            <!--segungo row de portafolio-->
-            <div class="row   portafolio-derecha" id="derecha">
+             <!--segungo row de portafolio-->
+             <div class="row">
                 <!-- Portfolio item 4-->
                 <div class="col-lg-4 col-sm-6 mb-4">
                     <div class="portfolio-item" style="border:solid;border-width:2px;border-color:black;">
@@ -438,10 +388,9 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <div class=""
-                                style="height:250px; background-image: url('{% static "portfolio/la-fortuna-trip/assets/img/inicio/la-fortuna-downtown-town-city-buildings-arenal-volcano-costa-rica.jpg" %}'); background-size:cover;">
+                            <div class="" style="height:250px; background-image: url('{% static "portfolio/la-fortuna-trip/assets/img/inicio/la-fortuna-downtown-town-city-buildings-arenal-volcano-costa-rica.jpg" %}'); background-size:cover;">
                             </div>
-
+                            
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">La Fortuna Trip</div>
@@ -458,8 +407,7 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <div class=""
-                                style="height:250px; background-image: url('{% static "portfolio/de-mi-tierra/assets/img/hero-bg.jpg" %}'); background-size:cover;">
+                            <div class="" style="height:250px; background-image: url('{% static "portfolio/de-mi-tierra/assets/img/hero-bg.jpg" %}'); background-size:cover;">
                             </div>
                         </a>
                         <div class="portfolio-caption">
@@ -476,9 +424,8 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <div class=""
-                                style="height:250px; background-image: url('{% static "assets/img/portfolio/portafolio2.png" %}'); background-size:cover; background-position:center;background-size:130%;">
-                            </div>
+                            <div class="" style="height:250px; background-image: url('{% static "assets/img/portfolio/portafolio2.png" %}'); background-size:cover; background-position:center;background-size:130%;">
+                                </div>
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">Euskodev</div>
@@ -489,7 +436,7 @@
                 </div>
             </div>
             <!--tercer row de presentacion de portafolio-->
-            <div class="row portafolio-izquierda2" id="izquierda2">
+            <div class="row">
                 <!-- Portfolio item 7-->
                 <div class="col-lg-4 col-sm-6 mb-4">
 
@@ -498,10 +445,8 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <div class=""
-                                style="height:250px; background-image: url('{% static "assets/img/portfolio/cocina.jpg" %}'); background-size:cover;">
-                            </div>
-                        </a>
+                            <div class="" style="height:250px; background-image: url('{% static "assets/img/portfolio/cocina.jpg" %}'); background-size:cover;">
+                            </div>    </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">Gastrogune</div>
                             <div class="portfolio-caption-subheading text-muted">Web + Design + App</div>
@@ -518,9 +463,8 @@
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
                             <!-- El tipo de background-image de este div es diferente al resto-->
-                            <div class=""
-                                style="height:250px; background-image: url('{% static "assets/img/portfolio/testosakidetza.png" %}'); background-size:200px; background-position: center; background-repeat:no-repeat; background-color:#eeeeee;">
-                            </div>
+                            <div class="" style="height:250px; background-image: url('{% static "assets/img/portfolio/testosakidetza.png" %}'); background-size:200px; background-position: center; background-repeat:no-repeat; background-color:#eeeeee;">
+                            </div> 
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">20.000+</div>
@@ -528,7 +472,7 @@
                         </div>
                     </div>
                 </div>
-
+                
             </div>
 
             <!--fin del segundo row de la portada de portafolio duplicado-->
@@ -553,8 +497,7 @@
             <ul class="timeline">
                 <li>
                     <div class="timeline-image"><img class="rounded-circle img-fluid simbolEffect"
-                            src="{% static 'assets/img/about/nueva.jpg' %}" alt="remodelacion y creacion de Webs" />
-                    </div>
+                            src="{% static 'assets/img/about/nueva.jpg' %}" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                             <!--<h4>2009-2011</h4>-->
@@ -573,8 +516,7 @@
                 </li>
                 <li class="timeline-inverted mb-5">
                     <div class="timeline-image"><img class="rounded-circle img-fluid simbolEffect"
-                            src="{% static 'assets/img/about/seguridad.jpg' %}"
-                            alt="hosting y domions para webs y proyectos, donostia, pais vasco, pais vasko" /></div>
+                            src="{% static 'assets/img/about/seguridad.jpg' %}" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                             <h4>{% trans 'Dominio, hosting y seguridad' %}</h4>
@@ -596,9 +538,7 @@
                 </li>
                 <li>
                     <div class="timeline-image"><img class="rounded-circle img-fluid simbolEffect"
-                            src="{% static 'assets/img/about/responsive.png' %}"
-                            alt="diseño de webs responsive adaptado a las deferentes pantallas de los dispositivos" />
-                    </div>
+                            src="{% static 'assets/img/about/responsive.png' %}" alt="..." /></div>
                     <div class="timeline-panel mb-5">
                         <div class="timeline-heading">
                             <!--<h4>December 2015</h4>-->
@@ -615,8 +555,7 @@
                 </li>
                 <li class="timeline-inverted">
                     <div class="timeline-image"><img class="rounded-circle img-fluid simbolEffect"
-                            src="{% static 'assets/img/about/tienda2.jpg' %}"
-                            alt="ecomerce-tu tienda online, ten una presencia en linea" /></div>
+                            src="{% static 'assets/img/about/tienda2.jpg' %}" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                             <!--<h4>July 2020</h4>-->
@@ -633,8 +572,7 @@
 
                 <li>
                     <div class="timeline-image"><img class="rounded-circle img-fluid simbolEffect"
-                            src="{% static 'assets/img/about/woman.png' %}"
-                            alt="diseño grafico desde cero, remodelacion" /></div>
+                            src="{% static 'assets/img/about/woman.png' %}" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                             <!--<h4>2009-2011</h4>-->
@@ -656,9 +594,7 @@
 
                 <li class="timeline-inverted">
                     <div class="timeline-image"><img class="rounded-circle img-fluid simbolEffect"
-                            src="{% static 'assets/img/about/seo.jpg' %}"
-                            alt="seo posocionamiento de webs, has que tu web se vea en los primeros resultados" />
-                    </div>
+                            src="{% static 'assets/img/about/seo.jpg' %}" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                             <!-- <h4>July 2020</h4>-->
@@ -699,12 +635,11 @@
             {% trans 'opiniones' %}</h1>
 
 
-        <div class="row comentarios">
+        <div class="row">
 
-            <div class="col-lg-4 text-center ">
+            <div class="col-lg-4 text-center">
                 <img class="rounded-circle facephoto" style="" src="{% static 'assets/img/opiniones/primera.jpeg' %}"
-                    alt="diseñamos webs, que ayuden a las personas a cercer como negocio o empresa" width="140"
-                    height="140">
+                    alt="" width="140" height="140">
                 <h2 style="margin-top: 3%; margin-bottom: 3%;">Mertxe</h2>
                 <p style="text-align:left;">
                     {% trans 'En Euskodev me diseñaron una web perfecta para mi negocio. Me escucharon con atención y entendieron mis necesidades a la perfección.' %}
@@ -717,7 +652,7 @@
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4 text-center">
                 <img class="rounded-circle facephoto" style="" src="{% static 'assets/img/opiniones/segundaa.jpeg' %}"
-                    alt="diseño web donostia, oiartzun" width="140" height="140">
+                    alt="" width="140" height="140">
                 <h2 style="margin-top: 3%; margin-bottom: 3%;">Jose Luis</h2>
                 <p style="text-align:left;">
                     {% trans 'Buscaba una web para mi negocio y no sabía por dónde empezar. En Euskodev me lo pusieron facilísimo. Desde el principio me escucharon y entendieron lo que quería. Me hicieron un diseño chulísimo y que funciona a la perfección, ¡hasta me subieron en el buscador! Son majísimos y profesionales.' %}
@@ -727,9 +662,9 @@
 
 
             </div><!-- /.col-lg-4 -->
-            <div class="col-lg-4 text-center" id="comentarios">
+            <div class="col-lg-4 text-center">
                 <img class="rounded-circle facephoto" style="" src="{% static 'assets/img/opiniones/tercera.jpeg' %}"
-                    alt="nicargua, costa rica, webs, app, responsives" width="140" height="140">
+                    alt="" width="140" height="140">
                 <h2 style="margin-top: 3%; margin-bottom: 3%;">Luis Diego</h2>
                 <p style="text-align:left;">
                     {% trans 'En Euskodev me entendieron a la perfección. Desde el principio supieron lo que buscaba para mi negocio online. Me hicieron una web preciosa y que funciona de maravilla. Además, me ayudaron a que me encontraran en Google, ¡estoy encantado! Son un equipo súper atento y profesional.' %}
@@ -753,15 +688,15 @@
 
     <section class="page-section" id="team" style="background-color: #ccc">
         <div class="container">
-            <div class="text-center"">
-                <h2 class=" section-heading text-uppercase">{% trans 'Sobre nosotros' %}</h2>
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">{% trans 'Sobre nosotros' %}</h2>
                 <h3 class="section-subheading text-muted">{% trans 'Developers Full Stack.' %}</h3>
             </div>
             <div class="row">
-                <div class="col-lg-6 foto-olvin">
-                    <div class="team-member" id="olvin-e-inaki">
-                        <img class="mx-auto rounded-circle facephoto" src="{% static 'assets/img/team/daniel.jpg' %}"
-                            alt="nicaragua, costa rica, internet, desarrollo web, software , developer full stack donostia y todo españa y pais vasco" />
+                <div class="col-lg-6">
+                    <div class="team-member">
+                        <img class="mx-auto rounded-circle facephoto" style=""
+                            src="{% static 'assets/img/team/daniel.jpg' %}" alt="..." />
                         <h4>Olvin Duarte</h4>
                         <p class="text-muted">{% trans 'Full Stack Developer & Photographer' %}</p>
                         <!-- <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Twitter Profile"><i
@@ -793,10 +728,10 @@
 
 
 
-                <div class="col-lg-6  foto-inaki">
-                    <div class="team-member" id="olvin-e-inaki">
-                        <img class="mx-auto rounded-circle facephoto" src="{% static 'assets/img/team/retegi.jpg' %}"
-                            alt="españa desarrollo web y en todo el mundo, developer full stack" />
+                <div class="col-lg-6">
+                    <div class="team-member">
+                        <img class="mx-auto rounded-circle facephoto" style=""
+                            src="{% static 'assets/img/team/retegi.jpg' %}" alt="..." />
                         <h4>Iñaki Retegi</h4>
                         <p class="text-muted">{% trans 'Full Stack Developer & Designer' %}</p>
                         <!-- <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Twitter Profile"><i
@@ -809,8 +744,8 @@
                     </div>
                 </div>
             </div>
-            <div class="row  parrafo_abajo_inaki">
-                <div class="col-lg-8 mx-auto text-center" id="parrafo_abajo_inaki">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
                     <p class="large text-muted">
                         {% trans 'Euskodev: Donde la tecnología se convierte en realidad Si está buscando un equipo de programadores digitales confiables y experimentados que puedan ayudarlo a alcanzar sus objetivos comerciales, no busque más allá de Euskodev. Con su enfoque personalizado y su dedicación a la calidad, Euskodev le brindará las soluciones digitales que necesita para prosperar en el mundo digital actual.' %}
                     </p>
@@ -830,17 +765,16 @@
     <div class="container mt-5" id="icon-container-div">
         <div class="row" style="opacity:100%;">
             <div class="col-lg-3 col-md-12 text-center mt-3">
-                <img class="w-25 icon-image-izquierda" id="icon-image"
-                    src="{% static 'assets/img/logos/python.png' %}" />
+                <img class="w-25 icon-image-izquierda" id="icon-image" src="{% static 'assets/img/logos/python.png' %}" />
             </div>
             <div class="col-lg-3 col-md-12 text-center mt-3 icon_image_izquierda" style="opacity:90%;">
                 <img class="w-25 icon-image-izquierda" src="{% static 'assets/img/logos/artificial.avif' %}" />
             </div>
             <div class="col-lg-3 col-md-12 text-center mt-3" style="opacity:70%;">
-                <img class="w-25 icon-image-izquierda" src="{% static 'assets/img/logos/django.png' %}" />
+                <img class="w-25" src="{% static 'assets/img/logos/django.png' %}" />
             </div>
             <div class="col-lg-3 col-md-12  text-center mt-3" style="opacity:80%; ">
-                <img class="w-25 icon-image-izquierda" src="{% static 'assets/img/logos/bootstrap.png' %}" />
+                <img class="w-25" src="{% static 'assets/img/logos/bootstrap.png' %}" />
             </div>
         </div>
     </div>
@@ -855,22 +789,22 @@
                 <img class="w-25 icon-image-izquierda2" src="{% static 'assets/img/logos/github.jpg' %}" />
             </div>
             <div class="col-lg-3 col-sm-4 text-center mt-3" style="opacity:100%;">
-                <a href="#!"><img class="w-25 icon-image-izquierda2" src="{% static 'assets/img/logos/linux.jpeg' %}"
-                        alt="..." aria-label="artificial Logo" /></a>
+                <a href="#!"><img class="w-25 icon-image-izquierda2" src="{% static 'assets/img/logos/linux.jpeg' %}" alt="..."
+                        aria-label="artificial Logo" /></a>
 
             </div>
             <div class="col-md-3 col-sm-6 text-center mt-3" style="opacity:70%;">
-                <a href="#!"><img class="w-25  icon-image-izquierda2" src="{% static 'assets/img/logos/sql.webp' %}"
-                        alt="..." aria-label="django Logo" /></a>
+                <a href="#!"><img class="w-25" src="{% static 'assets/img/logos/sql.webp' %}" alt="..."
+                        aria-label="django Logo" /></a>
             </div>
             <div class="col-md-3 col-sm-6 text-center mt-3" style="opacity:80%; ">
-                <a href="#!"><img class="w-25 icon-image-izquierda2" src="{% static 'assets/img/logos/triologo.webp' %}"
-                        alt="..." aria-label="bootstrap Logo" /></a>
+                <a href="#!"><img class="w-25" src="{% static 'assets/img/logos/triologo.webp' %}" alt="..."
+                        aria-label="bootstrap Logo" /></a>
 
             </div>
         </div>
     </div>
-
+    </div>
 
 
     <!--fin de iconos de aplicasiones usadas ppara desarrollar la web-->
@@ -889,28 +823,25 @@
                 <h3 class="section-subheading " style="color: white; margin-bottom: 1%;">{% trans 'Sin Fronteras.' %}
                 </h3>
                 <h3 class="section-heading text-uppercase mb-5">+34 747 47 88 42 <img
-                        src="{% static 'assets/img/whatsapp.png' %}"
-                        alt="domionio de difrentes aplicasiones y herramientas de desarrollo web y diseño grafico en todo pais vasco, donostia san sebastian, bilbao,la rioja,oiartzun,francia, londres, estados unidos,y todo el mundo "
-                        style="width: 40px;"></h3>
+                        src="{% static 'assets/img/whatsapp.png' %}" alt="" style="width: 40px;"></h3>
 
 
 
-                <form id="contactForm" data-sb-form-api-token="API_TOKEN" method="post"
-                    action="{% url 'home_app:formulario_contactar' %}">
+                <form id="contactForm" data-sb-form-api-token="API_TOKEN" method="post" action="{% url 'home_app:formulario_contactar' %}">
                     {% csrf_token %}
                     <div class="row align-items-stretch mb-5">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <!-- Name input-->
-                                <input class="form-control" id="name" name="name" type="text"
-                                    placeholder="{% trans 'Nombre' %}*" data-sb-validations="required" />
+                                <input class="form-control" id="name" name="name" type="text" placeholder="{% trans 'Nombre' %}*"
+                                    data-sb-validations="required" />
                                 <div class="invalid-feedback" data-sb-feedback="name:required">
                                     {% trans 'A name is required.' %}</div>
                             </div>
                             <div class="form-group">
                                 <!-- Email address input-->
-                                <input class="form-control" id="email" name="email" type="email"
-                                    placeholder="{% trans 'Email' %} *" data-sb-validations="required,email" />
+                                <input class="form-control" id="email" name="email" type="email" placeholder="{% trans 'Email' %} *"
+                                    data-sb-validations="required,email" />
                                 <div class="invalid-feedback" data-sb-feedback="email:required">
                                     {% trans 'An email is required' %}.</div>
                                 <div class="invalid-feedback" data-sb-feedback="email:email">
@@ -918,8 +849,8 @@
                             </div>
                             <div class="form-group mb-md-0">
                                 <!-- Phone number input-->
-                                <input class="form-control" id="phone" name="phone" type="tel"
-                                    placeholder="{% trans 'teléfono' %} *" data-sb-validations="required" />
+                                <input class="form-control" id="phone" name="phone" type="tel" placeholder="{% trans 'teléfono' %} *"
+                                    data-sb-validations="required" />
                                 <div class="invalid-feedback" data-sb-feedback="phone:required">
                                     {% trans 'A phone number is required.' %}
                                 </div>
@@ -928,8 +859,8 @@
                         <div class="col-md-6">
                             <div class="form-group form-group-textarea mb-md-0">
                                 <!-- Message input-->
-                                <textarea class="form-control" id="message" name="message"
-                                    placeholder="{% trans 'Mensaje' %}*" data-sb-validations="required"></textarea>
+                                <textarea class="form-control" id="message" name="message" placeholder="{% trans 'Mensaje' %}*"
+                                    data-sb-validations="required"></textarea>
                                 <div class="invalid-feedback" data-sb-feedback="message:required">
                                     {% trans 'A message is required.' %}
                                 </div>
@@ -953,8 +884,8 @@
                         <div class="text-center text-danger mb-3">{% trans 'Error sending message!' %}</div>
                     </div>
                     <!-- Submit Button-->
-                    <div class="text-center"><button class="btn btn-xl text-uppercase text-white" id="s" type="submit"
-                            style="background-color: #30C06F">{% trans 'Enviar' %}</button></div>
+                    <div class="text-center"><button class="btn btn-xl text-uppercase text-white" id="s"
+                            type="submit" style="background-color: #30C06F">{% trans 'Enviar' %}</button></div>
                 </form>
 
 
@@ -1053,8 +984,7 @@
                                 <p class="item-intro text-muted">
                                     {% trans 'Facilitamos Vuestro Aprendizaje' %}</p>
                                 <img class="img-fluid d-block mx-auto"
-                                    src="{% static 'assets/img/portfolio/testosakidetza.png' %}"
-                                    alt="desarrollo web, y creacion de base de datos- django, python, css, html, javascript, github" />
+                                    src="{% static 'assets/img/portfolio/testosakidetza.png' %}" alt="..." />
                                 <p>TESTOSAKIDETZA
                                     {% trans ' es tu portal ideal para prepararte con éxito. Esta web te ofrece una amplia variedad de test para diferentes puestos de trabajo en el ámbito de la salud, la educación, la administración y otros sectores.' %}
                                 </p>
@@ -1089,9 +1019,7 @@
     <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div><img src="{% static 'assets/img/portafolio/portafolio2.png' %}"
-                        alt="euskodev desarrollo web, desarrollo de software, mantenimiento de web, rremodelacion, creacion desde cero, creacion de aplicasiones web, y aplicasiones moviles" />
-                </div>
+                <div><img src="{% static 'assets/img/portafolio/portafolio2.png' %}" alt="" /></div>
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
@@ -1100,8 +1028,7 @@
                                 <h2 class="text-uppercase">{% trans 'Euskodev' %}</h2>
                                 <p class="item-intro text-muted">{% trans 'Desarrollo de software' %}</p>
                                 <img class="img-fluid d-block mx-auto"
-                                    src="{% static 'assets/img/portfolio/portafolio2.png' %}"
-                                    alt="creacoin de plataformas de reservacion para hoteles restaurantes y todo tipo de trabajos webs" />
+                                    src="{% static 'assets/img/portfolio/portafolio2.png' %}" alt="..." />
                                 <p> {% trans 'Euskodev: Su aliado en el desarrollo de software <br> Euskodev, un equipo de desarrolladores de software en el País Vasco. especializado en la creación de soluciones digitales a medida, para empresas de todos los tamaños, desde pequeñas startups hasta grandes corporaciones!' %}
                                 </p>
                                 <ul class="list-inline">
@@ -1390,16 +1317,9 @@
         var marker3 = L.marker([9.928779589424872, -84.0906867099021]).addTo(map3);
     </script>
 
-    <!--estos son los códigos para que funcione la librería de gsap-->
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-
-    <!--aca terminan los códigos de la librería de gsap-->
-
-    <!--aca inician los efectos de gsap iniciando por los cuatro primero iconos del apartado de iconos dod de arriba dos de abajo des lado izquierdo-->
-
     <script>
         // Registrar el plugin ScrollTrigger
         gsap.registerPlugin(ScrollTrigger);
@@ -1410,21 +1330,16 @@
         // Crear la animación con GSAP y ScrollTrigger
         gsap.to(images, {
             x: 0, // Desplazar las imágenes 200px a la derecha
-            duration: 20, // Duración de la animación
+            duration: 1, // Duración de la animación
             stagger: 0, // Retrasar cada imagen un poco para un efecto de escalonamiento
             scrollTrigger: {
                 trigger: '#icon-container-div', // El contenedor que activa la animación
-                start: "top 100%", // Inicia la animación cuando el contenedor esté en el centro de la pantalla
-                end: "bottom 80%", // Termina la animación cuando el contenedor salga del centro de la pantalla
+                start: "top 80%", // Inicia la animación cuando el contenedor esté en el centro de la pantalla
+                end: "bottom 20%", // Termina la animación cuando el contenedor salga del centro de la pantalla
                 scrub: true // Sincroniza la animación con el scroll
             }
         });
     </script>
-
-    <!--aca terminan los primero efectos de el partado de iconos -->
-
-    <!--aca inicia el segundo apartado de los efectos de el apartado de iconos cuatro de arriba y cuatro de abajo del lado derecho-->
-
     <script>
         // Seleccionar todas las imágenes dentro del tercer div usando ID
         const images2 = document.querySelectorAll('.icon-image-izquierda2');
@@ -1436,219 +1351,13 @@
             stagger: 0, // Retrasar cada imagen un poco para un efecto de escalonamiento
             scrollTrigger: {
                 trigger: '#icon-container-div2', // El contenedor que activa la animación
-                start: "top 100%", // Inicia la animación cuando el contenedor esté en el centro de la pantalla
-                end: "bottom 80%", // Termina la animación cuando el contenedor salga del centro de la pantalla
+                start: "top 30%", // Inicia la animación cuando el contenedor esté en el centro de la pantalla
+                end: "bottom 20%", // Termina la animación cuando el contenedor salga del centro de la pantalla
                 scrub: true // Sincroniza la animación con el scroll
             }
         });
     </script>
 
-    <!--aca termina el apartado de efectos de los iconos de lado derecho-->
-
-    <!--aca inician los efectos de las fotos en el apartado de sobre nosotros esta foto es la de olvin-->
-
-    <script>
-        // Seleccionar todas las imágenes dentro del tercer div usando ID
-        const images3 = document.querySelectorAll('.foto-olvin');
-
-        // Crear la animación con GSAP y ScrollTrigger
-        gsap.to(images3, {
-            x: 0, // Desplazar las imágenes 200px a la derecha
-            duration: 3, // Duración de la animación
-            stagger: 0, // Retrasar cada imagen un poco para un efecto de escalonamiento
-            scrollTrigger: {
-                trigger: '#olvin-e-inaki', // El contenedor que activa la animación
-                start: "top 100%", // Inicia la animación cuando el contenedor esté en el centro de la pantalla
-                end: "bottom 100%", // Termina la animación cuando el contenedor salga del centro de la pantalla
-                scrub: true, // Sincroniza la animación con el scroll
-            }
-        });
-    </script>
-
-    <!--aca terminan los efectos en foto de olvin y inician los efectos de la foto de iñaki-->
-
-    <script>
-        // Seleccionar todas las imágenes dentro del tercer div usando ID
-        const images4 = document.querySelectorAll('.foto-inaki');
-
-        // Crear la animación con GSAP y ScrollTrigger
-        gsap.to(images4, {
-            x: 0, // Desplazar las imágenes 200px a la derecha
-            duration: 3, // Duración de la animación
-            stagger: 0, // Retrasar cada imagen un poco para un efecto de escalonamiento
-            scrollTrigger: {
-                trigger: '#olvin-e-inaki', // El contenedor que activa la animación
-                start: "top 100%", // Inicia la animación cuando el contenedor esté en el centro de la pantalla
-                end: "bottom 100%", // Termina la animación cuando el contenedor salga del centro de la pantalla
-                scrub: true, // Sincroniza la animación con el scroll
-            }
-        });
-    </script>
-
-    <!--aca terminan ñlos efectos de la foto de inaki-->
-
-    <!--aca inician los efectos en el parrado de sobre nosotros-->
-
-    <script>
-        // Seleccionar todas las imágenes dentro del tercer div usando ID
-        const images5 = document.querySelectorAll('.parrafo_abajo_inaki');
-
-        // Crear la animación con GSAP y ScrollTrigger
-        gsap.to(images5, {
-            x: 0, // Desplazar las imágenes 200px a la derecha
-            duration: 1, // Duración de la animación
-            stagger: 0, // Retrasar cada imagen un poco para un efecto de escalonamiento
-            scrollTrigger: {
-                trigger: '#parrafo_abajo_inaki', // El contenedor que activa la animación
-                start: "top 100%", // Inicia la animación cuando el contenedor esté en el centro de la pantalla
-                end: "bottom 80%", // Termina la animación cuando el contenedor salga del centro de la pantalla
-                scrub: true, // Sincroniza la animación con el scroll
-                opacity: 1,
-            }
-        });
-    </script>
-
-    <!--aca terminan los efectos en el apartado del parrafo en el apartado sobre nosotros-->
-
-    <!--aca inician los efectos de gsap en eel apartado sobre los sercicios que ofrecemos abajo de la foto de perfil-->
-
-    <script>
-        // Seleccionar todas las imágenes dentro del tercer div usando ID
-        const images6 = document.querySelectorAll('.ecomerce');
-
-        // Crear la animación con GSAP y ScrollTrigger
-        gsap.to(images6, {
-
-            opacity: 1,
-            x: 0, // Desplazar las imágenes 200px a la derecha
-            duration: 2, // Duración de la animación
-            stagger: 0, // Retrasar cada imagen un poco para un efecto de escalonamiento
-            scrollTrigger: {
-                trigger: '#ecomerce', // El contenedor que activa la animación
-                start: "top 70%", // Inicia la animación cuando el contenedor esté en el centro de la pantalla
-                end: "bottom 80%", // Termina la animación cuando el contenedor salga del centro de la pantalla
-                scrub: true, // Sincroniza la animación con el scroll
-            }
-        });
-    </script>
-
-    <!--aca terminan los efectos del apartado de los servicios que ofrecemos abajo del la imagen de inicio-->
-
-    <!--aca inician los efectos para la parte de los portafolios-->
-
-    <!--movimiento a la izquierda-->
-    <script>
-        // Registrar el plugin ScrollTrigger
-        gsap.registerPlugin(ScrollTrigger);
-
-        // Seleccionar todas las imágenes dentro del tercer div usando ID
-        const images7 = document.querySelectorAll('.portafolio-izquierda');
-
-        // Crear la animación con GSAP y ScrollTrigger
-        gsap.to(images7, {
-            x: 0, // Desplazar las imágenes 200px a la derecha
-            duration: 3, // Duración de la animación
-            stagger: 0, // Retrasar cada imagen un poco para un efecto de escalonamiento
-            scrollTrigger: {
-                trigger: '#izquierda', // El contenedor que activa la animación
-                start: "top 80%", // Inicia la animación cuando el contenedor esté en el centro de la pantalla
-                end: "bottom 90%", // Termina la animación cuando el contenedor salga del centro de la pantalla
-                scrub: true // Sincroniza la animación con el scroll
-            }
-        });
-    </script>
-
-    <!--mpovimiento hacia la derecha-->
-
-    <script>
-        // Registrar el plugin ScrollTrigger
-        gsap.registerPlugin(ScrollTrigger);
-
-        // Seleccionar todas las imágenes dentro del tercer div usando ID
-        const images8 = document.querySelectorAll('.portafolio-derecha');
-
-        // Crear la animación con GSAP y ScrollTrigger
-        gsap.to(images8, {
-            x: 0, // Desplazar las imágenes 200px a la derecha
-            duration: 3, // Duración de la animación
-            stagger: 0, // Retrasar cada imagen un poco para un efecto de escalonamiento
-            scrollTrigger: {
-                trigger: '#derecha', // El contenedor que activa la animación
-                start: "top 70%", // Inicia la animación cuando el contenedor esté en el centro de la pantalla
-                end: "bottom 90%", // Termina la animación cuando el contenedor salga del centro de la pantalla
-                scrub: true // Sincroniza la animación con el scroll
-            }
-        });
-    </script>
-
-    <!--movimiento hacia la izquierda-->
-
-    <script>
-        // Registrar el plugin ScrollTrigger
-        gsap.registerPlugin(ScrollTrigger);
-
-        // Seleccionar todas las imágenes dentro del tercer div usando ID
-        const images9 = document.querySelectorAll('.portafolio-izquierda2');
-
-        // Crear la animación con GSAP y ScrollTrigger
-        gsap.to(images9, {
-            x: 0, // Desplazar las imágenes 200px a la derecha
-            duration: 3, // Duración de la animación
-            stagger: 0, // Retrasar cada imagen un poco para un efecto de escalonamiento
-            scrollTrigger: {
-                trigger: '#izquierda2', // El contenedor que activa la animación
-                start: "top 80%", // Inicia la animación cuando el contenedor esté en el centro de la pantalla
-                end: "bottom 90%", // Termina la animación cuando el contenedor salga del centro de la pantalla
-                scrub: true // Sincroniza la animación con el scroll
-            }
-        });
-    </script>
-
-    <!--fin de los efectos en el aparatado de portafiolios-->
-
-    <!--aca inician los efectos para el apartado de coemntarios-->
-
-    <script>
-        // Seleccionar todas las imágenes dentro del tercer div usando ID
-        const images10 = document.querySelectorAll('.comentarios');
-
-        // Crear la animación con GSAP y ScrollTrigger
-        gsap.to(images10, {
-
-            opacity: 1,
-            x: 0, // Desplazar las imágenes 200px a la derecha
-            duration: 2, // Duración de la animación
-            stagger: 0, // Retrasar cada imagen un poco para un efecto de escalonamiento
-            scrollTrigger: {
-                trigger: '#comentarios', // El contenedor que activa la animación
-                start: "top 70%", // Inicia la animación cuando el contenedor esté en el centro de la pantalla
-                end: "bottom 80%", // Termina la animación cuando el contenedor salga del centro de la pantalla
-                scrub: true, // Sincroniza la animación con el scroll
-            }
-        });
-    </script>
-
-    <!--aca terminan los efectos para el apartadode comentarios-->
-
-
-    <script>
-        // Seleccionar todas las imágenes dentro del tercer div usando ID
-        const images11 = document.querySelectorAll('.cambio-color');
-
-        // Crear la animación con GSAP y ScrollTrigger
-        gsap.to(images11, {
-            // Desplazar las imágenes 200px a la derecha
-            backgroundColor: "blue",
-            duration: 2, // Duración de la animación
-            stagger: 0, // Retrasar cada imagen un poco para un efecto de escalonamiento
-            scrollTrigger: {
-                trigger: '#backgroud', // El contenedor que activa la animación
-                start: "top 70%", // Inicia la animación cuando el contenedor esté en el centro de la pantalla
-                end: "bottom 70%", // Termina la animación cuando el contenedor salga del centro de la pantalla
-                scrub: true, // Sincroniza la animación con el scroll
-            }
-        });
-    </script>
 
 
 </body>
