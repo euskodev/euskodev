@@ -36,7 +36,8 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
 
-
+    <!--Google Search Console-->
+    <meta name="google-site-verification" content="Z5huUGyc1deP2ce9DgHlqWheIAB-kZt5-Ae9WK1rfeU" />
 
     <!--stilos-->
 
@@ -92,6 +93,12 @@
         }
         .efecto-foto-blog:hover {
             background-size: auto;
+        }
+        .icon-image-izquierda{
+            transform: translateX(-500px);
+        }
+        .icon-image-izquierda2{
+            transform: translateX(-500px);
         }
     </style>
 
@@ -755,13 +762,13 @@
 
 
 
-    <div class="container mt-5">
+    <div class="container mt-5" id="icon-container-div">
         <div class="row" style="opacity:100%;">
             <div class="col-lg-3 col-md-12 text-center mt-3">
-                <img class="w-25" src="{% static 'assets/img/logos/python.png' %}" />
+                <img class="w-25 icon-image-izquierda" id="icon-image" src="{% static 'assets/img/logos/python.png' %}" />
             </div>
-            <div class="col-lg-3 col-md-12 text-center mt-3" style="opacity:90%;">
-                <img class="w-25 " src="{% static 'assets/img/logos/artificial.avif' %}" />
+            <div class="col-lg-3 col-md-12 text-center mt-3 icon_image_izquierda" style="opacity:90%;">
+                <img class="w-25 icon-image-izquierda" src="{% static 'assets/img/logos/artificial.avif' %}" />
             </div>
             <div class="col-lg-3 col-md-12 text-center mt-3" style="opacity:70%;">
                 <img class="w-25" src="{% static 'assets/img/logos/django.png' %}" />
@@ -776,13 +783,13 @@
 
 
 
-    <div class="container mb-5">
+    <div class="container mb-5" id="icon-container-div2">
         <div class="row" style="opacity:100%;">
             <div class="col-lg-3 col-sm-6 text-center mt-3">
-                <img class="w-25" src="{% static 'assets/img/logos/github.jpg' %}" />
+                <img class="w-25 icon-image-izquierda2" src="{% static 'assets/img/logos/github.jpg' %}" />
             </div>
             <div class="col-lg-3 col-sm-4 text-center mt-3" style="opacity:100%;">
-                <a href="#!"><img class="w-25" src="{% static 'assets/img/logos/linux.jpeg' %}" alt="..."
+                <a href="#!"><img class="w-25 icon-image-izquierda2" src="{% static 'assets/img/logos/linux.jpeg' %}" alt="..."
                         aria-label="artificial Logo" /></a>
 
             </div>
@@ -1308,6 +1315,47 @@
         }).addTo(map3);
 
         var marker3 = L.marker([9.928779589424872, -84.0906867099021]).addTo(map3);
+    </script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script>
+        // Registrar el plugin ScrollTrigger
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Seleccionar todas las imágenes dentro del tercer div usando ID
+        const images = document.querySelectorAll('.icon-image-izquierda');
+
+        // Crear la animación con GSAP y ScrollTrigger
+        gsap.to(images, {
+            x: 0, // Desplazar las imágenes 200px a la derecha
+            duration: 1, // Duración de la animación
+            stagger: 0, // Retrasar cada imagen un poco para un efecto de escalonamiento
+            scrollTrigger: {
+                trigger: '#icon-container-div', // El contenedor que activa la animación
+                start: "top 80%", // Inicia la animación cuando el contenedor esté en el centro de la pantalla
+                end: "bottom 20%", // Termina la animación cuando el contenedor salga del centro de la pantalla
+                scrub: true // Sincroniza la animación con el scroll
+            }
+        });
+    </script>
+    <script>
+        // Seleccionar todas las imágenes dentro del tercer div usando ID
+        const images2 = document.querySelectorAll('.icon-image-izquierda2');
+
+        // Crear la animación con GSAP y ScrollTrigger
+        gsap.to(images2, {
+            x: 0, // Desplazar las imágenes 200px a la derecha
+            duration: 1, // Duración de la animación
+            stagger: 0, // Retrasar cada imagen un poco para un efecto de escalonamiento
+            scrollTrigger: {
+                trigger: '#icon-container-div2', // El contenedor que activa la animación
+                start: "top 30%", // Inicia la animación cuando el contenedor esté en el centro de la pantalla
+                end: "bottom 20%", // Termina la animación cuando el contenedor salga del centro de la pantalla
+                scrub: true // Sincroniza la animación con el scroll
+            }
+        });
     </script>
 
 
