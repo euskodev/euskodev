@@ -4,19 +4,22 @@
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JLE08PZQL8"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JLE08PZQL8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'G-JLE08PZQL8');
-</script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-JLE08PZQL8');
+    </script>
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -34,7 +37,7 @@
     <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1565972943494658"
-     crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
 
     <style>
         /* Ocultar contenido en pantallas mayores a 768px */
@@ -78,9 +81,11 @@
     <!-- Navigation-->
     <nav class=" navbar navbar-expand-lg navbar-dark fixed-top bg-black" id="mainNav">
         <div class="container">
-            
+
             <a class="display-6" href="{% url 'home_app:home' %}#page-top"
-                style="text-decoration: none;font-family: 'Courier New', Courier, monospace;text-shadow: 2px 2px 5px black;"><img class="p-0 m-0" style="height:30px;" src="{% static 'img/Logo-euskodev-gris-horizontal-rgb-001.png' %}"></a>
+                style="text-decoration: none;font-family: 'Courier New', Courier, monospace;text-shadow: 2px 2px 5px black;"><img
+                    class="p-0 m-0" style="height:30px;"
+                    src="{% static 'img/Logo-euskodev-gris-horizontal-rgb-001.png' %}"></a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -107,7 +112,7 @@
                     <li class="nav-item"><a class="nav-link" href="{% url 'home_app:home' %}#contact"
                             style="  text-shadow: 2px 2px black;">{% trans 'Contacto' %}</a></li>
 
-                    
+
 
 
                     {% get_current_language as CURRENT_LANGUAGE %}
@@ -161,10 +166,11 @@
 
                 <h4 style="padding-top: 10%;"></h4>
 
-                <a href="#" target="_blank"><img
-                        src="{% static 'assets/img/testOsakidetza.png' %}" alt="" class="w-75"></a>
+                <a href="#" target="_blank"><img src="{% static 'assets/img/testOsakidetza.png' %}" alt=""
+                        class="w-75"></a>
 
-                <label class="mt-3" style="font-size:11px;">({% trans 'Hemos desarrollado esta plataforma para ayudar en la preparación de oposiciones' %}.)</label>
+                <label class="mt-3"
+                    style="font-size:11px;">({% trans 'Hemos desarrollado esta plataforma para ayudar en la preparación de oposiciones' %}.)</label>
 
             </div>
 
@@ -181,14 +187,15 @@
 
                         <div class="col-lg-10 col-md-12">
                             <label style="color: gray;" class="text-start w-100"
-                                        style="margin-left: 5px;">{{ entrada_blog.fecha_hora|date:"Y/m/d" }} | {{ entrada_blog.autor }} <br> </label>
-                            
-                            <a href="{% url 'home_app:blog-detail' entrada_blog.id %}"
-                                    class="" style="text-decoration: none;">
-                                    <h1 class="text-start" style="font-size:34px;color:#333;">{{ entrada_blog.titulo }}
+                                style="margin-left: 5px;">{{ entrada_blog.fecha_hora|date:"Y/m/d" }} |
+                                {{ entrada_blog.autor }} <br> </label>
 
-                                    </h1>
-                                    
+                            <a href="{% url 'home_app:blog-detail' entrada_blog.id %}" class=""
+                                style="text-decoration: none;">
+                                <h1 class="text-start" style="font-size:34px;color:#333;">{{ entrada_blog.titulo }}
+
+                                </h1>
+
                             </a>
                         </div>
 
@@ -202,22 +209,23 @@
 
                         <div class="col-lg-4 col-md-12"> <img src="{{ entrada_blog.imagen.url }}" class="w-100">
                             <br>
-                            
-                            
+
+
                         </div>
 
 
                         <div class="col-lg-6 col-md-12">
                             <a href="{% url 'home_app:blog-detail' entrada_blog.id %}" style="text-decoration: none;">
                                 <p style="color: black;" class="">{{ entrada_blog.resumen|safe }}
-                                    <button class="btn" style="border: 60%;color:white; background-color:green;">{% trans 'Leer artículo...' %}</button>
+                                    <button class="btn"
+                                        style="border: 60%;color:white; background-color:green;">{% trans 'Leer artículo...' %}</button>
                                 </p>
                             </a>
 
                             <br>
 
                             <a href="" style=" text-decoration: none;">
-                                
+
                             </a>
                         </div>
 
@@ -247,7 +255,7 @@
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 
-    
+
 </body>
 
 </html>

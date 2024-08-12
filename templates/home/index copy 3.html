@@ -39,8 +39,7 @@
     <!--Google Search Console-->
     <meta name="google-site-verification" content="Z5huUGyc1deP2ce9DgHlqWheIAB-kZt5-Ae9WK1rfeU" />
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
 
     <!--stilos-->
 
@@ -244,68 +243,28 @@
 
 
     <!--fin de navbar-->
-    <div class="container-fluid w-100 p-0 m-0" style="height:100vh; width: 100vw;">
-        <div id="carouselExampleAutoplaying" class="carousel slide col-12" data-bs-ride="carousel"
-            style="height:100vh;">
-            <div class="carousel-inner w-100">
-                <div class="carousel-item active w-100 text-center" style=" background-image: url('{% static "img/la-fortuna-desarrollo-web-donostia.jpg" %}');
-                    background-size:cover; height: 90vH;">
-
-                    <img class="text-center" src="{% static 'img/Logo-euskodev-gris-horizontal-rgb-001.png' %}"
-                        style="padding-top:25vh; max-width: 70vw;">
-
-                    <div class="text-uppercase text-white"
-                        style="text-shadow: 4px 2px 30px black; font-size:4.5vw; font-family: arial;margin-top: 7vh;">
-                        <b>
-                            Desarrollo Web<br>APP e Imagen<br>Corporativa</b></div>
-
-                    <a class="btn btn-xl text-uppercase mt-3" style="background-color: #77E25B;" href="#services">
-
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="40" fill="currentColor"
-                            class="bi bi-arrow-down" viewBox="0 0 15 15" style="color:white;">
-                            <path fill-rule="evenodd"
-                                d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1">
-                            </path>
-                        </svg></a>
 
 
-                </div>
 
-                <div class="carousel-item w-100"
-                    style="background-image: url('{% static "img/portada.jpg" %}'); background-size:cover; height: 90vH;"
-                    ; height:100vh;>
-                </div>
+    <header class="masthead carousel slide" id="backgroundDiv"
+        style="background-image: url('{% static "/img/la-fortuna-desarrollo-web-donostia.jpg" %}'); filter: saturate(100%); height: 100vh; background-position:top;">
+        <div class="container">
+            <div class="masthead-subheading" style="text-shadow: 20px 20px 50px black;">
+                <img class="p-0 m-0" style="100%;" src="{% static 'img/Logo-euskodev-gris-horizontal-rgb-001.png' %}">
+                <div class="text-uppercase"
+                    style="text-shadow: 4px 2px 30px black; font-size:3vw; font-family: arial;margin-top: 10vh;"><b>
+                        {% trans "Desarrollo Web<br><br>APP e Imagen<br><br>Corporativa" %}</b></div>
+                <a class="btn btn-xl text-uppercase mt-5" style="background-color: #77E25B;" href="#services">
 
-                <div class="carousel-item  w-100"
-                    style="background-image: url('{% static "img/granada_nicaragua.jpeg" %}'); background-size:cover; height: 90vH;"
-                    ; height:100vh;>
-                </div>
-
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-arrow-down" viewBox="0 0 16 16" style="color:black;">
+                        <path fill-rule="evenodd"
+                            d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1" />
+                    </svg></a>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Anterior</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Siguiente</span>
-            </button>
-
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-
-            </div>
-
         </div>
+    </header>
 
-    </div>
     <!--fin masthead-->
 
     <!-- Services-->
@@ -314,7 +273,7 @@
             <div class="text-center">
                 <h2 class="section-heading text-uppercase" style="text-shadow: 2px 2px 5px white;">
                     {% trans 'Servicios' %}</h2>
-                <h3 class=" section-subheading text-muted" style="text-shadow: 2px 2px 5px white;">
+                <h3 class="section-subheading text-muted" style="text-shadow: 2px 2px 5px white;">
                     {% trans '¡Conoce un poco de nuestros servicios!' %}</h3>
             </div>
             <div class="row text-center">
@@ -411,7 +370,7 @@
             </div>
 
             <!--primer row de portafolio-->
-            <div class="row">
+            <div class="row  portafolio-izquierda " id="izquierda">
                 <!-- Portfolio item 1-->
                 <div class="col-lg-4 col-sm-12 mb-4">
                     <div class="portfolio-item" style="border:solid; border-width:2px; border-color:black;">
@@ -473,7 +432,7 @@
                 </div>
             </div>
             <!--segungo row de portafolio-->
-            <div class="row">
+            <div class="row   portafolio-derecha" id="derecha">
                 <!-- Portfolio item 4-->
                 <div class="col-lg-4 col-sm-12 mb-4">
                     <div class="portfolio-item" style="border:solid;border-width:2px;border-color:black;">
@@ -533,7 +492,7 @@
                 </div>
             </div>
             <!--tercer row de presentacion de portafolio-->
-            <div class="row">
+            <div class="row portafolio-izquierda2" id="izquierda2">
                 <!-- Portfolio item 7-->
                 <div class="col-lg-4 col-sm-12 mb-4">
 
@@ -618,8 +577,7 @@
                 <li class="timeline-inverted mb-5">
                     <div class="timeline-image"><img class="rounded-circle img-fluid simbolEffect"
                             src="{% static 'assets/img/about/seguridad.jpg' %}"
-                            alt="hosting y domions para webs y proyectos, donostia, pais vasco, pais vasko" />
-                    </div>
+                            alt="hosting y domions para webs y proyectos, donostia, pais vasco, pais vasko" /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                             <h4>{% trans 'Dominio, hosting y seguridad' %}</h4>
@@ -744,7 +702,7 @@
             {% trans 'opiniones' %}</h1>
 
 
-        <div class="row">
+        <div class="row comentarios">
 
             <div class="col-lg-4 text-center ">
                 <img class="rounded-circle facephoto" style="" src="{% static 'assets/img/opiniones/primera.jpeg' %}"
@@ -772,7 +730,7 @@
 
 
             </div><!-- /.col-lg-4 -->
-            <div class="col-lg-4 text-center">
+            <div class="col-lg-4 text-center" id="comentarios">
                 <img class="rounded-circle facephoto" style="" src="{% static 'assets/img/opiniones/tercera.jpeg' %}"
                     alt="nicargua, costa rica, webs, app, responsives" width="140" height="140">
                 <h2 style="margin-top: 3%; margin-bottom: 3%;">Luis Diego</h2>
@@ -803,8 +761,8 @@
                 <h3 class="section-subheading text-muted">{% trans 'Developers Full Stack.' %}</h3>
             </div>
             <div class="row">
-                <div class="col-lg-6">
-                    <div class="team-member">
+                <div class="col-lg-6 foto-olvin">
+                    <div class="team-member" id="olvin-e-inaki">
                         <img class="mx-auto rounded-circle facephoto" src="{% static 'assets/img/team/daniel.jpg' %}"
                             alt="nicaragua, costa rica, internet, desarrollo web, software , developer full stack donostia y todo españa y pais vasco" />
                         <h4 class="text-white">Olvin Duarte</h4>
@@ -838,8 +796,8 @@
 
 
 
-                <div class="col-lg-6">
-                    <div class="team-member">
+                <div class="col-lg-6  foto-inaki">
+                    <div class="team-member" id="olvin-e-inaki">
                         <img class="mx-auto rounded-circle facephoto" src="{% static 'assets/img/team/retegi.jpg' %}"
                             alt="españa desarrollo web y en todo el mundo, developer full stack" />
                         <h4 class="text-white">Iñaki Retegi</h4>
@@ -854,8 +812,8 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
+            <div class="row  parrafo_abajo_inaki">
+                <div class="col-lg-8 mx-auto text-center" id="parrafo_abajo_inaki">
                     <p class="large text-muted">
                         {% trans 'Euskodev: Donde la tecnología se convierte en realidad Si está buscando un equipo de programadores digitales confiables y experimentados que puedan ayudarlo a alcanzar sus objetivos comerciales, no busque más allá de Euskodev. Con su enfoque personalizado y su dedicación a la calidad, Euskodev le brindará las soluciones digitales que necesita para prosperar en el mundo digital actual.' %}
                     </p>
@@ -872,19 +830,20 @@
 
 
 
-    <div class="container mt-5">
+    <div class="container mt-5" id="icon-container-div">
         <div class="row" style="opacity:100%;">
             <div class="col-lg-3 col-md-12 text-center mt-3">
-                <img class="w-25" id="icon-image" src="{% static 'assets/img/logos/python.png' %}" />
+                <img class="w-25 icon-image-izquierda" id="icon-image"
+                    src="{% static 'assets/img/logos/python.png' %}" />
             </div>
-            <div class="col-lg-3 col-md-12 text-center mt-3" style="opacity:90%;">
-                <img class="w-25" src="{% static 'assets/img/logos/artificial.avif' %}" />
+            <div class="col-lg-3 col-md-12 text-center mt-3 icon_image_izquierda" style="opacity:90%;">
+                <img class="w-25 icon-image-izquierda" src="{% static 'assets/img/logos/artificial.avif' %}" />
             </div>
             <div class="col-lg-3 col-md-12 text-center mt-3" style="opacity:70%;">
-                <img class="w-25" src="{% static 'assets/img/logos/django.png' %}" />
+                <img class="w-25 icon-image-izquierda" src="{% static 'assets/img/logos/django.png' %}" />
             </div>
             <div class="col-lg-3 col-md-12  text-center mt-3" style="opacity:80%; ">
-                <img class="w-25" src="{% static 'assets/img/logos/bootstrap.png' %}" />
+                <img class="w-25 icon-image-izquierda" src="{% static 'assets/img/logos/bootstrap.png' %}" />
             </div>
         </div>
     </div>
@@ -893,23 +852,23 @@
 
 
 
-    <div class="container mb-5">
+    <div class="container mb-5" id="icon-container-div2">
         <div class="row" style="opacity:100%;">
             <div class="col-lg-3 col-sm-6 text-center mt-3">
-                <img class="w-25" src="{% static 'assets/img/logos/github.jpg' %}" />
+                <img class="w-25 icon-image-izquierda2" src="{% static 'assets/img/logos/github.jpg' %}" />
             </div>
             <div class="col-lg-3 col-sm-4 text-center mt-3" style="opacity:100%;">
-                <a href="#!"><img class="w-25" src="{% static 'assets/img/logos/linux.jpeg' %}" alt="..."
-                        aria-label="artificial Logo" /></a>
+                <a href="#!"><img class="w-25 icon-image-izquierda2" src="{% static 'assets/img/logos/linux.jpeg' %}"
+                        alt="..." aria-label="artificial Logo" /></a>
 
             </div>
             <div class="col-md-3 col-sm-6 text-center mt-3" style="opacity:70%;">
-                <a href="#!"><img class="w-25" src="{% static 'assets/img/logos/sql.webp' %}" alt="..."
-                        aria-label="django Logo" /></a>
+                <a href="#!"><img class="w-25  icon-image-izquierda2" src="{% static 'assets/img/logos/sql.webp' %}"
+                        alt="..." aria-label="django Logo" /></a>
             </div>
             <div class="col-md-3 col-sm-6 text-center mt-3" style="opacity:80%; ">
-                <a href="#!"><img class="w-25" src="{% static 'assets/img/logos/triologo.webp' %}" alt="..."
-                        aria-label="bootstrap Logo" /></a>
+                <a href="#!"><img class="w-25 icon-image-izquierda2" src="{% static 'assets/img/logos/triologo.webp' %}"
+                        alt="..." aria-label="bootstrap Logo" /></a>
 
             </div>
         </div>
@@ -930,8 +889,7 @@
             <div class=" row text-center col-lg-12 col-md-12" style="padding-bottom: 20px;">
 
                 <h2 class="section-heading text-uppercase">{% trans 'Contáctanos' %}</h2>
-                <h3 class="section-subheading " style="color: white; margin-bottom: 1%;">
-                    {% trans 'Sin Fronteras.' %}
+                <h3 class="section-subheading " style="color: white; margin-bottom: 1%;">{% trans 'Sin Fronteras.' %}
                 </h3>
                 <h3 class="section-heading text-uppercase mb-5">+34 747 47 88 42 <img
                         src="{% static 'assets/img/whatsapp.png' %}"
@@ -1702,8 +1660,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             function cambiarColor() {
                 const div = document.getElementById('miDiv');
-                const colorAleatorio =
-                    `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0')}`;
+                const colorAleatorio = `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0')}`;
                 div.style.backgroundColor = colorAleatorio;
             }
 
