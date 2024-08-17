@@ -4,7 +4,7 @@
 
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
 
@@ -25,7 +25,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>{% trans 'Euskodev - Desarrollo Web, App e Imagen Corporativa' %}</title>
+    <title>{% trans 'Desarrollo Web' %}</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
@@ -79,14 +79,13 @@
 <body id="page-top">
 
     <!-- Navigation-->
-    <nav class=" navbar navbar-expand-lg navbar-dark fixed-top bg-black" id="mainNav">
+    <!-- Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" id="mainNav">
         <div class="container">
-
-            <a class="display-6" href="{% url 'home_app:home' %}#page-top"
-                style="text-decoration: none;font-family: 'Courier New', Courier, monospace;text-shadow: 2px 2px 5px black;"><img
-                    class="p-0 m-0" style="height:30px;"
-                    src="{% static 'img/Logo-euskodev-gris-horizontal-rgb-001.png' %}"></a>
-
+            <a href="{% url 'home_app:home' %}">
+                <img class="p-0 m-0" style="height:30px;"
+                    src="{% static 'img/Logo-euskodev-gris-horizontal-rgb-001.png' %}">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
@@ -94,25 +93,27 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="{% url 'home_app:home' %}#services"
+                    <li class="nav-item"><a class="nav-link" href="#services"
                             style="  text-shadow: 2px 2px black;">{% trans 'Servicios' %}</a></li>
 
-                    <li class="nav-item"><a class="nav-link" href="{% url 'home_app:home' %}#portfolio"
+                    <li class="nav-item"><a class="nav-link" href="#portfolio"
                             style="  text-shadow: 2px 2px black;">{% trans 'Portfolio' %}</a></li>
 
-                    <li class="nav-item"><a class="nav-link" href="{% url 'home_app:home' %}#about"
+                    <li class="nav-item"><a class="nav-link" href="#about"
                             style="  text-shadow: 2px 2px black;">{% trans 'Sobre' %}</a></li>
 
-                    <li class="nav-item"><a class="nav-link" href="{% url 'home_app:blog' %}"
-                            style="  text-shadow: 2px 2px black;">{% trans 'Blog' %} </a></li>
+                    <li class="nav-item"><a class="nav-link" style="color:lime;" href="{% url 'home_app:blog' %}"
+                            style="  text-shadow: 2px 2px black;">{% trans 'Blog' %}</a></li>
 
-                    <li class="nav-item"><a class="nav-link" href="{% url 'home_app:home' %}#team"
-                            style="  text-shadow: 2px 2px black;">{% trans 'Creadores' %} </a></li>
+                    <li class="nav-item"><a class="nav-link" href="#team"
+                            style="  text-shadow: 2px 2px black;">{% trans 'Nosotros' %} </a></li>
 
-                    <li class="nav-item"><a class="nav-link" href="{% url 'home_app:home' %}#contact"
+                    <li class="nav-item"><a class="nav-link" href="#contact"
                             style="  text-shadow: 2px 2px black;">{% trans 'Contacto' %}</a></li>
 
-
+                    <!--<li class="nav-item"><a class="nav-link" href="#contact"
+                            style="  text-shadow: 2px 2px black;"><b>747
+                                47 88 42 </b> </a></li>-->
 
 
                     {% get_current_language as CURRENT_LANGUAGE %}
@@ -120,11 +121,12 @@
                     {% get_language_info_list for AVAILABLE_LANGUAGES as languages %}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle"
-                            style="text-transform:uppercase; background-color:green; color:white; border-radius:25px;"
+                            style="text-transform:uppercase; background-color:#30C06F; color:white; border-radius:25px;"
                             href="#" data-bs-toggle="dropdown" aria-expanded="false">{{ CURRENT_LANGUAGE }}</a>
                         <ul class="dropdown-menu">
                             {% for language in languages %}
-                            <li><a class="dropdown-item" style="text-transform:uppercase; color:gray;"
+                            <li><a class="dropdown-item"
+                                    style="text-transform:uppercase; color:gray; text-decoration:none;"
                                     href="/{{ language.code }}/{{ request.get_full_path|slice:'4:' }}">{{ language.code }}</a>
                             </li>
                             {% endfor %}
@@ -134,6 +136,18 @@
             </div>
         </div>
     </nav>
+
+    {% if messages %}
+    <div class="container-fluid text-center" style="background-color:#8cfaa5; position: relative; top: 20%;">
+        {% for message in messages %}
+        <label {% if message.tags %} class="{{ message.tags }}" {% endif %}
+            style="font-size: 12px;">{{ message }}</label>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+
+    <!--fin de navbar-->
     <!-- Masthead-->
 
 
