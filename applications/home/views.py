@@ -14,7 +14,7 @@ from django.contrib import messages
 from applications.home.models import Blog
 
 def formulario_contactar(request):
-    print("Formulario de contactarrrrrrrrrrrrrrrrrrrrrrrrrrrrr")
+    print("Formulario de contactar")
     if request.method == "POST":
         name = request.POST.get('name')
         email = request.POST.get('email')
