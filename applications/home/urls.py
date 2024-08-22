@@ -87,12 +87,13 @@ urlpatterns = [
         views.DeMiTierraView.as_view(),
         name='de-mi-tierra',
     ),
+
     path('formulario/', views.formulario_contactar, name='formulario_contactar'),
 
 
     path('404',
-      views.Error404View.as_view(),
-      name='error-404',
+        views.Error404View.as_view(),
+        name='error-404',
     ),
 
 

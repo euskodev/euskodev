@@ -99,6 +99,14 @@ class DeMiTierrapView(TemplateView):
     template_name = "portfolio/de-mi-tierra/index.html"
 
 
+class Error404View(TemplateView):
+    template_name = "home/error-404.html"
+
+def custom_404(request, exception):
+    return render(request, 'home/erro-404.html', status=404)
+
+
+
 
 
 
