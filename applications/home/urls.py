@@ -1,6 +1,8 @@
 from os import name
 from django.urls import include, path
 from . import views
+from django.conf.urls import handler404
+
 
 """
 {% url 'home_app:aviso_legal' %}
@@ -11,6 +13,8 @@ from . import views
 """
 
 app_name = 'home_app'
+
+handler404 ='applications.home.views.custom_404'
 
 urlpatterns = [
     path('',
@@ -85,6 +89,11 @@ urlpatterns = [
     ),
     path('formulario/', views.formulario_contactar, name='formulario_contactar'),
 
+
+    path('404',
+      views.Error404View.as_view(),
+      name='error-404',
+    ),
 
 
 ]
