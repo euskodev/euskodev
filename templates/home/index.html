@@ -188,22 +188,22 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#services"
-                            style="  text-shadow: 2px 2px black;">{% trans 'Servicios' %}</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'home_app:home' %}#services"
+                        style="  text-shadow: 2px 2px black;">{% trans 'Servicios' %}</a></li>
 
-                    <li class="nav-item"><a class="nav-link" href="#portfolio"
+                    <li class="nav-item"><a class="nav-link" href="{% url 'home_app:home' %}#portfolio"
                             style="  text-shadow: 2px 2px black;">{% trans 'Portfolio' %}</a></li>
 
-                    <li class="nav-item"><a class="nav-link" href="#about"
+                    <li class="nav-item"><a class="nav-link" href="{% url 'home_app:home' %}#about"
                             style="  text-shadow: 2px 2px black;">{% trans 'Sobre' %}</a></li>
 
                     <li class="nav-item"><a class="nav-link" style="color:lime;" href="{% url 'home_app:blog' %}"
                             style="  text-shadow: 2px 2px black;">{% trans 'Blog' %}</a></li>
 
-                    <li class="nav-item"><a class="nav-link" href="#team"
+                    <li class="nav-item"><a class="nav-link" href="{% url 'home_app:home' %}#team"
                             style="  text-shadow: 2px 2px black;">{% trans 'Nosotros' %} </a></li>
 
-                    <li class="nav-item"><a class="nav-link" href="#contact"
+                    <li class="nav-item"><a class="nav-link" href="{% url 'home_app:home' %}#contact"
                             style="  text-shadow: 2px 2px black;">{% trans 'Contacto' %}</a></li>
 
                     <!--<li class="nav-item"><a class="nav-link" href="#contact"
