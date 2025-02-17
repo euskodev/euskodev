@@ -13,22 +13,42 @@ from django.template.loader import render_to_string
 from django.contrib import messages
 from applications.home.models import Blog
 
-def formulario_contactar(request):
-    print("Formulario de contactar")
-    if request.method == "POST":
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        phone = request.POST.get('phone')
-        message = request.POST.get('message')
-        message = "Nombre: " + name + " Email: " + email + " Tel: " + phone + " Mensaje: " + message
-        
-        print(name, email, phone, message)
-        from_email = settings.EMAIL_HOST_USER
-        recipient_list = ['euskodev@gmail.com','retegi84@gmail.com','olvind78@gmail.com']
-        send_mail(email, message, from_email, recipient_list)
-        messages.add_message(request, messages.INFO, "Hemos recibido el email, en breve nos pondremos en contacto. | Emaila jaso dugu, laster harremanetan jarriko gara.")
+from django.shortcuts import render
+from django.http import HttpResponse
+import requests
+from django.conf import settings
 
-    return render(request, "home/index.html")
+
+
+
+def formulario_contactar(request):
+    if request.method == "POST":
+        recaptcha_response = request.POST.get("g-recaptcha-response")
+        data = {
+            "secret": settings.RECAPTCHA_PRIVATE_KEY,
+            "response": recaptcha_response
+        }
+        recaptcha_result = requests.post("https://www.google.com/recaptcha/api/siteverify", data=data).json()
+
+        if recaptcha_result.get("success"):
+            try:
+                send_mail(
+                    "Nuevo mensaje de contacto",
+                    "Has recibido un nuevo mensaje.",
+                    settings.EMAIL_HOST_USER,
+                    ["euskodev@gmail.com"],
+                    fail_silently=False,
+                )
+                messages.success(request, "✅ Formulario enviado correctamente. ¡Gracias por contactarnos!")
+            except Exception as e:
+                messages.error(request, f"❌ Error enviando el correo: {e}")
+
+        else:
+            messages.warning(request, "⚠️ Error: ReCAPTCHA no validado.")
+
+    return render(request, "index.html")  # Redirige y muestra los mensajes en la landing
+
+
 
 class HomePageView(ListView):
     template_name = "home/index.html"
